@@ -205,9 +205,9 @@
     <button class="nav-btn" data-t="d3" onclick="show('d3')">Day 3<br><small style="font-weight:400">Wed</small></button>
     <button class="nav-btn" data-t="d4" onclick="show('d4')">Day 4<br><small style="font-weight:400">Thu</small></button>
     <button class="nav-btn" data-t="d5" onclick="show('d5')">Day 5<br><small style="font-weight:400">Fri</small></button>
-    <button class="nav-btn" data-t="apps" onclick="show('apps')">📱 Apps</button>
-    <button class="nav-btn" data-t="places" onclick="show('places')">🗺️ Places<br><small style="font-weight:400">& Food</small></button>
     <button class="nav-btn" data-t="info" onclick="show('info')">ℹ️ Info</button>
+    <button class="nav-btn" data-t="places" onclick="show('places')">🗺️ Places<br><small style="font-weight:400">& Food</small></button>
+    <button class="nav-btn" data-t="apps" onclick="show('apps')">📱 Apps</button>
   </nav>
 </div>
 
@@ -265,14 +265,6 @@
 <div id="d3" class="section d3">
   <div class="day-hdr"><div class="day-lbl">Day 3 · Wednesday 8 April</div><div class="day-title">Chinatown + MOIC Split + Marina Bay 🦁</div></div>
   <div class="veg-sticky">🌿 Vegetarian only for breakfast — temples 10:00 + 10:30 AM · full menu opens after 11 AM</div>
-  <div class="card card-gray">
-    <div class="card-title">🚇 MRT Quick Reference</div>
-    <div class="mrt-row"><div class="mrt-journey">Farrer Park → Chinatown</div><div class="mrt-line">Purple NEL · direct</div><div class="mrt-time">10 min</div></div>
-    <div class="mrt-row"><div class="mrt-journey">Farrer Park → HarbourFront</div><div class="mrt-line">Purple NEL · direct</div><div class="mrt-time">15 min</div></div>
-    <div class="mrt-row"><div class="mrt-journey">Little India → Bayfront</div><div class="mrt-line">Blue DTL · direct</div><div class="mrt-time">12 min</div></div>
-    <div class="mrt-row"><div class="mrt-journey">Bayfront → Little India</div><div class="mrt-line">Blue DTL · direct</div><div class="mrt-time">12 min</div></div>
-    <div class="mrt-row"><div class="mrt-journey">→ Airport</div><div class="mrt-line" style="color:var(--red);font-weight:600">Use GrabMax instead</div><div class="mrt-time" style="color:var(--red)">avoid</div></div>
-  </div>
   <div class="slot"><div class="slot-left"><div class="slot-time">8:15 AM</div></div><div class="slot-icon">🚇</div><div class="slot-body"><div class="slot-title">MRT: Farrer Park (NE8) → Chinatown (NE4)</div><div class="slot-note">Purple line · direct · 10 min</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">8:30 AM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🍳</div><div class="slot-body" data-dishes="maxwell_breakfast"><div class="slot-title">Maxwell Food Centre breakfast<a href="https://maps.google.com/?q=Maxwell+Food+Centre+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Kaya toast · soft eggs · congee · roti prata 🌿</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">10:00 AM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🛕</div><div class="slot-body"><div class="slot-title">Sri Mariamman Temple<a href="https://maps.google.com/?q=Sri+Mariamman+Temple+Chinatown+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Free · Singapore's oldest Hindu temple 🌿</div></div></div>
@@ -390,32 +382,72 @@
   <div class="quote-note">Last kaya toast. Last Rain Vortex. Last MRT beep. It goes fast. Be here.</div>
 </div>
 
-<!-- ═══ APPS ═══ -->
-<div id="apps" class="section">
-  <div class="card card-orange" style="margin-bottom:0;border-radius:12px 12px 0 0;border-left:none;border-bottom:none;background:#E05C2A">
-    <div class="card-title" style="color:white">📱 Apps to Download</div>
+<!-- ═══ INFO ═══ -->
+<div id="info" class="section">
+
+  <div class="card card-dark">
+    <div class="card-title">✈️ All Flights</div>
+    <p><strong>You + Family (SFO→SIN)</strong> · United UA29 · Apr 5 10:25 AM → Apr 6 6:35 PM</p>
+    <p><strong>Grandparents Booking 1 (BLR→SIN)</strong> · IndiGo 6E1091 · Apr 6 10:20 AM → 5:40 PM</p>
+    <p><strong>Grandparents Booking 2 (BLR→SIN)</strong> · IndiGo 6E1091 · Apr 6 10:20 AM → 5:40 PM</p>
+    <p><strong>All 8 Return (SIN→BLR)</strong> · IndiGo 6E1092 · Apr 10 7:40 PM → 9:40 PM · T2</p>
   </div>
-  <div style="background:white;border-radius:0 0 12px 12px;padding:4px 16px 8px;box-shadow:0 2px 12px rgba(0,0,0,0.06);margin-bottom:16px">
-    <div class="app-row"><div class="app-name">🚗 Grab</div><div class="app-desc">Rides + food. Add US credit card at home — easier before travel.</div><div class="app-when app-urgent">⚠️ Pre-trip</div></div>
-    <div class="app-row"><div class="app-name">🎟️ Klook</div><div class="app-desc">Pre-book Oceanarium, ArtScience, MOIC, Cloud Forest.</div><div class="app-when app-urgent">⚠️ Pre-trip</div></div>
-    <div class="app-row"><div class="app-name">✈️ IndiGo</div><div class="app-desc">Online check-in for Apr 10 SIN→BLR flight (48 hrs before).</div><div class="app-when app-urgent">⚠️ Pre-trip</div></div>
-    <div class="app-row"><div class="app-name">🌟 ImagiNite</div><div class="app-desc">AR camera for Sentosa Sensoryscape. Needs setup before Day 4.</div><div class="app-when app-urgent">⚠️ Pre-trip</div></div>
-    <div class="app-row"><div class="app-name">💬 WhatsApp</div><div class="app-desc">Coordinate with grandparents on Day 1 (55 min apart arrivals).</div><div class="app-when app-normal">Before SFO</div></div>
-    <div class="app-row"><div class="app-name">🗺️ Google Maps</div><div class="app-desc">Walking + MRT navigation with real-time routing.</div><div class="app-when app-normal">Before SFO</div></div>
-    <div class="app-row"><div class="app-name">🌐 Google Translate</div><div class="app-desc">Camera mode for Chinese hawker menus.</div><div class="app-when app-normal">Before SFO</div></div>
-    <div class="app-row"><div class="app-name">📷 Google Photos</div><div class="app-desc">Shared album — invite grandparents before trip.</div><div class="app-when app-normal">Before SFO</div></div>
-    <div class="app-row"><div class="app-name">💱 XE Currency</div><div class="app-desc">Instant SGD ↔ USD ↔ INR conversion.</div><div class="app-when app-normal">Before SFO</div></div>
-    <div class="app-row"><div class="app-name">🎬 1 Second Everyday</div><div class="app-desc">1 sec/day → auto-stitches into a 5-day trip film.</div><div class="app-when app-normal">Before SFO</div></div>
+
+  <div class="card card-orange">
+    <div class="card-title">🏨 Hotel · Novotel Kitchener Road</div>
+    <div class="cost-row"><span class="cost-label">Address</span><span class="cost-val">181 Kitchener Rd, S208533<a href="https://maps.google.com/?q=Novotel+Singapore+on+Kitchener+Road" target="_blank" rel="noopener" class="ml">📍</a></span></div>
+    <div class="cost-row"><span class="cost-label">MRT</span><span class="cost-val">Farrer Park NE8 · 5 min walk</span></div>
+    <div class="cost-row"><span class="cost-label">Tel</span><span class="cost-val"><a href="tel:+6564283000" style="color:var(--orange)">+65 6428 3000</a></span></div>
+    <div class="cost-row"><span class="cost-label">Rooms</span><span class="cost-val">3 rooms, same floor · crib confirmed</span></div>
   </div>
-  <div class="card card-red">
-    <div class="card-title">⚠️ ImagiNite — Set Up Before Sentosa Day</div>
-    <p>Only works inside Sentosa Sensoryscape but must be opened at least once before arrival to initialise AR. Do this at hotel on Apr 7 or 8. <strong>Not compatible with iPad — phones only.</strong></p>
+
+  <div class="card card-gray">
+    <div class="card-title">🚇 MRT Quick Reference</div>
+    <div class="mrt-row"><div class="mrt-journey">Farrer Park → Chinatown</div><div class="mrt-line">Purple NEL · direct</div><div class="mrt-time">10 min</div></div>
+    <div class="mrt-row"><div class="mrt-journey">Farrer Park → HarbourFront</div><div class="mrt-line">Purple NEL · direct</div><div class="mrt-time">15 min</div></div>
+    <div class="mrt-row"><div class="mrt-journey">Little India → Bayfront</div><div class="mrt-line">Blue DTL · direct</div><div class="mrt-time">12 min</div></div>
+    <div class="mrt-row"><div class="mrt-journey">Bayfront → Little India</div><div class="mrt-line">Blue DTL · direct</div><div class="mrt-time">12 min</div></div>
+    <div class="mrt-row"><div class="mrt-journey">→ Airport</div><div class="mrt-line" style="color:var(--red);font-weight:600">Use GrabMax instead</div><div class="mrt-time" style="color:var(--red)">avoid</div></div>
   </div>
-  <div class="card card-teal">
-    <div class="card-title">📡 Data in Singapore — Google Fi Note</div>
-    <p>You're on <strong>Unlimited Standard</strong> which does NOT include international data. Either upgrade to Unlimited Premium before departure, or buy a Singtel/StarHub SIM at Changi arrivals (~S$15 for 100GB/7 days).</p>
+
+  <div class="card card-green">
+    <div class="card-title">🎁 Memorabilia</div>
+    <ul>
+      <li><strong>Bengawan Solo kueh lapis tins</strong> — Jewel Day 5 · get first, they sell out · one per household</li>
+      <li><strong>Merlion plushies</strong> — one per child · any Jewel gift shop</li>
+      <li><strong>Singapore stamp passport</strong> — collect stamps at each attraction · 4yr old will treasure it</li>
+      <li><strong>Peranakan pottery / tile</strong> — Haji Lane Day 2 · genuinely Singaporean</li>
+      <li><strong>Custom star map</strong> — underluckystars.com · sky over SG on Apr 8 · order after trip</li>
+      <li><strong>Photo book</strong> — Artifact Uprising · from shared Google Photos album · one per household</li>
+      <li><strong>Printed photo calendar</strong> — one per household</li>
+      <li><strong>1 Second Everyday film</strong> — 5 sec/day · export after Day 5</li>
+    </ul>
   </div>
-</div>
+
+  <div class="info-grid" style="margin-top:16px">
+    <div class="info-box">
+      <div class="info-box-title" style="color:#E05C2A">☀️ Weather</div>
+      <p>~<strong>32°C</strong> every day, humid</p>
+      <p>Light cotton. All museums &amp; malls are heavily AC'd.</p>
+    </div>
+    <div class="info-box">
+      <div class="info-box-title" style="color:#2E7A3A">💵 Money</div>
+      <p>Singapore Dollars (SGD). Cards everywhere.</p>
+      <p>Carry ~S$20 cash per person for hawkers.</p>
+    </div>
+    <div class="info-box">
+      <div class="info-box-title" style="color:#1B7A8A">🍽️ Must Eats</div>
+      <p><strong>Laksa</strong> — Day 4, Malaysian Food Street</p>
+      <p>Kaya toast <em class="dish-desc">toasted bread with coconut-pandan jam</em> every morning. Chendol Day 3.</p>
+    </div>
+    <div class="info-box">
+      <div class="info-box-title" style="color:#5B4A8A">📡 Data</div>
+      <p>Upgrade Fi to <strong>Unlimited Premium</strong> before SFO</p>
+      <p>Or Singtel SIM at Changi arrivals (~S$15)</p>
+    </div>
+  </div>
+
+</div><!-- info -->
 
 <!-- ═══ PLACES & FOOD ═══ -->
 <div id="places" class="section">
@@ -506,72 +538,32 @@
 
 
 
-<!-- ═══ INFO ═══ -->
-<div id="info" class="section">
-
-  <div class="card card-dark">
-    <div class="card-title">✈️ All Flights</div>
-    <p><strong>You + Family (SFO→SIN)</strong> · United UA29 · Apr 5 10:25 AM → Apr 6 6:35 PM</p>
-    <p><strong>Grandparents Booking 1 (BLR→SIN)</strong> · IndiGo 6E1091 · Apr 6 10:20 AM → 5:40 PM</p>
-    <p><strong>Grandparents Booking 2 (BLR→SIN)</strong> · IndiGo 6E1091 · Apr 6 10:20 AM → 5:40 PM</p>
-    <p><strong>All 8 Return (SIN→BLR)</strong> · IndiGo 6E1092 · Apr 10 7:40 PM → 9:40 PM · T2</p>
+<!-- ═══ APPS ═══ -->
+<div id="apps" class="section">
+  <div class="card card-orange" style="margin-bottom:0;border-radius:12px 12px 0 0;border-left:none;border-bottom:none;background:#E05C2A">
+    <div class="card-title" style="color:white">📱 Apps to Download</div>
   </div>
-
-  <div class="card card-orange">
-    <div class="card-title">🏨 Hotel · Novotel Kitchener Road</div>
-    <div class="cost-row"><span class="cost-label">Address</span><span class="cost-val">181 Kitchener Rd, S208533<a href="https://maps.google.com/?q=Novotel+Singapore+on+Kitchener+Road" target="_blank" rel="noopener" class="ml">📍</a></span></div>
-    <div class="cost-row"><span class="cost-label">MRT</span><span class="cost-val">Farrer Park NE8 · 5 min walk</span></div>
-    <div class="cost-row"><span class="cost-label">Tel</span><span class="cost-val"><a href="tel:+6564283000" style="color:var(--orange)">+65 6428 3000</a></span></div>
-    <div class="cost-row"><span class="cost-label">Rooms</span><span class="cost-val">3 rooms, same floor · crib confirmed</span></div>
+  <div style="background:white;border-radius:0 0 12px 12px;padding:4px 16px 8px;box-shadow:0 2px 12px rgba(0,0,0,0.06);margin-bottom:16px">
+    <div class="app-row"><div class="app-name">🚗 Grab</div><div class="app-desc">Rides + food. Add US credit card at home — easier before travel.</div><div class="app-when app-urgent">⚠️ Pre-trip</div></div>
+    <div class="app-row"><div class="app-name">🎟️ Klook</div><div class="app-desc">Pre-book Oceanarium, ArtScience, MOIC, Cloud Forest.</div><div class="app-when app-urgent">⚠️ Pre-trip</div></div>
+    <div class="app-row"><div class="app-name">✈️ IndiGo</div><div class="app-desc">Online check-in for Apr 10 SIN→BLR flight (48 hrs before).</div><div class="app-when app-urgent">⚠️ Pre-trip</div></div>
+    <div class="app-row"><div class="app-name">🌟 ImagiNite</div><div class="app-desc">AR camera for Sentosa Sensoryscape. Needs setup before Day 4.</div><div class="app-when app-urgent">⚠️ Pre-trip</div></div>
+    <div class="app-row"><div class="app-name">💬 WhatsApp</div><div class="app-desc">Coordinate with grandparents on Day 1 (55 min apart arrivals).</div><div class="app-when app-normal">Before SFO</div></div>
+    <div class="app-row"><div class="app-name">🗺️ Google Maps</div><div class="app-desc">Walking + MRT navigation with real-time routing.</div><div class="app-when app-normal">Before SFO</div></div>
+    <div class="app-row"><div class="app-name">🌐 Google Translate</div><div class="app-desc">Camera mode for Chinese hawker menus.</div><div class="app-when app-normal">Before SFO</div></div>
+    <div class="app-row"><div class="app-name">📷 Google Photos</div><div class="app-desc">Shared album — invite grandparents before trip.</div><div class="app-when app-normal">Before SFO</div></div>
+    <div class="app-row"><div class="app-name">💱 XE Currency</div><div class="app-desc">Instant SGD ↔ USD ↔ INR conversion.</div><div class="app-when app-normal">Before SFO</div></div>
+    <div class="app-row"><div class="app-name">🎬 1 Second Everyday</div><div class="app-desc">1 sec/day → auto-stitches into a 5-day trip film.</div><div class="app-when app-normal">Before SFO</div></div>
   </div>
-
-  <div class="card card-gray">
-    <div class="card-title">🚇 MRT Quick Reference</div>
-    <div class="mrt-row"><div class="mrt-journey">Farrer Park → Chinatown</div><div class="mrt-line">Purple NEL · direct</div><div class="mrt-time">10 min</div></div>
-    <div class="mrt-row"><div class="mrt-journey">Farrer Park → HarbourFront</div><div class="mrt-line">Purple NEL · direct</div><div class="mrt-time">15 min</div></div>
-    <div class="mrt-row"><div class="mrt-journey">Little India → Bayfront</div><div class="mrt-line">Blue DTL · direct</div><div class="mrt-time">12 min</div></div>
-    <div class="mrt-row"><div class="mrt-journey">Bayfront → Little India</div><div class="mrt-line">Blue DTL · direct</div><div class="mrt-time">12 min</div></div>
-    <div class="mrt-row"><div class="mrt-journey">→ Airport</div><div class="mrt-line" style="color:var(--red);font-weight:600">Use GrabMax instead</div><div class="mrt-time" style="color:var(--red)">avoid</div></div>
+  <div class="card card-red">
+    <div class="card-title">⚠️ ImagiNite — Set Up Before Sentosa Day</div>
+    <p>Only works inside Sentosa Sensoryscape but must be opened at least once before arrival to initialise AR. Do this at hotel on Apr 7 or 8. <strong>Not compatible with iPad — phones only.</strong></p>
   </div>
-
-  <div class="card card-green">
-    <div class="card-title">🎁 Memorabilia</div>
-    <ul>
-      <li><strong>Bengawan Solo kueh lapis tins</strong> — Jewel Day 5 · get first, they sell out · one per household</li>
-      <li><strong>Merlion plushies</strong> — one per child · any Jewel gift shop</li>
-      <li><strong>Singapore stamp passport</strong> — collect stamps at each attraction · 4yr old will treasure it</li>
-      <li><strong>Peranakan pottery / tile</strong> — Haji Lane Day 2 · genuinely Singaporean</li>
-      <li><strong>Custom star map</strong> — underluckystars.com · sky over SG on Apr 8 · order after trip</li>
-      <li><strong>Photo book</strong> — Artifact Uprising · from shared Google Photos album · one per household</li>
-      <li><strong>Printed photo calendar</strong> — one per household</li>
-      <li><strong>1 Second Everyday film</strong> — 5 sec/day · export after Day 5</li>
-    </ul>
+  <div class="card card-teal">
+    <div class="card-title">📡 Data in Singapore — Google Fi Note</div>
+    <p>You're on <strong>Unlimited Standard</strong> which does NOT include international data. Either upgrade to Unlimited Premium before departure, or buy a Singtel/StarHub SIM at Changi arrivals (~S$15 for 100GB/7 days).</p>
   </div>
-
-  <div class="info-grid" style="margin-top:16px">
-    <div class="info-box">
-      <div class="info-box-title" style="color:#E05C2A">☀️ Weather</div>
-      <p>~<strong>32°C</strong> every day, humid</p>
-      <p>Light cotton. All museums &amp; malls are heavily AC'd.</p>
-    </div>
-    <div class="info-box">
-      <div class="info-box-title" style="color:#2E7A3A">💵 Money</div>
-      <p>Singapore Dollars (SGD). Cards everywhere.</p>
-      <p>Carry ~S$20 cash per person for hawkers.</p>
-    </div>
-    <div class="info-box">
-      <div class="info-box-title" style="color:#1B7A8A">🍽️ Must Eats</div>
-      <p><strong>Laksa</strong> — Day 4, Malaysian Food Street</p>
-      <p>Kaya toast <em class="dish-desc">toasted bread with coconut-pandan jam</em> every morning. Chendol Day 3.</p>
-    </div>
-    <div class="info-box">
-      <div class="info-box-title" style="color:#5B4A8A">📡 Data</div>
-      <p>Upgrade Fi to <strong>Unlimited Premium</strong> before SFO</p>
-      <p>Or Singtel SIM at Changi arrivals (~S$15)</p>
-    </div>
-  </div>
-
-</div><!-- info -->
+</div>
 
 </div><!-- content -->
 
@@ -592,9 +584,7 @@
   });
   document.addEventListener('DOMContentLoaded',()=>{
     const b=document.getElementById('back-top');
-    if(b) b.onclick=()=>window.scrollTo({top:0,behavior:'smooth'
-    renderDishes(true);
-  });
+    if(b) b.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
   });
   // Dish toggle
   function toggleDishes(el){

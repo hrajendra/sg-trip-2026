@@ -489,8 +489,8 @@
     <button class="nav-btn" data-day="3" onclick="showDay('3')">Day 3<br><small style="font-weight:400;font-size:11px">Wed Apr 8</small></button>
     <button class="nav-btn" data-day="4" onclick="showDay('4')">Day 4<br><small style="font-weight:400;font-size:11px">Thu Apr 9</small></button>
     <button class="nav-btn" data-day="5" onclick="showDay('5')">Day 5<br><small style="font-weight:400;font-size:11px">Fri Apr 10</small></button>
-    <button class="nav-btn" data-day="places" onclick="showDay('places')">🗺️ Places<br><small style="font-weight:400;font-size:11px">& Food</small></button>
     <button class="nav-btn" data-day="info" onclick="showDay('info')">ℹ️ Info</button>
+    <button class="nav-btn" data-day="places" onclick="showDay('places')">🗺️ Places<br><small style="font-weight:400;font-size:11px">& Food</small></button>
   </nav>
 </div>
 <div class="detail-banner">
@@ -716,84 +716,6 @@
 
 
   <!-- ══ PLACES & FOOD ══ -->
-  <div id="day-places" class="section">
-    <div class="day-header" style="background:#FDF0EA;">
-      <div class="day-label" style="color:#E05C2A;">All 5 Days</div>
-      <div class="day-title">Places We're Visiting & Food to Try 🗺️🍽️</div>
-    </div>
-
-    <div class="card card-teal">
-      <div class="card-title">🏛️ Places We're Visiting</div>
-      <ul>
-        <li><strong>Tekka Centre</strong> — Little India's best hawker breakfast hall</li>
-        <li><strong>Sri Veeramakaliamman Temple</strong> — vibrant Hindu temple, Serangoon Rd</li>
-        <li><strong>Serangoon Road &amp; Mustafa Centre</strong> — the heart of Little India</li>
-        <li><strong>Sultan Mosque</strong> — golden-domed mosque in Kampong Glam</li>
-        <li><strong>Haji Lane &amp; Arab Street</strong> — colourful shophouses and heritage district</li>
-        <li><strong>Maxwell Food Centre</strong> — Chinatown's iconic hawker centre</li>
-        <li><strong>Sri Mariamman Temple</strong> — Singapore's oldest Hindu temple, Chinatown</li>
-        <li><strong>Buddha Tooth Relic Temple</strong> — stunning Buddhist temple museum</li>
-        <li><strong>Chinatown Complex Food Centre</strong> — three floors of local food</li>
-        <li><strong>Merlion Park</strong> — Singapore's most iconic landmark, free</li>
-        <li><strong>Helix Bridge</strong> — the beautiful DNA-shaped pedestrian bridge</li>
-        <li><strong>Gardens by the Bay — Supertrees</strong> — Garden Rhapsody light show (free, 8:45 PM)</li>
-        <li><strong>ArtScience Museum</strong> — Future World by teamLab, digital art</li>
-        <li><strong>Cloud Forest</strong> — 35m indoor waterfall, Jurassic World experience</li>
-        <li><strong>Satay by the Bay</strong> — open-air hawker by the water</li>
-        <li><strong>Singapore Cable Car</strong> — gondola ride from HarbourFront to Sentosa</li>
-        <li><strong>Singapore Oceanarium</strong> — 22 ocean zones, 100,000+ marine animals</li>
-        <li><strong>Sentosa Sensoryscape</strong> — free interactive light garden</li>
-        <li><strong>Siloso / Palawan Beach</strong> — Sentosa island beach</li>
-        <li><strong>Wings of Time</strong> — outdoor laser &amp; water show by the sea</li>
-        <li><strong>Jewel Changi Airport</strong> — Rain Vortex (world's tallest indoor waterfall, free)</li>
-      </ul>
-    </div>
-
-    <div class="card card-orange">
-      <div class="card-title">🍽️ Restaurants &amp; Hawker Centres</div>
-      <ul>
-        <li><strong>Tekka Centre</strong> — hawker breakfast (idli, dosa, filter coffee) · from 6am</li>
-        <li><strong>Zam Zam</strong> — murtabak &amp; biryani since 1908, North Bridge Rd · 7am–11pm daily</li>
-        <li><strong>Hjh Maimunah</strong> — Nasi Padang (Michelin!), Jalan Pisang · Mon–Sat 7am–8pm · <em>closed Sundays</em></li>
-        <li><strong>Banana Leaf Apolo</strong> — banana leaf South Indian meals, Race Course Rd · 10:30am–10:30pm</li>
-        <li><strong>Maxwell Food Centre</strong> — Tian Tian chicken rice, kaya toast, prata</li>
-        <li><strong>Chinatown Complex Food Centre</strong> — char kway teow, popiah, economic rice</li>
-        <li><strong>Malaysian Food Street, RWS</strong> — Sentosa laksa, noodles, satay · 10am–10pm</li>
-        <li><strong>Rang Mahal</strong> — fine Indian dining, Pan Pacific Hotel (pre-booked) · dinner 6:30pm</li>
-        <li><strong>Satay by the Bay</strong> — satay, laksa, carrot cake by the water</li>
-        <li><strong>Ya Kun Kaya Toast</strong> — farewell kaya toast + kopi-O at T2</li>
-        <li><strong>Bengawan Solo</strong> — Jewel Day 5 · get kueh lapis tins first (sells out!)</li>
-      </ul>
-    </div>
-
-    <div class="card card-green">
-      <div class="card-title">☕ Food &amp; Drinks to Try</div>
-      <ul>
-        <li><strong>Kaya toast + soft-boiled eggs</strong> — Singapore breakfast ritual; have it every morning if you can</li>
-        <li><strong>Filter coffee (kopi) / teh halia</strong> — Indian-style drip coffee / ginger milk tea</li>
-        <li><strong>Milo Dinosaur</strong> — cold Milo with undissolved powder piled on top; kids love it</li>
-        <li><strong>Idli + dosa + sambar</strong> — South Indian classics, just like home</li>
-        <li><strong>Sugarcane juice</strong> — pressed fresh on Serangoon Rd </li>
-        <li><strong>Murtabak</strong> — stuffed crispy savoury pancake at Zam Zam, a Singapore institution</li>
-        <li><strong>Chendol</strong> — shaved ice with pandan jelly, coconut milk &amp; palm sugar. Don't skip.</li>
-        <li><strong>Ice Kachang</strong> — rainbow shaved ice tower with sweet toppings</li>
-        <li><strong>Ice cream sandwich</strong> — rainbow bread or wafer with a slab of ice cream</li>
-        <li><strong>Char Kway Teow</strong> — smoky wok-fried flat noodles at Maxwell</li>
-        <li><strong>Laksa</strong> — 🌟 THE dish of the trip. Spicy coconut noodle soup. Have it at Malaysian Food Street on Day 4.</li>
-        <li><strong>Satay</strong> — charcoal-grilled meat skewers with peanut sauce, at Satay by the Bay</li>
-        <li><strong>Fresh coconut water</strong> — at Sentosa beach , the most refreshing thing</li>
-        <li><strong>Bandung rose milk</strong> — sweet pink rose-flavoured milk drink, served cold</li>
-        <li><strong>Kopi-O</strong> — strong black coffee, local style. The farewell cup at Ya Kun.</li>
-        <li><strong>Kueh lapis</strong> — layered Peranakan cake from Bengawan Solo, perfect to bring home</li>
-      </ul>
-    </div>
-
-    <div class="last-updated"></div>
-  </div>
-
-
-
-  <!-- ══ INFO ══ -->
   <div id="day-info" class="section">
     <div style="padding-top:8px">
       <div class="flight-card">
@@ -873,6 +795,84 @@
     <div class="last-updated" id="last-updated"></div>
   </div>
 
+  <div id="day-places" class="section">
+    <div class="day-header" style="background:#FDF0EA;">
+      <div class="day-label" style="color:#E05C2A;">All 5 Days</div>
+      <div class="day-title">Places We're Visiting & Food to Try 🗺️🍽️</div>
+    </div>
+
+    <div class="card card-teal">
+      <div class="card-title">🏛️ Places We're Visiting</div>
+      <ul>
+        <li><strong>Tekka Centre</strong> — Little India's best hawker breakfast hall</li>
+        <li><strong>Sri Veeramakaliamman Temple</strong> — vibrant Hindu temple, Serangoon Rd</li>
+        <li><strong>Serangoon Road &amp; Mustafa Centre</strong> — the heart of Little India</li>
+        <li><strong>Sultan Mosque</strong> — golden-domed mosque in Kampong Glam</li>
+        <li><strong>Haji Lane &amp; Arab Street</strong> — colourful shophouses and heritage district</li>
+        <li><strong>Maxwell Food Centre</strong> — Chinatown's iconic hawker centre</li>
+        <li><strong>Sri Mariamman Temple</strong> — Singapore's oldest Hindu temple, Chinatown</li>
+        <li><strong>Buddha Tooth Relic Temple</strong> — stunning Buddhist temple museum</li>
+        <li><strong>Chinatown Complex Food Centre</strong> — three floors of local food</li>
+        <li><strong>Merlion Park</strong> — Singapore's most iconic landmark, free</li>
+        <li><strong>Helix Bridge</strong> — the beautiful DNA-shaped pedestrian bridge</li>
+        <li><strong>Gardens by the Bay — Supertrees</strong> — Garden Rhapsody light show (free, 8:45 PM)</li>
+        <li><strong>ArtScience Museum</strong> — Future World by teamLab, digital art</li>
+        <li><strong>Cloud Forest</strong> — 35m indoor waterfall, Jurassic World experience</li>
+        <li><strong>Satay by the Bay</strong> — open-air hawker by the water</li>
+        <li><strong>Singapore Cable Car</strong> — gondola ride from HarbourFront to Sentosa</li>
+        <li><strong>Singapore Oceanarium</strong> — 22 ocean zones, 100,000+ marine animals</li>
+        <li><strong>Sentosa Sensoryscape</strong> — free interactive light garden</li>
+        <li><strong>Siloso / Palawan Beach</strong> — Sentosa island beach</li>
+        <li><strong>Wings of Time</strong> — outdoor laser &amp; water show by the sea</li>
+        <li><strong>Jewel Changi Airport</strong> — Rain Vortex (world's tallest indoor waterfall, free)</li>
+      </ul>
+    </div>
+
+    <div class="card card-orange">
+      <div class="card-title">🍽️ Restaurants &amp; Hawker Centres</div>
+      <ul>
+        <li><strong>Tekka Centre</strong> — hawker breakfast (idli, dosa, filter coffee) · from 6am</li>
+        <li><strong>Zam Zam</strong> — murtabak &amp; biryani since 1908, North Bridge Rd · 7am–11pm daily</li>
+        <li><strong>Hjh Maimunah</strong> — Nasi Padang (Michelin!), Jalan Pisang · Mon–Sat 7am–8pm · <em>closed Sundays</em></li>
+        <li><strong>Banana Leaf Apolo</strong> — banana leaf South Indian meals, Race Course Rd · 10:30am–10:30pm</li>
+        <li><strong>Maxwell Food Centre</strong> — Tian Tian chicken rice, kaya toast, prata</li>
+        <li><strong>Chinatown Complex Food Centre</strong> — char kway teow, popiah, economic rice</li>
+        <li><strong>Malaysian Food Street, RWS</strong> — Sentosa laksa, noodles, satay · 10am–10pm</li>
+        <li><strong>Rang Mahal</strong> — fine Indian dining, Pan Pacific Hotel (pre-booked) · dinner 6:30pm</li>
+        <li><strong>Satay by the Bay</strong> — satay, laksa, carrot cake by the water</li>
+        <li><strong>Ya Kun Kaya Toast</strong> — farewell kaya toast + kopi-O at T2</li>
+        <li><strong>Bengawan Solo</strong> — Jewel Day 5 · get kueh lapis tins first (sells out!)</li>
+      </ul>
+    </div>
+
+    <div class="card card-green">
+      <div class="card-title">☕ Food &amp; Drinks to Try</div>
+      <ul>
+        <li><strong>Kaya toast + soft-boiled eggs</strong> — Singapore breakfast ritual; have it every morning if you can</li>
+        <li><strong>Filter coffee (kopi) / teh halia</strong> — Indian-style drip coffee / ginger milk tea</li>
+        <li><strong>Milo Dinosaur</strong> — cold Milo with undissolved powder piled on top; kids love it</li>
+        <li><strong>Idli + dosa + sambar</strong> — South Indian classics, just like home</li>
+        <li><strong>Sugarcane juice</strong> — pressed fresh on Serangoon Rd </li>
+        <li><strong>Murtabak</strong> — stuffed crispy savoury pancake at Zam Zam, a Singapore institution</li>
+        <li><strong>Chendol</strong> — shaved ice with pandan jelly, coconut milk &amp; palm sugar. Don't skip.</li>
+        <li><strong>Ice Kachang</strong> — rainbow shaved ice tower with sweet toppings</li>
+        <li><strong>Ice cream sandwich</strong> — rainbow bread or wafer with a slab of ice cream</li>
+        <li><strong>Char Kway Teow</strong> — smoky wok-fried flat noodles at Maxwell</li>
+        <li><strong>Laksa</strong> — 🌟 THE dish of the trip. Spicy coconut noodle soup. Have it at Malaysian Food Street on Day 4.</li>
+        <li><strong>Satay</strong> — charcoal-grilled meat skewers with peanut sauce, at Satay by the Bay</li>
+        <li><strong>Fresh coconut water</strong> — at Sentosa beach , the most refreshing thing</li>
+        <li><strong>Bandung rose milk</strong> — sweet pink rose-flavoured milk drink, served cold</li>
+        <li><strong>Kopi-O</strong> — strong black coffee, local style. The farewell cup at Ya Kun.</li>
+        <li><strong>Kueh lapis</strong> — layered Peranakan cake from Bengawan Solo, perfect to bring home</li>
+      </ul>
+    </div>
+
+    <div class="last-updated"></div>
+  </div>
+
+
+
+  <!-- ══ INFO ══ -->
 </div><!-- .content -->
 
 <script>
@@ -892,9 +892,7 @@
   });
   document.addEventListener('DOMContentLoaded',()=>{
     const b=document.getElementById('back-top');
-    if(b) b.onclick=()=>window.scrollTo({top:0,behavior:'smooth'
-    renderDishes(false);
-  });
+    if(b) b.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
   });
   // Dish toggle
   function toggleDishes(el){
