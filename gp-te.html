@@ -893,3 +893,16 @@
 </div>
 
 </div><!-- content -->
+
+<script>
+  function show(t) {
+    document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+    document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active"));
+    document.getElementById(t).classList.add("active");
+    document.querySelector(`[data-t="${t}"]`).classList.add("active");
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(()=>{});
+</script>
+</body>
+</html>
