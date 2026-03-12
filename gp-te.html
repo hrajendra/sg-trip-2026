@@ -151,6 +151,25 @@
   .detail-banner { background: #FDF0EA; border-top: 1px solid #F0C9B0;
         padding: 10px 20px; text-align: center; font-size: 13px; }
 
+
+  .hero-back { position: relative; font-size: 13px; opacity: 0.75; margin-bottom: 12px;
+    text-decoration: none; color: white; display: inline-flex; align-items: center; gap: 4px; }
+  .quote-note { background: linear-gradient(135deg, #FDF0EA, #F3F0FA); border-radius: 12px;
+    padding: 18px 22px 18px 34px; margin: 4px 0 16px; font-family: 'Noto Sans Telugu', serif;
+    font-size: 14px; line-height: 1.75; color: #777; font-style: italic; position: relative; }
+  .quote-note::before { content: '"'; font-size: 56px; color: #E05C2A; opacity: 0.12;
+    position: absolute; top: -4px; left: 8px; line-height: 1; font-family: 'Noto Sans Telugu', serif; }
+  .wellness { background: #EFF8F3; border-left: 4px solid #4CAF78; border-radius: 12px;
+    padding: 14px 16px; margin-bottom: 14px; }
+  .wellness .card-title { color: #2E7A3A; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+  .info-box { border-radius: 12px; padding: 14px; background: white;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+  .info-box-title { font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 8px; }
+  .info-box p { font-size: 13px; color: #555; line-height: 1.5; margin-bottom: 4px; }
+  .info-box p strong { color: #1A1A1A; }
+
 </style>
 </head>
 <body>
@@ -190,7 +209,7 @@
   <div class="card card-purple">
     <div class="card-title">✈️ మీరు ముందు దిగుతారు</div>
     <p><strong>మీ విమానం సాయంత్రం 5:40 కి దిగుతుంది</strong> — IndiGo 6E1091 (బెంగళూరు నుండి).</p>
-    <p>Custom దాటాక, arrival hall లో వేచి ఉండండి. మీ అబ్బాయి కుటుంబం 6:35 కి వేరే విమానంలో వస్తారు — అంటే 55 నిమిషాల తర్వాత.</p>
+    <p>Custom దాటాక, arrival hall లో వేచి ఉండండి. మేము 6:35 కి వేరే విమానంలో వస్తాం — అంటే 55 నిమిషాల తర్వాత.</p>
     <p>అందరూ కలిసి ఒకే పెద్ద Grab వ్యాన్ లో హోటల్ కి వెళతాం.</p>
   </div>
 
@@ -208,8 +227,8 @@
     <div class="slot-icon">👨‍👩‍👧‍👦</div>
     <div class="slot-body">
       <div class="slot-title">కుటుంబం వస్తారు — అమెరికా నుండి</div>
-      <div class="slot-note">అబ్బాయి WhatsApp లో message పంపుతాడు</div>
-      <div class="slot-en">Family lands from San Francisco. Son will WhatsApp you.</div>
+      <div class="slot-note">మేము WhatsApp లో message పంపుతాం</div>
+      <div class="slot-en">Family lands from San Francisco. We'll WhatsApp you.</div>
     </div>
   </div>
   <div class="slot">
@@ -240,7 +259,9 @@
     </div>
   </div>
 
-  <div class="div"></div>
+  <div class="quote-note">మీరు ఈ యాత్ర చేసారు. అది అన్నిటికంటే ముఖ్యమైన విషయం. Arrivals hall లో మిమ్మల్ని చూసిన క్షణం నుండే ఈ trip నిజంగా మొదలవుతుంది. మీరు ఇక్కడ ఉన్నందుకు మాకు చాలా సంతోషంగా ఉంది.</div>
+
+<div class="div"></div>
   <div class="card card-teal">
     <div class="card-title">🏨 హోటల్ వివరాలు</div>
     <p><strong>Novotel Singapore on Kitchener Road</strong></p>
@@ -342,13 +363,18 @@
     </div>
   </div>
 
-  <div class="div"></div>
+  <div class="quote-note">ఈ వీధుల్లో మీతో నడుస్తూ — దేవాలయాలు, మసాలాల సువాసన, ఇంట్లో లాంటి శబ్దాలు — పిల్లలు మీ కళ్ళ ద్వారా వీటన్నిటినీ అనుభవించడం చూడడం మనం వేరేగా ఇవ్వలేని ఒక బహుమతి.</div>
+
+<div class="div"></div>
   <div class="card card-gray">
-    <div class="card-title">👟 ఈ రోజు దుస్తులు గురించి</div>
+    <div class="card-title">👟 ఈ రోజు దుస్తులు — మరికొన్ని reminders</div>
     <ul>
       <li>సౌకర్యవంతమైన నడక చెప్పులు వేసుకోండి — ~3–4 కి.మీ నడక</li>
       <li>Sultan Mosque కి వెళ్ళేందుకు శాలువా లేదా ఓడ్నీ తీసుకెళ్ళండి</li>
       <li>అలసిపోతే ఎప్పుడైనా Grab పిలవొచ్చు — మీరు చెప్పాలి</li>
+        <li>🚰 హోటల్ వదిలే ముందు నీళ్ళు తాగండి — వేడి అనిపించకపోయినా dehydration అవుతుంది</li>
+        <li>🪑 అలసిపోతే వెంటనే కూర్చోండి — kopitiam కుర్చీ, దేవాలయ మెట్లు — ఎక్కడైనా పర్వాలేదు</li>
+        <li>🌿 చుట్టూ ఉన్న ప్రదేశాన్ని నెమ్మదిగా చూడండి. ఈ వీధులు చాలా అందంగా ఉన్నాయి.</li>
     </ul>
   </div>
 </div>
@@ -472,7 +498,18 @@
     </div>
   </div>
 
-  <div class="div"></div>
+  <div class="quote-note">ఈ రాత్రి Supertrees వెలిగినప్పుడు, పిల్లల మొహాలు చూడండి. ఆ వెలుగులో వారి కళ్ళు — అందుకే మేము ఇదంతా plan చేసాం.</div>
+
+<div class="div"></div>
+    <div class="wellness">
+      <div class="card-title">💧 నెమ్మదిగా వెళ్ళండి ఈ రోజు</div>
+      <ul>
+        <li>ప్రతి hawker stop లో నీళ్ళు తాగండి — వేడి అంచనా కంటే ఎక్కువగా ఉంటుంది</li>
+        <li>Maxwell Centre, దేవాలయాల లోపల AC బాగా ఉంటుంది — అక్కడ కాసేపు ఉండండి</li>
+        <li>సాయంత్రం Rang Mahal dinner కి అలసిపోతే పర్వాలేదు — మేము అందరం కలిసి ఉన్నాం, అదే ముఖ్యం</li>
+        <li>Supertrees light show కేవలం 10 నిమిషాలు. అక్కడ నిల్చుని, present గా ఉండండి.</li>
+      </ul>
+    </div>
   <div class="card card-orange">
     <div class="card-title">🌟 తప్పక చూడవలసింది — Supertrees light show</div>
     <p>రాత్రి 8:45 కి గార్డెన్స్ లో Supertrees light show జరుగుతుంది. ఇది సింగపూర్ లో అత్యంత అద్భుతమైన దృశ్యాలలో ఒకటి. ఉచితం, 10 నిమిషాలు మాత్రమే, కానీ జీవితమంత గుర్తుండిపోతుంది. సాయంత్రం చల్లగా ఉంటుంది — తేలికైన శాలువా తీసుకెళ్ళండి.</p>
@@ -582,13 +619,18 @@
     </div>
   </div>
 
-  <div class="div"></div>
+  <div class="quote-note">అన్నీ చేయాల్సిన అవసరం లేదు. Beach మీద నీడలో కూర్చుని, చిన్నవాడు అలలు వెంట పరిగెత్తడం చూడడం — అదే అన్నిటికంటే అందమైన క్షణం.</div>
+
+<div class="div"></div>
   <div class="card card-gray">
-    <div class="card-title">♿ Sentosa గురించి గమనించవలసినవి</div>
+    <div class="card-title">♿ Sentosa గురించి + కొన్ని reminders</div>
     <ul>
       <li>అన్ని చోట్లా lifts ఉన్నాయి — మెట్లు అవసరం లేదు</li>
       <li>Aquarium లో AC ఉంటుంది — తేలికైన శాలువా తీసుకెళ్ళండి</li>
       <li>Beach కి వెళ్ళాలంటే sandals తీసుకెళ్ళండి</li>
+        <li>💧 Water bottle తీసుకెళ్ళండి — island లో చాలా వేడిగా ఉంటుంది, సముద్రం గాలి అయినా</li>
+        <li>🌊 Beach లో నీడలో కూర్చోండి — పిల్లలు అలలు వెంట పరిగెత్తడం చూడండి, అదే చాలు</li>
+        <li>🕑 Wings of Time చాలా ఆలస్యం అనిపిస్తే మాకు చెప్పండి — సర్దుకోవచ్చు</li>
     </ul>
   </div>
 </div>
@@ -708,7 +750,16 @@
     </div>
   </div>
 
-  <div class="div"></div>
+      <div class="wellness">
+      <div class="card-title">🌸 నెమ్మదిగా ఉండండి ఈ రోజు</div>
+      <ul>
+        <li>ప్రతి అడుగులోనూ నీళ్ళు తాగండి — airport లో తొందరగా dehydration అవుతుంది</li>
+        <li>Jewel లో Rain Vortex దగ్గర ఒక నిమిషం ఆగండి — ఆ దృశ్యం గుర్తుపెట్టుకోండి</li>
+        <li>Ya Kun kaya toast నెమ్మదిగా తినండి — సింగపూర్ లో చివరి రుచి</li>
+        <li>Boarding దగ్గర ఒకసారి వెనక్కి చూడండి. ఈ 5 రోజులు మీవి.</li>
+      </ul>
+    </div>
+<div class="div"></div>
   <div class="love-note">
     మీరు ఇక్కడ ఉన్నారంటే మాకు చాలా సంతోషంగా ఉంది. Supertrees దగ్గర, సముద్రం దగ్గర, దేవాలయాల్లో — మీతో కలిసి ఈ అనుభవాలు మా జీవితమంత గుర్తుంటాయి. అలసిపోతే ఎప్పుడైనా చెప్పండి, విశ్రాంతి తీసుకోవడానికి ముందే plan చేశాం. మీరు ఇక్కడ ఉన్నందుకు చాలా ఆనందంగా ఉంది. 💛
   </div>
@@ -751,14 +802,14 @@
     <div class="card-title">🆘 అత్యవసర నంబర్లు</div>
     <div class="contact-row"><span class="contact-lbl">Police</span><span class="contact-val"><a href="tel:999">999</a></span></div>
     <div class="contact-row"><span class="contact-lbl">Ambulance</span><span class="contact-val"><a href="tel:995">995</a></span></div>
-    <div class="contact-row"><span class="contact-lbl">అబ్బాయి (WhatsApp)</span><span class="contact-val">మీ contacts లో ఉంది</span></div>
+    <div class="contact-row"><span class="contact-lbl">కుటుంబం (WhatsApp)</span><span class="contact-val">మీ contacts లో ఉంది</span></div>
   </div>
 
   <div class="info-grid">
     <div class="info-box">
       <div class="info-box-title" style="color:var(--teal)">🚇 రైలు గురించి</div>
       <p>ప్రతి station లో <strong>lift</strong> ఉంది — మెట్లు అవసరం లేదు</p>
-      <p>అబ్బాయి phone లో అన్ని <strong>Grab</strong> rides book చేస్తాడు</p>
+      <p>అన్ని <strong>Grab</strong> rides మా phones లో book చేసుకుంటాం</p>
     </div>
     <div class="info-box">
       <div class="info-box-title" style="color:var(--orange)">☀️ వాతావరణం</div>

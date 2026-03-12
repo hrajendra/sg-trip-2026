@@ -35,6 +35,25 @@ h1 { font-family: 'Playfair Display', serif; font-size: 28px; line-height: 1.2; 
 .card-gpen .card-title { color: #1B7A8A; }
 .card-gpte .card-title { color: #5B4A8A; }
 .tip { margin: 0 20px 28px; background: #F0F4FF; border-radius: 12px; padding: 14px 16px; font-size: 13px; color: #555; line-height: 1.5; text-align: center; }
+
+  .hero-back { position: relative; font-size: 13px; opacity: 0.75; margin-bottom: 12px;
+    text-decoration: none; color: white; display: inline-flex; align-items: center; gap: 4px; }
+  .quote-note { background: linear-gradient(135deg, #FDF0EA, #F3F0FA); border-radius: 12px;
+    padding: 18px 22px 18px 34px; margin: 4px 0 16px; font-family: 'Playfair Display', serif;
+    font-size: 14px; line-height: 1.75; color: #777; font-style: italic; position: relative; }
+  .quote-note::before { content: '"'; font-size: 56px; color: #E05C2A; opacity: 0.12;
+    position: absolute; top: -4px; left: 8px; line-height: 1; font-family: 'Playfair Display', serif; }
+  .wellness { background: #EFF8F3; border-left: 4px solid #4CAF78; border-radius: 12px;
+    padding: 14px 16px; margin-bottom: 14px; }
+  .wellness .card-title { color: #2E7A3A; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+  .info-box { border-radius: 12px; padding: 14px; background: white;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+  .info-box-title { font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 8px; }
+  .info-box p { font-size: 13px; color: #555; line-height: 1.5; margin-bottom: 4px; }
+  .info-box p strong { color: #1A1A1A; }
+
 </style>
 </head>
 <body>
@@ -52,17 +71,17 @@ h1 { font-family: 'Playfair Display', serif; font-size: 28px; line-height: 1.2; 
     </div>
   </a>
   <a href="gp-en.html" class="card card-gpen">
-    <div class="card-icon">👴</div>
+    <div class="card-icon">🌺</div>
     <div>
       <div class="card-title">Grandparent Guide — English</div>
-      <div class="card-sub">Simple day-by-day schedule with tips — for Dad &amp; Father-in-law</div>
+      <div class="card-sub">Simple schedule with tips in English — for our parents</div>
     </div>
   </a>
   <a href="gp-te.html" class="card card-gpte">
     <div class="card-icon">🙏</div>
     <div>
       <div class="card-title">అమ్మలకు గైడ్ · Telugu Guide</div>
-      <div class="card-sub">అమ్మ &amp; అత్తయ్య కోసం తెలుగు లో — for Mom &amp; Mom-in-law</div>
+      <div class="card-sub">అమ్మలకు తెలుగు లో — for our moms</div>
     </div>
   </a>
 </div>

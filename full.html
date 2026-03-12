@@ -154,6 +154,25 @@
   .detail-banner { background: #FDF0EA; border-top: 1px solid #F0C9B0;
         padding: 10px 20px; text-align: center; font-size: 13px; }
 
+
+  .hero-back { position: relative; font-size: 13px; opacity: 0.75; margin-bottom: 12px;
+    text-decoration: none; color: white; display: inline-flex; align-items: center; gap: 4px; }
+  .quote-note { background: linear-gradient(135deg, #FDF0EA, #F3F0FA); border-radius: 12px;
+    padding: 18px 22px 18px 34px; margin: 4px 0 16px; font-family: 'Playfair Display', serif;
+    font-size: 14px; line-height: 1.75; color: #777; font-style: italic; position: relative; }
+  .quote-note::before { content: '"'; font-size: 56px; color: #E05C2A; opacity: 0.12;
+    position: absolute; top: -4px; left: 8px; line-height: 1; font-family: 'Playfair Display', serif; }
+  .wellness { background: #EFF8F3; border-left: 4px solid #4CAF78; border-radius: 12px;
+    padding: 14px 16px; margin-bottom: 14px; }
+  .wellness .card-title { color: #2E7A3A; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+  .info-box { border-radius: 12px; padding: 14px; background: white;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+  .info-box-title { font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 8px; }
+  .info-box p { font-size: 13px; color: #555; line-height: 1.5; margin-bottom: 4px; }
+  .info-box p strong { color: #1A1A1A; }
+
 </style>
 </head>
 <body>
@@ -193,6 +212,9 @@
   <div class="slot"><div class="slot-left"><div class="slot-time">9:00 PM</div></div><div class="slot-icon">🍽️</div><div class="slot-body"><div class="slot-title">Dinner — GrabFood, Serangoon Rd<a href="https://maps.google.com/?q=Serangoon+Road+Little+India+Singapore" target="_blank" rel="noopener" class="ml">📍</a>, or Mustafa<a href="https://maps.google.com/?q=Mustafa+Centre+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Mustafa is 24hr if everyone's exhausted</div></div></div>
 </div>
 
+
+<div class="quote-note">Eight of us, one arrivals hall, two continents. This is where it all comes together. Don't forget to look up.</div>
+
 <!-- ═══ DAY 2 ═══ -->
 <div id="d2" class="section d2">
   <div class="day-hdr"><div class="day-lbl">Day 2 · Tuesday 7 April</div><div class="day-title">Little India + Kampong Glam 🛕</div></div>
@@ -210,10 +232,22 @@
   <div class="slot"><div class="slot-left"><div class="slot-time">12:00 PM</div><div class="tag tag-should">Should</div></div><div class="slot-icon">🍛</div><div class="slot-body"><div class="slot-title">Lunch — Zam Zam<a href="https://maps.google.com/?q=Zam+Zam+Restaurant+North+Bridge+Road+Singapore" target="_blank" rel="noopener" class="ml">📍</a> or Hjh Maimunah<a href="https://maps.google.com/?q=Hjh+Maimunah+Restaurant+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Veg options available 🌿</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">1:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🕌</div><div class="slot-body"><div class="slot-title">Sultan Mosque<a href="https://maps.google.com/?q=Sultan+Mosque+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Free · shawl required · stunning inside</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">2:30 PM</div><div class="tag tag-should">Should</div></div><div class="slot-icon">🌸</div><div class="slot-body"><div class="slot-title">Haji Lane<a href="https://maps.google.com/?q=Haji+Lane+Singapore" target="_blank" rel="noopener" class="ml">📍</a> + Arab Street<a href="https://maps.google.com/?q=Arab+Street+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Pomegranate juice S$3–4 · chrysanthemum tea S$1.50 · kueh</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">3:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🏨</div><div class="slot-body"><div class="slot-title">Back to hotel — rest break</div><div class="slot-note">Deliberately planned. Grandparents need this.</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">3:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🏨</div><div class="slot-body"><div class="slot-title">Back to hotel — rest break</div><div class="slot-note">Deliberately scheduled. Everyone use it.</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">5:30 PM</div><div class="tag tag-should">Should</div></div><div class="slot-icon">🚶</div><div class="slot-body"><div class="slot-title">Evening Serangoon Rd walk</div><div class="slot-note">Lit up beautifully in the evening</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">7:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🍽️</div><div class="slot-body"><div class="slot-title">Dinner — Komala Vilas<a href="https://maps.google.com/?q=Komala+Vilas+Restaurant+Singapore" target="_blank" rel="noopener" class="ml">📍</a> or Banana Leaf Apolo<a href="https://maps.google.com/?q=Banana+Leaf+Apolo+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Classic South Indian on banana leaf</div></div></div>
 </div>
+
+
+<div class="wellness">
+  <div class="card-title">💧 Pacing notes for today</div>
+  <ul>
+    <li>~3–4 km walking total. The 3:30 PM hotel rest break is non-negotiable — use it yourself too.</li>
+    <li>Everyone drink water before leaving the hotel. The humidity is deceptive.</li>
+    <li>Have GrabMax ready on your phone before leaving each location. Don't scramble at the kerb.</li>
+  </ul>
+</div>
+
+<div class="quote-note">There's something irreplaceable about watching grandparents introduce grandchildren to a world that looks like home but isn't quite. Be present for it.</div>
 
 <!-- ═══ DAY 3 ═══ -->
 <div id="d3" class="section d3">
@@ -257,6 +291,19 @@
   <div class="slot"><div class="slot-left"><div class="slot-time">10:00 PM</div></div><div class="slot-icon">🚇</div><div class="slot-body"><div class="slot-title">MRT home: Bayfront (DT16) → Little India (DT12)</div><div class="slot-note">Blue line · direct · 12 min</div></div></div>
 </div>
 
+
+<div class="wellness">
+  <div class="card-title">🗓️ Logistics + pacing</div>
+  <ul>
+    <li>MOIC split at 1:45 — confirm Dempsey regroup point with everyone before separating.</li>
+    <li>Rang Mahal: smart casual. Text the restaurant if running more than 10 min late.</li>
+    <li>Be at Supertrees grove by 8:35 PM for the 8:45 show. 10 minutes — make everyone stand still for it.</li>
+    <li>Long day — carry water from the hotel. Hawker centres don't reliably sell bottled water.</li>
+  </ul>
+</div>
+
+<div class="quote-note">Rang Mahal at dusk, Supertrees after dark. Singapore at its most cinematic. Slow down for both.</div>
+
 <!-- ═══ DAY 4 ═══ -->
 <div id="d4" class="section d4">
   <div class="day-hdr"><div class="day-lbl">Day 4 · Thursday 9 April</div><div class="day-title">Sentosa — Full Day 🐠🎡</div></div>
@@ -274,6 +321,18 @@
   <div class="slot"><div class="slot-left"><div class="slot-time">8:50 PM</div><div class="tag tag-must">Must</div><div class="tag tag-toddle">🍼</div></div><div class="slot-icon">🚡</div><div class="slot-body"><div class="slot-title">Cable Car BACK at night<a href="https://maps.google.com/?q=Singapore+Cable+Car+HarbourFront+Station" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Last cable car 9:30 PM · even more beautiful at night</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">9:30 PM</div></div><div class="slot-icon">🚇</div><div class="slot-body"><div class="slot-title">MRT home: HarbourFront (NE1) → Farrer Park (NE8)</div></div></div>
 </div>
+
+
+<div class="wellness">
+  <div class="card-title">🌊 Day 4 pacing</div>
+  <ul>
+    <li>The 4:30 PM beach slot is not optional for you either — it's reset time. Put the phone down.</li>
+    <li>Toddler nap window: 2–3 PM. Work around it if possible before Wings of Time.</li>
+    <li>Last cable car back is 9:30 PM — don't linger too long after the show.</li>
+  </ul>
+</div>
+
+<div class="quote-note">Biggest day on paper. The moments that last will probably be the smallest — a face at the fish tank, sugarcane juice on the beach. Watch for them.</div>
 
 <!-- ═══ DAY 5 ═══ -->
 <div id="d5" class="section d5">
@@ -306,6 +365,18 @@
     <p><strong>3rd:</strong> Rain Vortex photos — free, just walk under the atrium</p>
   </div>
 </div>
+
+
+<div class="wellness">
+  <div class="card-title">📌 Hold space today</div>
+  <ul>
+    <li>Logistically the most packed day — but emotionally the most important. Build in breath.</li>
+    <li>At the Rain Vortex: just stand there for a minute. No photo. Just look.</li>
+    <li>The Ya Kun kaya toast at the gate — eat it slowly. You'll want to remember this.</li>
+  </ul>
+</div>
+
+<div class="quote-note">Last kaya toast. Last Rain Vortex. Last MRT beep. It goes fast. Be here.</div>
 
 <!-- ═══ APPS ═══ -->
 <div id="apps" class="section">
@@ -381,15 +452,39 @@
   <div class="card card-green">
     <div class="card-title">🎁 Memorabilia</div>
     <ul>
-      <li><strong>Bengawan Solo kueh lapis tins</strong> — Jewel Day 5 · get first · one per grandparent couple</li>
+      <li><strong>Bengawan Solo kueh lapis tins</strong> — Jewel Day 5 · get first · one per household</li>
       <li><strong>Merlion plushies</strong> — one per child · any Jewel gift shop</li>
       <li><strong>Singapore stamp passport</strong> — blank booklet · collect stamps at each attraction · 4yr old loves it</li>
       <li><strong>Peranakan pottery / tile</strong> — Haji Lane Day 2 · S$20–60 · genuinely Singaporean</li>
       <li><strong>Custom star map</strong> — underluckystars.com · sky over SG on Apr 8 (Supertrees night) · order after trip</li>
       <li><strong>Photo book</strong> — Artifact Uprising · order from shared Google Photos album · one per household</li>
-      <li><strong>Printed photo calendar</strong> — one per grandparent household · they'll look at it every day</li>
+      <li><strong>Printed photo calendar</strong> — one per household · they'll look at it every day</li>
       <li><strong>1 Second Everyday film</strong> — 5 sec clip · export after Day 5 · watch every anniversary</li>
     </ul>
+  </div>
+
+
+  <div class="info-grid" style="margin-top:16px">
+    <div class="info-box">
+      <div class="info-box-title" style="color:#E05C2A">☀️ Weather</div>
+      <p>~<strong>32°C</strong> every day, humid</p>
+      <p>Light cotton. All museums & malls are heavily AC'd.</p>
+    </div>
+    <div class="info-box">
+      <div class="info-box-title" style="color:#2E7A3A">💵 Money</div>
+      <p><strong>S$1 ≈ ₹63 ≈ US$0.74</strong></p>
+      <p>Cards everywhere. ~S$20 cash per person for hawkers.</p>
+    </div>
+    <div class="info-box">
+      <div class="info-box-title" style="color:#1B7A8A">🍽️ Must Eats</div>
+      <p><strong>Laksa</strong> — Day 4, Malaysian Food Street</p>
+      <p>Kaya toast every morning. Chendol Day 3.</p>
+    </div>
+    <div class="info-box">
+      <div class="info-box-title" style="color:#5B4A8A">📡 Data</div>
+      <p>Upgrade Fi to <strong>Unlimited Premium</strong> before SFO departure</p>
+      <p>Or Singtel SIM at Changi arrivals (~S$15)</p>
+    </div>
   </div>
 
 </div><!-- info -->
