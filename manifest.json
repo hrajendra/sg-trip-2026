@@ -1,8 +1,8 @@
 {
   "name": "Singapore Family Trip 2026",
   "short_name": "SG Trip",
-  "description": "Family itinerary for Singapore, April 6–10 2026",
-  "start_url": "/",
+  "description": "Family itinerary for Singapore, April 6\u201310 2026",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#FDF0EA",
   "theme_color": "#E05C2A",
@@ -20,5 +20,6 @@
       "type": "image/png",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "scope": "./"
 }
