@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>SG Trip — Grandparent Guide</title>
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#E05C2A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="SG Grandparents">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --orange:  #E05C2A;
+    --teal:    #1B7A8A;
+    --purple:  #5B4A8A;
+    --green:   #2E7A3A;
+    --gold:    #A06C10;
+    --dark:    #1A1A1A;
+    --mid:     #555;
+    --light:   #999;
+    --cream:   #FDF8F3;
+    --white:   #FFFFFF;
+    --radius:  14px;
+    --shadow:  0 2px 16px rgba(0,0,0,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    min-height: 100vh;
+    padding-bottom: env(safe-area-inset-bottom, 24px);
+  }
+
+  /* ── HEADER ── */
+  .hero {
+    background: linear-gradient(160deg, #E05C2A 0%, #C4441A 60%, #9A2E0E 100%);
+    padding: 56px 24px 40px;
+    padding-top: max(56px, calc(44px + env(safe-area-inset-top)));
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-flag { font-size: 52px; display: block; margin-bottom: 12px; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .hero-sub {
+    font-size: 16px;
+    opacity: 0.85;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+  .hero-badge {
+    display: inline-block;
+    margin-top: 16px;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── NAV TABS ── */
+  .nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid #EEEEEE;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .nav {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0 12px;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    flex-shrink: 0;
+    padding: 14px 16px;
+    border: none;
+    background: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--light);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s;
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+  }
+  .nav-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%; right: 50%;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background: var(--orange);
+    transition: left 0.2s, right 0.2s;
+  }
+  .nav-btn.active { color: var(--dark); }
+  .nav-btn.active::after { left: 12px; right: 12px; }
+  .nav-btn[data-day="2"].active::after { background: var(--teal); }
+  .nav-btn[data-day="3"].active::after { background: var(--purple); }
+  .nav-btn[data-day="4"].active::after { background: var(--green); }
+  .nav-btn[data-day="5"].active::after { background: var(--gold); }
+  .nav-btn[data-day="info"].active::after { background: #555; }
+
+  /* ── CONTENT ── */
+  .content { padding: 0 16px 40px; max-width: 640px; margin: 0 auto; }
+
+  .section { display: none; padding-top: 24px; }
+  .section.active { display: block; }
+
+  /* ── DAY HEADER ── */
+  .day-header {
+    border-radius: var(--radius);
+    padding: 20px 20px 16px;
+    margin-bottom: 20px;
+  }
+  .day-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 4px;
+  }
+  .day-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--dark);
+  }
+
+  .day-1 .day-header { background: #FDF0EA; }
+  .day-1 .day-label  { color: var(--orange); }
+  .day-2 .day-header { background: #E8F4F6; }
+  .day-2 .day-label  { color: var(--teal); }
+  .day-3 .day-header { background: #F3F0FA; }
+  .day-3 .day-label  { color: var(--purple); }
+  .day-4 .day-header { background: #E8F4EE; }
+  .day-4 .day-label  { color: var(--green); }
+  .day-5 .day-header { background: #FDF5E0; }
+  .day-5 .day-label  { color: var(--gold); }
+
+  /* ── SCHEDULE ── */
+  .schedule { display: flex; flex-direction: column; gap: 2px; }
+
+  .slot {
+    display: flex;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #F0F0F0;
+    align-items: flex-start;
+  }
+  .slot:last-child { border-bottom: none; }
+
+  .slot-time {
+    font-size: 13px;
+    font-weight: 700;
+    min-width: 66px;
+    padding-top: 2px;
+    letter-spacing: -0.2px;
+  }
+  .day-1 .slot-time { color: var(--orange); }
+  .day-2 .slot-time { color: var(--teal); }
+  .day-3 .slot-time { color: var(--purple); }
+  .day-4 .slot-time { color: var(--green); }
+  .day-5 .slot-time { color: var(--gold); }
+
+  .slot-icon { font-size: 22px; min-width: 28px; padding-top: 0px; }
+  .slot-body { flex: 1; min-width: 0; }
+  .slot-title {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--dark);
+    margin-bottom: 3px;
+  }
+  .slot-note {
+    font-size: 13px;
+    color: var(--light);
+    line-height: 1.4;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    margin-bottom: 16px;
+  }
+  .card-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 0.2px;
+  }
+  .card p {
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.6;
+    margin-bottom: 6px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  .card p strong { color: var(--dark); }
+
+  .card-orange { background: #FDF0EA; border-left: 4px solid var(--orange); }
+  .card-orange .card-title { color: var(--orange); }
+  .card-teal   { background: #E8F4F6; border-left: 4px solid var(--teal); }
+  .card-teal   .card-title { color: var(--teal); }
+  .card-green  { background: #E8F4EE; border-left: 4px solid var(--green); }
+  .card-green  .card-title { color: var(--green); }
+  .card-red    { background: #FFF0F0; border-left: 4px solid #CC2222; }
+  .card-red    .card-title { color: #CC2222; }
+  .card-gray   { background: #F5F5F5; border-left: 4px solid #CCCCCC; }
+  .card-gray   .card-title { color: var(--mid); }
+  .card-purple { background: #F3F0FA; border-left: 4px solid var(--purple); }
+  .card-purple .card-title { color: var(--purple); }
+  .card-gold   { background: #FDF5E0; border-left: 4px solid var(--gold); }
+  .card-gold   .card-title { color: var(--gold); }
+
+  .card ul { list-style: none; padding: 0; }
+  .card ul li {
+    font-size: 14px;
+    color: var(--mid);
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    gap: 8px;
+    line-height: 1.4;
+  }
+  .card ul li:last-child { border-bottom: none; }
+  .card ul li::before { content: '•'; color: inherit; opacity: 0.5; flex-shrink: 0; }
+  .card ul li strong { color: var(--dark); }
+
+  /* ── INFO GRID ── */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .info-box {
+    border-radius: var(--radius);
+    padding: 16px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+  }
+  .info-box-title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+  }
+  .info-box p {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+  .info-box p strong { color: var(--dark); }
+
+  /* ── VEG NOTICE ── */
+  .veg-notice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #F0FFF4;
+    border: 1px solid #B2DFCC;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green);
+  }
+
+  /* ── FLIGHT BADGE ── */
+  .flight-card {
+    background: var(--dark);
+    color: white;
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .flight-route {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .flight-city { font-size: 28px; font-weight: 700; letter-spacing: -1px; }
+  .flight-arrow {
+    flex: 1;
+    text-align: center;
+    opacity: 0.4;
+    font-size: 20px;
+  }
+  .flight-detail { font-size: 13px; opacity: 0.65; margin-bottom: 3px; }
+  .flight-highlight { font-size: 16px; font-weight: 700; color: var(--orange); }
+
+  /* ── CONTACT TABLE ── */
+  .contact-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 0;
+    border-bottom: 1px solid #F0F0F0;
+    font-size: 14px;
+  }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-label { color: var(--mid); }
+  .contact-value { font-weight: 600; color: var(--dark); }
+  .contact-value a { color: var(--teal); text-decoration: none; }
+
+  /* ── LOVE NOTE ── */
+  .love-note {
+    background: linear-gradient(135deg, #FDF0EA, #F3F0FA);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-top: 8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--mid);
+    font-style: italic;
+    position: relative;
+  }
+  .love-note::before {
+    content: '"';
+    font-size: 80px;
+    color: var(--orange);
+    opacity: 0.15;
+    position: absolute;
+    top: -8px;
+    left: 12px;
+    line-height: 1;
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* ── SECTION DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #DDD, transparent);
+    margin: 24px 0;
+  }
+
+  /* ── LAST UPDATED ── */
+  .last-updated {
+    text-align: center;
+    font-size: 12px;
+    color: var(--light);
+    padding: 20px 0 0;
+    letter-spacing: 0.3px;
+  }
+
+  /* ── INSTALL BANNER ── */
+  #install-banner {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--dark);
+    color: white;
+    padding: 14px 20px;
+    padding-bottom: max(14px, env(safe-area-inset-bottom));
+    z-index: 200;
+    font-size: 14px;
+    align-items: center;
+    gap: 12px;
+  }
+  #install-banner span { flex: 1; }
+  #install-banner button {
+    background: var(--orange);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  #install-close {
+    background: none !important;
+    padding: 4px 8px !important;
+    opacity: 0.6;
+    font-size: 18px !important;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-flag">🇸🇬</span>
+  <h1>Singapore Family Trip</h1>
+  <p class="hero-sub">6 – 10 April 2026</p>
+  <span class="hero-badge">Grandparent Guide</span>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <nav class="nav">
+    <button class="nav-btn active" data-day="1" onclick="showDay('1')">Day 1<br><small style="font-weight:400;font-size:11px">Mon Apr 6</small></button>
+    <button class="nav-btn" data-day="2" onclick="showDay('2')">Day 2<br><small style="font-weight:400;font-size:11px">Tue Apr 7</small></button>
+    <button class="nav-btn" data-day="3" onclick="showDay('3')">Day 3<br><small style="font-weight:400;font-size:11px">Wed Apr 8</small></button>
+    <button class="nav-btn" data-day="4" onclick="showDay('4')">Day 4<br><small style="font-weight:400;font-size:11px">Thu Apr 9</small></button>
+    <button class="nav-btn" data-day="5" onclick="showDay('5')">Day 5<br><small style="font-weight:400;font-size:11px">Fri Apr 10</small></button>
+    <button class="nav-btn" data-day="info" onclick="showDay('info')">ℹ️ Info</button>
+  </nav>
+</div>
+
+<div class="content">
+
+  <!-- ══ DAY 1 ══ -->
+  <div id="day-1" class="section day-1 active">
+    <div class="day-header">
+      <div class="day-label">Day 1 · Monday 6 April</div>
+      <div class="day-title">Arrival — Welcome to Singapore! 🎉</div>
+    </div>
+
+    <div class="card card-teal">
+      <div class="card-title">✈️ Your Flight Arrival</div>
+      <p><strong>You land at 5:40 PM</strong> on IndiGo 6E1091 (from Bengaluru).</p>
+      <p>After clearing customs, wait in the arrivals hall. The family (son, wife, grandchildren) land at 6:35 PM on a separate flight — 55 minutes after you.</p>
+      <p>Your son will text when through customs. Then all 8 of you take one Grab van to the hotel together.</p>
+    </div>
+
+    <div class="schedule">
+      <div class="slot"><div class="slot-time">5:40 PM</div><div class="slot-icon">✈️</div><div class="slot-body"><div class="slot-title">Your flight lands — IndiGo 6E1091</div><div class="slot-note">Clear customs, collect bags, then wait in arrivals hall</div></div></div>
+      <div class="slot"><div class="slot-time">6:35 PM</div><div class="slot-icon">👨‍👩‍👧‍👦</div><div class="slot-body"><div class="slot-title">Family lands — United flight from San Francisco</div><div class="slot-note">Son will text you as soon as they're through customs</div></div></div>
+      <div class="slot"><div class="slot-time">7:15 PM</div><div class="slot-icon">🚗</div><div class="slot-body"><div class="slot-title">Everyone together — Grab van to hotel</div><div class="slot-note">~45 min ride, all 8 of you in one large van (~S$50 total)</div></div></div>
+      <div class="slot"><div class="slot-time">8:30 PM</div><div class="slot-icon">🏨</div><div class="slot-body"><div class="slot-title">Check in — Novotel Kitchener Road</div><div class="slot-note">Your rooms are on the same floor. Crib ready for the baby.</div></div></div>
+      <div class="slot"><div class="slot-time">9:00 PM</div><div class="slot-icon">🍽️</div><div class="slot-body"><div class="slot-title">Dinner — hotel or Serangoon Road nearby</div><div class="slot-note">Easy first night — no long walk needed</div></div></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="card card-orange">
+      <div class="card-title">🏨 Hotel Details</div>
+      <p><strong>Novotel Singapore on Kitchener Road</strong></p>
+      <p>181 Kitchener Rd, Singapore 208533</p>
+      <p>5-min walk from Farrer Park MRT (Purple line)</p>
+      <p><strong>Tel:</strong> +65 6428 3000</p>
+    </div>
+  </div>
+
+  <!-- ══ DAY 2 ══ -->
+  <div id="day-2" class="section day-2">
+    <div class="day-header">
+      <div class="day-label">Day 2 · Tuesday 7 April</div>
+      <div class="day-title">Little India + Kampong Glam 🛕</div>
+    </div>
+
+    <div class="veg-notice">
+      🌿 Vegetarian only until 1:30 PM — we visit a temple and a mosque today
+    </div>
+
+    <div class="schedule">
+      <div class="slot"><div class="slot-time">8:00 AM</div><div class="slot-icon">☕</div><div class="slot-body"><div class="slot-title">Breakfast — Tekka Centre food court</div><div class="slot-note">Idli, dosa, pongal, filter coffee — just like home</div></div></div>
+      <div class="slot"><div class="slot-time">9:15 AM</div><div class="slot-icon">🥚</div><div class="slot-body"><div class="slot-title">Kaya toast + soft-boiled eggs at kopitiam</div><div class="slot-note">Try the Milo Dinosaur — the children will love it</div></div></div>
+      <div class="slot"><div class="slot-time">9:45 AM</div><div class="slot-icon">🛕</div><div class="slot-body"><div class="slot-title">Sri Veeramakaliamman Temple</div><div class="slot-note">Free entry. Beautiful, accessible, no stairs required.</div></div></div>
+      <div class="slot"><div class="slot-time">10:30 AM</div><div class="slot-icon">🛍️</div><div class="slot-body"><div class="slot-title">Serangoon Road stroll</div><div class="slot-note">Sugarcane juice (S$1.50), curry puffs, Mustafa Centre</div></div></div>
+      <div class="slot"><div class="slot-time">12:00 PM</div><div class="slot-icon">🍛</div><div class="slot-body"><div class="slot-title">Lunch — Zam Zam or Hjh Maimunah</div><div class="slot-note">Vegetarian options available at both</div></div></div>
+      <div class="slot"><div class="slot-time">1:30 PM</div><div class="slot-icon">🕌</div><div class="slot-body"><div class="slot-title">Sultan Mosque</div><div class="slot-note">Free entry. Inside is stunning. Covered shoulders required — bring a shawl.</div></div></div>
+      <div class="slot"><div class="slot-time">2:30 PM</div><div class="slot-icon">🌸</div><div class="slot-body"><div class="slot-title">Haji Lane & Arab Street</div><div class="slot-note">Colourful shophouses, pomegranate juice, kueh, window shopping</div></div></div>
+      <div class="slot"><div class="slot-time">3:30 PM</div><div class="slot-icon">🏨</div><div class="slot-body"><div class="slot-title">Back to hotel — planned rest break</div><div class="slot-note">This is deliberately scheduled. Put your feet up.</div></div></div>
+      <div class="slot"><div class="slot-time">7:30 PM</div><div class="slot-icon">🍽️</div><div class="slot-body"><div class="slot-title">Dinner — Komala Vilas or Banana Leaf Apolo</div><div class="slot-note">Classic South Indian served on a banana leaf</div></div></div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="card card-gray">
+      <div class="card-title">👟 What to wear today</div>
+      <ul>
+        <li>Comfortable walking shoes — ~3–4 km total</li>
+        <li>Bring a shawl or scarf — required to enter Sultan Mosque</li>
+        <li>Grab is always available if feet get tired — just say the word</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══ DAY 3 ══ -->
+  <div id="day-3" class="section day-3">
+    <div class="day-header">
+      <div class="day-label">Day 3 · Wednesday 8 April</div>
+      <div class="day-title">Chinatown + Marina Bay 🦁✨</div>
+    </div>
+
+    <div class="veg-notice">
+      🌿 Vegetarian only for breakfast — temples in the morning, full menu from 11 AM
+    </div>
+
+    <div class="schedule">
+      <div class="slot"><div class="slot-time">8:15 AM</div><div class="slot-icon">🚇</div><div class="slot-body"><div class="slot-title">MRT to Chinatown</div><div class="slot-note">Farrer Park → Chinatown, Purple line, 10 min, direct, no change</div></div></div>
+      <div class="slot"><div class="slot-time">8:30 AM</div><div class="slot-icon">🍳</div><div class="slot-body"><div class="slot-title">Breakfast — Maxwell Food Centre</div><div class="slot-note">Kaya toast, congee, roti prata, bandung rose milk</div></div></div>
+      <div class="slot"><div class="slot-time">10:00 AM</div><div class="slot-icon">🛕</div><div class="slot-body"><div class="slot-title">Sri Mariamman Temple</div><div class="slot-note">Singapore's oldest Hindu temple. Free entry.</div></div></div>
+      <div class="slot"><div class="slot-time">10:30 AM</div><div class="slot-icon">🏛️</div><div class="slot-body"><div class="slot-title">Buddha Tooth Relic Temple</div><div class="slot-note">Beautiful temple museum. Free entry. Air-conditioned inside.</div></div></div>
+      <div class="slot"><div class="slot-time">11:30 AM</div><div class="slot-icon">🍜</div><div class="slot-body"><div class="slot-title">Lunch — Chinatown Complex hawker centre</div><div class="slot-note">Char Kway Teow, popiah, economic rice. Full menu open.</div></div></div>
+      <div class="slot"><div class="slot-time">12:45 PM</div><div class="slot-icon">🍧</div><div class="slot-body"><div class="slot-title">Chendol + Ice Kachang + ice cream sandwich</div><div class="slot-note">Three Singapore desserts in a row — don't skip any</div></div></div>
+      <div class="slot"><div class="slot-time">1:45 PM</div><div class="slot-icon">☕</div><div class="slot-body"><div class="slot-title">Grandparents relax at Dempsey Hill café</div><div class="slot-note">PS.Café or Dempsey Bistro — rest while the kids do Museum of Ice Cream</div></div></div>
+      <div class="slot"><div class="slot-time">3:30 PM</div><div class="slot-icon">🚗</div><div class="slot-body"><div class="slot-title">Everyone regroups + Grab to Marina Bay</div><div class="slot-note">~S$15, ~20 min ride</div></div></div>
+      <div class="slot"><div class="slot-time">4:00 PM</div><div class="slot-icon">🦁</div><div class="slot-body"><div class="slot-title">Merlion Park + Helix Bridge</div><div class="slot-note">The iconic Singapore photo. Free. Easy flat walk.</div></div></div>
+      <div class="slot"><div class="slot-time">6:30 PM</div><div class="slot-icon">🍽️</div><div class="slot-body"><div class="slot-title">Dinner — Rang Mahal (pre-booked)</div><div class="slot-note">Fine Indian dining at Pan Pacific Hotel. Dress nicely.</div></div></div>
+      <div class="slot"><div class="slot-time">8:45 PM</div><div class="slot-icon">✨</div><div class="slot-body"><div class="slot-title">Supertrees light show — Gardens by the Bay</div><div class="slot-note">FREE. Runs exactly 10 minutes. Bring a light jacket for the evening.</div></div></div>
+      <div class="slot"><div class="slot-time">10:00 PM</div><div class="slot-icon">🚇</div><div class="slot-body"><div class="slot-title">MRT back to hotel</div><div class="slot-note">Bayfront → Little India, Blue line, 12 min, direct</div></div></div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="card card-purple">
+      <div class="card-title">🌟 Don't miss — the Supertrees light show</div>
+      <p>The 8:45 PM Garden Rhapsody light show at the Supertrees is one of the most beautiful things in Singapore. It's free, lasts exactly 10 minutes, and is genuinely worth staying up for. Bring a light jacket for the evening breeze.</p>
+    </div>
+  </div>
+
+  <!-- ══ DAY 4 ══ -->
+  <div id="day-4" class="section day-4">
+    <div class="day-header">
+      <div class="day-label">Day 4 · Thursday 9 April</div>
+      <div class="day-title">Sentosa Island — Full Day 🐠🎡</div>
+    </div>
+
+    <div class="card card-green">
+      <div class="card-title">🚡 The Big Adventure Day!</div>
+      <p>Cable car to the island, one of the world's largest aquariums, a beautiful beach, and an outdoor laser & water show at night. The grandchildren will absolutely love this day — and so will you.</p>
+    </div>
+
+    <div class="schedule">
+      <div class="slot"><div class="slot-time">8:30 AM</div><div class="slot-icon">🍽️</div><div class="slot-body"><div class="slot-title">Breakfast — Serangoon Road</div><div class="slot-note">Parotta + dhal, or idli, before heading out</div></div></div>
+      <div class="slot"><div class="slot-time">9:30 AM</div><div class="slot-icon">🚇</div><div class="slot-body"><div class="slot-title">MRT to HarbourFront</div><div class="slot-note">Farrer Park → HarbourFront, Purple line, 15 min, direct</div></div></div>
+      <div class="slot"><div class="slot-time">10:00 AM</div><div class="slot-icon">🚡</div><div class="slot-body"><div class="slot-title">Cable Car to Sentosa Island</div><div class="slot-note">Pre-booked tickets. Amazing harbour views. Toddler will go wild!</div></div></div>
+      <div class="slot"><div class="slot-time">10:30 AM</div><div class="slot-icon">🐠</div><div class="slot-body"><div class="slot-title">Singapore Oceanarium (3 hours)</div><div class="slot-note">One of the world's largest aquariums. All tickets pre-booked. Fully accessible.</div></div></div>
+      <div class="slot"><div class="slot-time">1:30 PM</div><div class="slot-icon">🍜</div><div class="slot-body"><div class="slot-title">Lunch — Malaysian Food Street, Resorts World</div><div class="slot-note">Order the LAKSA here — this is the one to have in Singapore</div></div></div>
+      <div class="slot"><div class="slot-time">3:00 PM</div><div class="slot-icon">🌈</div><div class="slot-body"><div class="slot-title">Sensoryscape interactive garden</div><div class="slot-note">Colourful light and sound garden. Free. The toddler will run everywhere.</div></div></div>
+      <div class="slot"><div class="slot-time">4:30 PM</div><div class="slot-icon">🏖️</div><div class="slot-body"><div class="slot-title">Beach — Siloso or Palawan</div><div class="slot-note">Fresh coconut (S$3–4), tau huay, bandung. Just rest and relax.</div></div></div>
+      <div class="slot"><div class="slot-time">6:30 PM</div><div class="slot-icon">🍽️</div><div class="slot-body"><div class="slot-title">Dinner — Coastes or beach food court</div><div class="slot-note">Casual, breezy dinner before the evening show</div></div></div>
+      <div class="slot"><div class="slot-time">7:40 PM</div><div class="slot-icon">🎆</div><div class="slot-body"><div class="slot-title">Wings of Time — outdoor laser & water show</div><div class="slot-note">Pre-booked seats. The toddler's first fireworks-style experience!</div></div></div>
+      <div class="slot"><div class="slot-time">8:50 PM</div><div class="slot-icon">🚡</div><div class="slot-body"><div class="slot-title">Cable Car BACK — night views</div><div class="slot-note">Even more beautiful at night. Last cable car at 9:30 PM.</div></div></div>
+      <div class="slot"><div class="slot-time">9:30 PM</div><div class="slot-icon">🚇</div><div class="slot-body"><div class="slot-title">MRT back to hotel</div><div class="slot-note">HarbourFront → Farrer Park, Purple line</div></div></div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="card card-gray">
+      <div class="card-title">♿ Good to know for Sentosa</div>
+      <ul>
+        <li>All attractions have lifts and accessible paths — no stairs required anywhere</li>
+        <li>The Oceanarium is fully air-conditioned — bring a light layer</li>
+        <li>Bring sandals or flip-flops if you want to walk on the beach sand</li>
+        <li>The beach has shaded seating areas — no need to sit in the sun</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══ DAY 5 ══ -->
+  <div id="day-5" class="section day-5">
+    <div class="day-header">
+      <div class="day-label">Day 5 · Friday 10 April</div>
+      <div class="day-title">Last Morning + Jewel + Departure ✈️</div>
+    </div>
+
+    <div class="card card-red">
+      <div class="card-title">⚠️ Flight Details — Keep This Handy</div>
+      <p><strong>IndiGo 6E1092</strong> — Singapore → Bengaluru</p>
+      <p><strong>Terminal 2</strong> · Check-in opens <strong>4:40 PM</strong></p>
+      <p>Board <strong>6:40 PM</strong> · Departs <strong>7:40 PM</strong> · Arrives BLR <strong>9:40 PM</strong></p>
+    </div>
+
+    <div class="schedule">
+      <div class="slot"><div class="slot-time">8:00 AM</div><div class="slot-icon">☕</div><div class="slot-body"><div class="slot-title">Last breakfast — Tekka Centre</div><div class="slot-note">One final filter coffee and dosa. A bittersweet one.</div></div></div>
+      <div class="slot"><div class="slot-time">9:00 AM</div><div class="slot-icon">🏨</div><div class="slot-body"><div class="slot-title">Check out of hotel by 9:00 AM</div><div class="slot-note">Leave luggage with concierge — they'll hold it until you depart</div></div></div>
+      <div class="slot"><div class="slot-time">9:30 AM</div><div class="slot-icon">🚇</div><div class="slot-body"><div class="slot-title">MRT to Marina Bay</div><div class="slot-note">Little India → Bayfront, Blue line, 12 min, direct</div></div></div>
+      <div class="slot"><div class="slot-time">10:00 AM</div><div class="slot-icon">🎨</div><div class="slot-body"><div class="slot-title">ArtScience Museum — Future World by teamLab</div><div class="slot-note">Children under 12 FREE today (Friday). Incredible digital art. 2 hrs.</div></div></div>
+      <div class="slot"><div class="slot-time">12:00 PM</div><div class="slot-icon">🌿</div><div class="slot-body"><div class="slot-title">Cloud Forest — Gardens by the Bay</div><div class="slot-note">35-metre waterfall inside a glass dome. One of the world's best sights.</div></div></div>
+      <div class="slot"><div class="slot-time">1:30 PM</div><div class="slot-icon">🍢</div><div class="slot-body"><div class="slot-title">Last hawker lunch — Satay by the Bay</div><div class="slot-note">Open-air hawker by the waterfront. Satay, laksa, carrot cake.</div></div></div>
+      <div class="slot"><div class="slot-time">2:15 PM</div><div class="slot-icon">🚗</div><div class="slot-body"><div class="slot-title">Grab back to hotel — collect luggage</div><div class="slot-note">Son books a GrabMax for all 8 + bags</div></div></div>
+      <div class="slot"><div class="slot-time">3:00 PM</div><div class="slot-icon">🚗</div><div class="slot-body"><div class="slot-title">GrabMax to Jewel Changi Airport</div><div class="slot-note">~25 min, ~S$45–50</div></div></div>
+      <div class="slot"><div class="slot-time">3:30 PM</div><div class="slot-icon">💧</div><div class="slot-body"><div class="slot-title">Jewel — Rain Vortex</div><div class="slot-note">World's tallest indoor waterfall. Free to see. Absolutely stunning.</div></div></div>
+      <div class="slot"><div class="slot-time">3:45 PM</div><div class="slot-icon">🎁</div><div class="slot-body"><div class="slot-title">Bengawan Solo — kueh lapis tins</div><div class="slot-note">Get these FIRST — they sell out. Perfect takeaway gift for family.</div></div></div>
+      <div class="slot"><div class="slot-time">4:30 PM</div><div class="slot-icon">🛂</div><div class="slot-body"><div class="slot-title">Walk to Terminal 2 (via bridge from Jewel)</div><div class="slot-note">~10 min walk. Check-in opens 4:40 PM. Use Family Assistance Lanes.</div></div></div>
+      <div class="slot"><div class="slot-time">6:00 PM</div><div class="slot-icon">☕</div><div class="slot-body"><div class="slot-title">Ya Kun Kaya Toast — airside Terminal 2</div><div class="slot-note">Farewell kaya toast + kopi-O 🥲 Last taste of Singapore.</div></div></div>
+      <div class="slot"><div class="slot-time">6:40 PM</div><div class="slot-icon">✈️</div><div class="slot-body"><div class="slot-title">Board IndiGo 6E1092 at Terminal 2</div><div class="slot-note">Departs 7:40 PM · Arrives Bengaluru 9:40 PM</div></div></div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="love-note">
+      This trip means everything to us. Having you here with the grandchildren in Singapore — at the Supertrees, by the sea, at the temples — these are memories we will all carry forever. We are so glad you are here.
+    </div>
+  </div>
+
+  <!-- ══ INFO ══ -->
+  <div id="day-info" class="section">
+    <div style="padding-top:8px">
+      <div class="flight-card">
+        <div class="flight-route">
+          <div>
+            <div style="font-size:11px;opacity:0.5;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px">Your arrival</div>
+            <div class="flight-city">BLR</div>
+          </div>
+          <div class="flight-arrow">✈ ──────</div>
+          <div>
+            <div style="font-size:11px;opacity:0.5;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;text-align:right">Singapore</div>
+            <div class="flight-city">SIN</div>
+          </div>
+        </div>
+        <div class="flight-detail">IndiGo 6E1091 · Monday 6 April</div>
+        <div class="flight-highlight">Departs 10:20 AM · Arrives 5:40 PM</div>
+      </div>
+
+      <div class="flight-card" style="margin-top:-8px;background:#2A1A0E">
+        <div class="flight-route">
+          <div>
+            <div style="font-size:11px;opacity:0.5;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px">Return</div>
+            <div class="flight-city">SIN</div>
+          </div>
+          <div class="flight-arrow">──────  ✈</div>
+          <div>
+            <div style="font-size:11px;opacity:0.5;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;text-align:right">Bengaluru</div>
+            <div class="flight-city">BLR</div>
+          </div>
+        </div>
+        <div class="flight-detail">IndiGo 6E1092 · Friday 10 April · Terminal 2</div>
+        <div class="flight-highlight">Check-in 4:40 PM · Departs 7:40 PM · Arrives 9:40 PM</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="card card-orange">
+      <div class="card-title">🏨 Hotel</div>
+      <div class="contact-row"><span class="contact-label">Name</span><span class="contact-value">Novotel Kitchener Road</span></div>
+      <div class="contact-row"><span class="contact-label">Address</span><span class="contact-value">181 Kitchener Rd, S208533</span></div>
+      <div class="contact-row"><span class="contact-label">MRT</span><span class="contact-value">Farrer Park (NE8), 5 min</span></div>
+      <div class="contact-row"><span class="contact-label">Phone</span><span class="contact-value"><a href="tel:+6564283000">+65 6428 3000</a></span></div>
+    </div>
+
+    <div class="card card-red">
+      <div class="card-title">🆘 Emergency Numbers</div>
+      <div class="contact-row"><span class="contact-label">Police</span><span class="contact-value"><a href="tel:999">999</a></span></div>
+      <div class="contact-row"><span class="contact-label">Ambulance</span><span class="contact-value"><a href="tel:995">995</a></span></div>
+      <div class="contact-row"><span class="contact-label">Son (WhatsApp)</span><span class="contact-value">In your contacts</span></div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <div class="info-box-title" style="color:var(--teal)">🚇 MRT Tips</div>
+        <p>Every station has a <strong>lift</strong> — no stairs ever needed</p>
+        <p>Son's phone handles all <strong>Grab</strong> rides</p>
+        <p>Tap contactless Mastercard/Visa to pay for MRT</p>
+      </div>
+      <div class="info-box">
+        <div class="info-box-title" style="color:var(--orange)">☀️ Weather</div>
+        <p>Hot & humid — <strong>~32°C</strong> every day</p>
+        <p>Wear light cotton. Change shirts midday if needed.</p>
+        <p>All malls & museums are heavily <strong>air-conditioned</strong></p>
+      </div>
+      <div class="info-box">
+        <div class="info-box-title" style="color:var(--green)">💵 Money</div>
+        <p>All prices in <strong>Singapore Dollars (SGD)</strong></p>
+        <p><strong>S$1 ≈ ₹63</strong> approximately</p>
+        <p>Most places take cards — carry a little cash for hawkers</p>
+      </div>
+      <div class="info-box">
+        <div class="info-box-title" style="color:var(--purple)">🍽️ Food</div>
+        <p>Hawker meals: <strong>S$3–8</strong> per dish</p>
+        <p>Must try: <strong>Laksa</strong> on Day 4 at Malaysian Food Street</p>
+        <p>Kaya toast is Singapore's breakfast institution — have it daily</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="card card-teal">
+      <div class="card-title">🎁 Memorabilia to Collect</div>
+      <ul>
+        <li><strong>Bengawan Solo kueh lapis tin</strong> — Jewel on Day 5, get it first (sells out)</li>
+        <li><strong>Merlion plushie</strong> — one for each grandchild, from any gift shop</li>
+        <li><strong>Stamp passport</strong> — the 4-year-old will collect stamps at each attraction</li>
+        <li><strong>Photo calendar</strong> — son will order after the trip, one for each household</li>
+        <li><strong>Peranakan tile or pottery</strong> — Haji Lane, Day 2, S$20–60, beautifully Singaporean</li>
+      </ul>
+    </div>
+
+    <div class="last-updated" id="last-updated"></div>
+  </div>
+
+</div><!-- .content -->
+
+<!-- Install banner (Android only) -->
+<div id="install-banner">
+  <span>Add to your home screen to use like an app</span>
+  <button onclick="installPWA()">Install</button>
+  <button id="install-close" onclick="document.getElementById('install-banner').style.display='none'">✕</button>
+</div>
+
+<script>
+  // Tab navigation
+  function showDay(day) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('day-' + day).classList.add('active');
+    document.querySelector(`[data-day="${day}"]`).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Last updated timestamp
+  document.getElementById('last-updated').textContent =
+    'Last updated ' + new Date(document.lastModified).toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'});
+
+  // Service Worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  }
+
+  // PWA install prompt (Android Chrome only)
+  let deferredPrompt;
+  window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();
+    deferredPrompt = e;
+    document.getElementById('install-banner').style.display = 'flex';
+  });
+  function installPWA() {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(() => {
+        document.getElementById('install-banner').style.display = 'none';
+      });
+    }
+  }
+</script>
+</body>
+</html>

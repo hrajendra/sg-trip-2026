@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>సింగపూర్ కుటుంబ యాత్ర 2026</title>
+<meta name="theme-color" content="#5B4A8A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="SG అమ్మలకు">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600;700&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #5B4A8A; --light-purple: #F3F0FA;
+    --orange: #E05C2A; --light-orange: #FDF0EA;
+    --teal:   #1B7A8A; --light-teal:   #E8F4F6;
+    --green:  #2E7A3A; --light-green:  #E8F4EE;
+    --gold:   #A06C10; --light-gold:   #FDF5E0;
+    --red:    #CC2222;
+    --dark: #1A1A1A; --mid: #555; --light: #999; --cream: #FDF8F3;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: 'Noto Sans Telugu', 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    padding-bottom: env(safe-area-inset-bottom, 24px);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .hero {
+    background: linear-gradient(160deg, #5B4A8A 0%, #3D3060 60%, #251E40 100%);
+    padding: 56px 24px 40px;
+    padding-top: max(56px, calc(44px + env(safe-area-inset-top)));
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); }
+  .hero-back { position: relative; font-size: 13px; opacity: 0.75; margin-bottom: 14px; text-decoration: none; color: white; display: inline-flex; align-items: center; gap: 4px; font-family: 'DM Sans', sans-serif; }
+  .hero-flag { font-size: 52px; display: block; margin-bottom: 12px; position: relative; }
+  .hero h1 { font-size: 26px; font-weight: 700; position: relative; margin-bottom: 6px; line-height: 1.3; }
+  .hero-sub { font-size: 15px; opacity: 0.82; position: relative; }
+  .hero-badge { display: inline-block; margin-top: 14px; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 5px 14px; font-size: 13px; font-weight: 600; position: relative; }
+
+  .nav-wrap { position: sticky; top: 0; z-index: 100; background: white; border-bottom: 1px solid #EEE; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .nav { display: flex; overflow-x: auto; scrollbar-width: none; padding: 0 8px; }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav-btn { flex-shrink: 0; padding: 12px 14px; border: none; background: none; font-family: 'Noto Sans Telugu', sans-serif; font-size: 13px; font-weight: 600; color: var(--light); cursor: pointer; position: relative; white-space: nowrap; line-height: 1.3; transition: color 0.2s; }
+  .nav-btn::after { content: ''; position: absolute; bottom: 0; left: 50%; right: 50%; height: 3px; border-radius: 3px 3px 0 0; background: var(--purple); transition: left 0.2s, right 0.2s; }
+  .nav-btn.active { color: var(--dark); }
+  .nav-btn.active::after { left: 8px; right: 8px; }
+  .nav-btn[data-t="d2"].active::after { background: var(--teal); }
+  .nav-btn[data-t="d3"].active::after { background: var(--orange); }
+  .nav-btn[data-t="d4"].active::after { background: var(--green); }
+  .nav-btn[data-t="d5"].active::after { background: var(--gold); }
+  .nav-btn[data-t="info"].active::after { background: #555; }
+
+  .content { padding: 0 16px 40px; max-width: 640px; margin: 0 auto; }
+  .section { display: none; padding-top: 20px; }
+  .section.active { display: block; }
+
+  /* Day card */
+  .day-hdr { border-radius: 14px; padding: 18px 20px 14px; margin-bottom: 16px; }
+  .day-lbl { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; opacity: 0.65; margin-bottom: 4px; font-family: 'DM Sans', sans-serif; }
+  .day-title { font-size: 22px; font-weight: 700; color: var(--dark); line-height: 1.3; }
+  .day-date  { font-size: 13px; color: var(--mid); margin-top: 4px; font-family: 'DM Sans', sans-serif; }
+  .d1 .day-hdr { background: var(--light-purple); } .d1 .day-lbl { color: var(--purple); }
+  .d2 .day-hdr { background: var(--light-teal); }   .d2 .day-lbl { color: var(--teal); }
+  .d3 .day-hdr { background: var(--light-orange); } .d3 .day-lbl { color: var(--orange); }
+  .d4 .day-hdr { background: var(--light-green); }  .d4 .day-lbl { color: var(--green); }
+  .d5 .day-hdr { background: var(--light-gold); }   .d5 .day-lbl { color: var(--gold); }
+
+  /* Slots */
+  .slot { display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid #F0F0F0; align-items: flex-start; }
+  .slot:last-child { border-bottom: none; }
+  .slot-time { font-size: 13px; font-weight: 700; min-width: 66px; padding-top: 3px; letter-spacing: -0.2px; font-family: 'DM Sans', sans-serif; }
+  .d1 .slot-time { color: var(--purple); } .d2 .slot-time { color: var(--teal); }
+  .d3 .slot-time { color: var(--orange); } .d4 .slot-time { color: var(--green); }
+  .d5 .slot-time { color: var(--gold); }
+  .slot-icon { font-size: 22px; min-width: 28px; padding-top: 2px; }
+  .slot-body { flex: 1; }
+  .slot-title { font-size: 16px; font-weight: 700; color: var(--dark); line-height: 1.4; margin-bottom: 3px; }
+  .slot-note  { font-size: 14px; color: var(--light); line-height: 1.5; }
+  .slot-en    { font-size: 12px; color: #BBBBBB; line-height: 1.3; margin-top: 2px; font-family: 'DM Sans', sans-serif; font-style: italic; }
+
+  /* Cards */
+  .card { border-radius: 12px; padding: 16px 18px; margin-bottom: 14px; }
+  .card-title { font-size: 15px; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+  .card p { font-size: 15px; color: var(--mid); line-height: 1.65; margin-bottom: 6px; }
+  .card p:last-child { margin-bottom: 0; }
+  .card p strong { color: var(--dark); }
+  .card ul { list-style: none; }
+  .card ul li { font-size: 15px; color: var(--mid); padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; gap: 8px; line-height: 1.5; }
+  .card ul li:last-child { border-bottom: none; }
+  .card ul li::before { content: '•'; opacity: 0.4; flex-shrink: 0; }
+  .card ul li strong { color: var(--dark); }
+  .card-purple { background: var(--light-purple); border-left: 4px solid var(--purple); } .card-purple .card-title { color: var(--purple); }
+  .card-teal   { background: var(--light-teal);   border-left: 4px solid var(--teal); }   .card-teal   .card-title { color: var(--teal); }
+  .card-orange { background: var(--light-orange); border-left: 4px solid var(--orange); } .card-orange .card-title { color: var(--orange); }
+  .card-green  { background: var(--light-green);  border-left: 4px solid var(--green); }  .card-green  .card-title { color: var(--green); }
+  .card-gold   { background: var(--light-gold);   border-left: 4px solid var(--gold); }   .card-gold   .card-title { color: var(--gold); }
+  .card-red    { background: #FFF0F0; border-left: 4px solid var(--red); }                .card-red    .card-title { color: var(--red); }
+  .card-gray   { background: #F5F5F5; border-left: 4px solid #CCC; }                      .card-gray   .card-title { color: var(--mid); }
+
+  /* Veg notice */
+  .veg { display: flex; align-items: flex-start; gap: 10px; background: #F0FFF4; border: 1px solid #B2DFCC; border-radius: 10px; padding: 12px 14px; margin-bottom: 14px; font-size: 15px; font-weight: 600; color: var(--green); line-height: 1.5; }
+
+  /* Info grid */
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+  .info-box { border-radius: 12px; padding: 16px; background: white; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+  .info-box-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 10px; font-family: 'DM Sans', sans-serif; }
+  .info-box p { font-size: 14px; color: var(--mid); line-height: 1.55; margin-bottom: 5px; }
+  .info-box p strong { color: var(--dark); }
+
+  /* Flight card */
+  .flight-card { background: var(--dark); color: white; border-radius: 14px; padding: 18px; margin-bottom: 12px; }
+  .flight-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .flight-city { font-size: 30px; font-weight: 700; letter-spacing: -1px; font-family: 'DM Sans', sans-serif; }
+  .flight-arrow { flex: 1; text-align: center; opacity: 0.4; font-size: 18px; }
+  .flight-info { font-size: 13px; opacity: 0.65; margin-bottom: 3px; font-family: 'DM Sans', sans-serif; }
+  .flight-hl { font-size: 16px; font-weight: 700; color: #FFA07A; font-family: 'DM Sans', sans-serif; }
+
+  /* Contact */
+  .contact-row { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid #F0F0F0; font-size: 14px; }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-lbl { color: var(--mid); }
+  .contact-val { font-weight: 600; color: var(--dark); font-family: 'DM Sans', sans-serif; }
+  .contact-val a { color: var(--teal); text-decoration: none; }
+
+  /* Love note */
+  .love-note { background: linear-gradient(135deg, var(--light-purple), var(--light-orange)); border-radius: 14px; padding: 22px; margin-top: 8px; font-size: 16px; line-height: 1.8; color: var(--mid); font-style: italic; position: relative; }
+  .love-note::before { content: '"'; font-size: 72px; color: var(--purple); opacity: 0.12; position: absolute; top: -4px; left: 12px; line-height: 1; }
+
+  .div { height: 1px; background: linear-gradient(to right, transparent, #DDD, transparent); margin: 20px 0; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <a href="index.html" class="hero-back">← అన్ని గైడ్లు · All Guides</a>
+  <span class="hero-flag">🇸🇬</span>
+  <h1>సింగపూర్ కుటుంబ యాత్ర</h1>
+  <p class="hero-sub">ఏప్రిల్ 6 – 10, 2026</p>
+  <span class="hero-badge">అమ్మలకు గైడ్ 🙏</span>
+</div>
+
+<div class="nav-wrap">
+  <nav class="nav">
+    <button class="nav-btn active" data-t="d1" onclick="show('d1')">రోజు 1<br><small style="font-weight:400;font-size:11px;font-family:'DM Sans'">Mon Apr 6</small></button>
+    <button class="nav-btn" data-t="d2" onclick="show('d2')">రోజు 2<br><small style="font-weight:400;font-size:11px;font-family:'DM Sans'">Tue Apr 7</small></button>
+    <button class="nav-btn" data-t="d3" onclick="show('d3')">రోజు 3<br><small style="font-weight:400;font-size:11px;font-family:'DM Sans'">Wed Apr 8</small></button>
+    <button class="nav-btn" data-t="d4" onclick="show('d4')">రోజు 4<br><small style="font-weight:400;font-size:11px;font-family:'DM Sans'">Thu Apr 9</small></button>
+    <button class="nav-btn" data-t="d5" onclick="show('d5')">రోజు 5<br><small style="font-weight:400;font-size:11px;font-family:'DM Sans'">Fri Apr 10</small></button>
+    <button class="nav-btn" data-t="info" onclick="show('info')">ℹ️ సమాచారం</button>
+  </nav>
+</div>
+
+<div class="content">
+
+<!-- ══ DAY 1 ══ -->
+<div id="d1" class="section d1 active">
+  <div class="day-hdr">
+    <div class="day-lbl">రోజు 1 · Day 1</div>
+    <div class="day-title">రాక — స్వాగతం సింగపూర్! 🎉</div>
+    <div class="day-date">సోమవారం, ఏప్రిల్ 6 · Monday 6 April</div>
+  </div>
+
+  <div class="card card-purple">
+    <div class="card-title">✈️ మీరు ముందు దిగుతారు</div>
+    <p><strong>మీ విమానం సాయంత్రం 5:40 కి దిగుతుంది</strong> — IndiGo 6E1091 (బెంగళూరు నుండి).</p>
+    <p>Custom దాటాక, arrival hall లో వేచి ఉండండి. మీ అబ్బాయి కుటుంబం 6:35 కి వేరే విమానంలో వస్తారు — అంటే 55 నిమిషాల తర్వాత.</p>
+    <p>అందరూ కలిసి ఒకే పెద్ద Grab వ్యాన్ లో హోటల్ కి వెళతాం.</p>
+  </div>
+
+  <div class="slot">
+    <div class="slot-time">5:40 PM</div>
+    <div class="slot-icon">✈️</div>
+    <div class="slot-body">
+      <div class="slot-title">మీ విమానం దిగుతుంది — IndiGo 6E1091</div>
+      <div class="slot-note">Customs దాటి, సామాన్లు తీసుకుని, arrival hall లో ఆగండి</div>
+      <div class="slot-en">Your flight lands. Wait in arrivals hall after clearing customs.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">6:35 PM</div>
+    <div class="slot-icon">👨‍👩‍👧‍👦</div>
+    <div class="slot-body">
+      <div class="slot-title">కుటుంబం వస్తారు — అమెరికా నుండి</div>
+      <div class="slot-note">అబ్బాయి WhatsApp లో message పంపుతాడు</div>
+      <div class="slot-en">Family lands from San Francisco. Son will WhatsApp you.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">7:15 PM</div>
+    <div class="slot-icon">🚗</div>
+    <div class="slot-body">
+      <div class="slot-title">అందరూ కలిసి — Grab వ్యాన్ లో హోటల్ కి</div>
+      <div class="slot-note">~45 నిమిషాల ప్రయాణం</div>
+      <div class="slot-en">All 8 together in one Grab van to hotel. ~45 min.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">8:30 PM</div>
+    <div class="slot-icon">🏨</div>
+    <div class="slot-body">
+      <div class="slot-title">హోటల్ లో చేరడం — Novotel Kitchener Road</div>
+      <div class="slot-note">అన్ని గదులు ఒకే అంతస్తులో ఉంటాయి</div>
+      <div class="slot-en">Check in. All rooms on same floor.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">9:00 PM</div>
+    <div class="slot-icon">🍽️</div>
+    <div class="slot-body">
+      <div class="slot-title">రాత్రి భోజనం — హోటల్ దగ్గర</div>
+      <div class="slot-note">తొందర లేదు, సులభమైన మొదటి రాత్రి</div>
+      <div class="slot-en">Dinner near hotel. Easy first night, no rush.</div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+  <div class="card card-teal">
+    <div class="card-title">🏨 హోటల్ వివరాలు</div>
+    <p><strong>Novotel Singapore on Kitchener Road</strong></p>
+    <p>181 Kitchener Rd, Singapore 208533</p>
+    <p>Farrer Park MRT నుండి 5 నిమిషాల నడక</p>
+    <p><strong>Phone:</strong> <a href="tel:+6564283000" style="color:var(--teal)">+65 6428 3000</a></p>
+  </div>
+</div>
+
+<!-- ══ DAY 2 ══ -->
+<div id="d2" class="section d2">
+  <div class="day-hdr">
+    <div class="day-lbl">రోజు 2 · Day 2</div>
+    <div class="day-title">లిటిల్ ఇండియా + కంపాంగ్ గ్లామ్ 🛕</div>
+    <div class="day-date">మంగళవారం, ఏప్రిల్ 7 · Tuesday 7 April</div>
+  </div>
+
+  <div class="veg">🌿 మధ్యాహ్నం 1:30 వరకు శాఖాహారం మాత్రమే — ఈ రోజు దేవాలయం మరియు మసీదు వెళ్తాం</div>
+
+  <div class="slot">
+    <div class="slot-time">8:00 AM</div>
+    <div class="slot-icon">☕</div>
+    <div class="slot-body">
+      <div class="slot-title">అల్పాహారం — Tekka Centre food court</div>
+      <div class="slot-note">ఇడ్లి, దోశ, పొంగల్, filter coffee — ఇంట్లో లాగే ఉంటుంది! 🌿</div>
+      <div class="slot-en">Breakfast. Idli, dosa, pongal, filter coffee — just like home!</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">9:15 AM</div>
+    <div class="slot-icon">🥚</div>
+    <div class="slot-body">
+      <div class="slot-title">కాయా టోస్ట్ + మెత్తగా ఉడికిన గుడ్లు</div>
+      <div class="slot-note">సింగపూర్ ప్రసిద్ధ అల్పాహారం · Milo Dinosaur అని ఒక రుచికరమైన పానీయం ఉంది 🌿</div>
+      <div class="slot-en">Kaya toast + soft-boiled eggs. Try Milo Dinosaur drink!</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">9:45 AM</div>
+    <div class="slot-icon">🛕</div>
+    <div class="slot-body">
+      <div class="slot-title">శ్రీ వీరమాకాళియమ్మన్ దేవాలయం</div>
+      <div class="slot-note">ఉచిత ప్రవేశం · చాలా అందంగా ఉంటుంది 🌿</div>
+      <div class="slot-en">Sri Veeramakaliamman Temple. Free entry. Beautiful.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">10:30 AM</div>
+    <div class="slot-icon">🛍️</div>
+    <div class="slot-body">
+      <div class="slot-title">Serangoon Road వెంట నడక</div>
+      <div class="slot-note">చెరుకు రసం S$1.50 · curry puffs · Mustafa Centre కి వెళ్ళవచ్చు</div>
+      <div class="slot-en">Serangoon Road stroll. Sugarcane juice, curry puffs, Mustafa Centre.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">12:00 PM</div>
+    <div class="slot-icon">🍛</div>
+    <div class="slot-body">
+      <div class="slot-title">మధ్యాహ్న భోజనం — Zam Zam లేదా Hjh Maimunah</div>
+      <div class="slot-note">శాఖాహార వంటకాలు అందుబాటులో ఉన్నాయి 🌿</div>
+      <div class="slot-en">Lunch. Vegetarian options available.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">1:30 PM</div>
+    <div class="slot-icon">🕌</div>
+    <div class="slot-body">
+      <div class="slot-title">Sultan Mosque (మసీదు)</div>
+      <div class="slot-note">ఉచిత ప్రవేశం · లోపల చాలా అద్భుతంగా ఉంటుంది · భుజాలు కప్పుకోవాలి</div>
+      <div class="slot-en">Sultan Mosque. Free. Stunning inside. Cover shoulders with shawl.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">2:30 PM</div>
+    <div class="slot-icon">🌸</div>
+    <div class="slot-body">
+      <div class="slot-title">Haji Lane & Arab Street వెంట నడక</div>
+      <div class="slot-note">రంగురంగుల దుకాణాలు · దానిమ్మ రసం S$3 · kueh తినవచ్చు</div>
+      <div class="slot-en">Colourful shophouses. Pomegranate juice, kueh, window shopping.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">3:30 PM</div>
+    <div class="slot-icon">🏨</div>
+    <div class="slot-body">
+      <div class="slot-title">హోటల్ కి తిరిగి రండి — విశ్రాంతి సమయం</div>
+      <div class="slot-note">ఈ విశ్రాంతి ముందే plan చేసుకున్నాం — తప్పకుండా విశ్రమించండి</div>
+      <div class="slot-en">Back to hotel. Planned rest break. Please rest!</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">7:30 PM</div>
+    <div class="slot-icon">🍽️</div>
+    <div class="slot-body">
+      <div class="slot-title">రాత్రి భోజనం — Komala Vilas లేదా Banana Leaf Apolo</div>
+      <div class="slot-note">అరటి ఆకులో వడ్డించే దక్షిణ భారత భోజనం</div>
+      <div class="slot-en">Dinner. Classic South Indian served on banana leaf.</div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+  <div class="card card-gray">
+    <div class="card-title">👟 ఈ రోజు దుస్తులు గురించి</div>
+    <ul>
+      <li>సౌకర్యవంతమైన నడక చెప్పులు వేసుకోండి — ~3–4 కి.మీ నడక</li>
+      <li>Sultan Mosque కి వెళ్ళేందుకు శాలువా లేదా ఓడ్నీ తీసుకెళ్ళండి</li>
+      <li>అలసిపోతే ఎప్పుడైనా Grab పిలవొచ్చు — మీరు చెప్పాలి</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══ DAY 3 ══ -->
+<div id="d3" class="section d3">
+  <div class="day-hdr">
+    <div class="day-lbl">రోజు 3 · Day 3</div>
+    <div class="day-title">Chinatown + Marina Bay 🦁✨</div>
+    <div class="day-date">బుధవారం, ఏప్రిల్ 8 · Wednesday 8 April</div>
+  </div>
+
+  <div class="veg">🌿 ఉదయపు అల్పాహారం వరకు శాఖాహారం — దేవాలయాలు 10:00 AM కి · పూర్తి menu పదకొండు తర్వాత</div>
+
+  <div class="slot">
+    <div class="slot-time">8:15 AM</div>
+    <div class="slot-icon">🚇</div>
+    <div class="slot-body">
+      <div class="slot-title">MRT రైలు — Chinatown కి</div>
+      <div class="slot-note">Farrer Park నుండి Chinatown · 10 నిమిషాలు · direct</div>
+      <div class="slot-en">MRT to Chinatown. 10 min, direct, no change.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">8:30 AM</div>
+    <div class="slot-icon">🍳</div>
+    <div class="slot-body">
+      <div class="slot-title">అల్పాహారం — Maxwell Food Centre</div>
+      <div class="slot-note">కాయా టోస్ట్, congee, roti prata, bandung తాగవచ్చు 🌿</div>
+      <div class="slot-en">Breakfast. Kaya toast, congee, roti prata, bandung rose milk.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">10:00 AM</div>
+    <div class="slot-icon">🛕</div>
+    <div class="slot-body">
+      <div class="slot-title">శ్రీ మారియమ్మన్ దేవాలయం</div>
+      <div class="slot-note">సింగపూర్ లో అత్యంత పురాతన హిందూ దేవాలయం · ఉచిత ప్రవేశం 🌿</div>
+      <div class="slot-en">Sri Mariamman Temple. Singapore's oldest Hindu temple. Free entry.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">10:30 AM</div>
+    <div class="slot-icon">🏛️</div>
+    <div class="slot-body">
+      <div class="slot-title">బుద్ధ టూత్ రెలిక్ టెంపుల్</div>
+      <div class="slot-note">అందమైన దేవాలయ మ్యూజియం · ఉచిత · లోపల AC ఉంటుంది 🌿</div>
+      <div class="slot-en">Buddha Tooth Relic Temple. Beautiful museum. Free. Air-conditioned.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">11:30 AM</div>
+    <div class="slot-icon">🍜</div>
+    <div class="slot-body">
+      <div class="slot-title">మధ్యాహ్న భోజనం — Chinatown Complex hawker centre</div>
+      <div class="slot-note">Char Kway Teow, popiah, వివిధ వంటకాలు</div>
+      <div class="slot-en">Lunch at Chinatown hawker centre. Char Kway Teow, popiah.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">12:45 PM</div>
+    <div class="slot-icon">🍧</div>
+    <div class="slot-body">
+      <div class="slot-title">మూడు desserts వరుసగా!</div>
+      <div class="slot-note">Chendol + Ice Kachang + Ice Cream Sandwich — ఒకటి వదలకండి!</div>
+      <div class="slot-en">Triple dessert run! Chendol, Ice Kachang, Ice Cream Sandwich.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">1:45 PM</div>
+    <div class="slot-icon">☕</div>
+    <div class="slot-body">
+      <div class="slot-title">అమ్మలు Dempsey Hill café లో విశ్రాంతి</div>
+      <div class="slot-note">PS.Café లో కూర్చోండి — పిల్లలు Museum of Ice Cream వెళతారు, తర్వాత కలుస్తారు</div>
+      <div class="slot-en">Rest at Dempsey Hill café while kids visit Museum of Ice Cream. Regroup 3:30 PM.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">3:30 PM</div>
+    <div class="slot-icon">🚗</div>
+    <div class="slot-body">
+      <div class="slot-title">అందరూ కలిసి — Grab లో Marina Bay కి</div>
+      <div class="slot-note">~20 నిమిషాల ప్రయాణం</div>
+      <div class="slot-en">Everyone regroups. Grab to Marina Bay, ~20 min.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">4:00 PM</div>
+    <div class="slot-icon">🦁</div>
+    <div class="slot-body">
+      <div class="slot-title">Merlion Park + Helix Bridge</div>
+      <div class="slot-note">సింగపూర్ ప్రసిద్ధ చిహ్నం · ఉచిత · అందమైన ఫోటోలు తీసుకోవచ్చు</div>
+      <div class="slot-en">Merlion Park. Singapore's iconic symbol. Free. Great photos!</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">6:30 PM</div>
+    <div class="slot-icon">🍽️</div>
+    <div class="slot-body">
+      <div class="slot-title">రాత్రి భోజనం — Rang Mahal (ముందే book చేసారు)</div>
+      <div class="slot-note">Pan Pacific Hotel లో ఉన్న Indian restaurant · చక్కని బట్టలు వేసుకోండి</div>
+      <div class="slot-en">Dinner at Rang Mahal, Pan Pacific Hotel. Pre-booked. Smart casual dress.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">8:45 PM</div>
+    <div class="slot-icon">✨</div>
+    <div class="slot-body">
+      <div class="slot-title">Supertrees light show — Gardens by the Bay</div>
+      <div class="slot-note">ఉచిత · కేవలం 10 నిమిషాలు · చాలా అద్భుతంగా ఉంటుంది! తప్పక చూడండి</div>
+      <div class="slot-en">FREE. 10 min. Absolutely stunning. Don't miss this!</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">10:00 PM</div>
+    <div class="slot-icon">🚇</div>
+    <div class="slot-body">
+      <div class="slot-title">MRT లో హోటల్ కి తిరిగి రండి</div>
+      <div class="slot-note">Bayfront నుండి Little India · 12 నిమిషాలు · direct</div>
+      <div class="slot-en">MRT home. Bayfront to Little India. 12 min, direct.</div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+  <div class="card card-orange">
+    <div class="card-title">🌟 తప్పక చూడవలసింది — Supertrees light show</div>
+    <p>రాత్రి 8:45 కి గార్డెన్స్ లో Supertrees light show జరుగుతుంది. ఇది సింగపూర్ లో అత్యంత అద్భుతమైన దృశ్యాలలో ఒకటి. ఉచితం, 10 నిమిషాలు మాత్రమే, కానీ జీవితమంత గుర్తుండిపోతుంది. సాయంత్రం చల్లగా ఉంటుంది — తేలికైన శాలువా తీసుకెళ్ళండి.</p>
+  </div>
+</div>
+
+<!-- ══ DAY 4 ══ -->
+<div id="d4" class="section d4">
+  <div class="day-hdr">
+    <div class="day-lbl">రోజు 4 · Day 4</div>
+    <div class="day-title">Sentosa Island — రోజంతా సాహసయాత్ర 🐠🎡</div>
+    <div class="day-date">గురువారం, ఏప్రిల్ 9 · Thursday 9 April</div>
+  </div>
+
+  <div class="card card-green">
+    <div class="card-title">🚡 పెద్ద సాహస రోజు!</div>
+    <p>Cable car లో ద్వీపానికి వెళ్ళడం, ప్రపంచంలోని అతిపెద్ద aquariums లో ఒకటి చూడడం, అందమైన beach, రాత్రి laser show — మనవళ్ళు/మనవరాళ్ళు చాలా సంతోషపడతారు!</p>
+  </div>
+
+  <div class="slot">
+    <div class="slot-time">8:30 AM</div>
+    <div class="slot-icon">🍽️</div>
+    <div class="slot-body">
+      <div class="slot-title">అల్పాహారం — Serangoon Road</div>
+      <div class="slot-note">parotta + dhal లేదా idli</div>
+      <div class="slot-en">Breakfast. Parotta + dhal or idli.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">9:30 AM</div>
+    <div class="slot-icon">🚇</div>
+    <div class="slot-body">
+      <div class="slot-title">MRT — HarbourFront కి</div>
+      <div class="slot-note">Farrer Park నుండి HarbourFront · 15 నిమిషాలు · direct</div>
+      <div class="slot-en">MRT to HarbourFront. 15 min, direct.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">10:00 AM</div>
+    <div class="slot-icon">🚡</div>
+    <div class="slot-body">
+      <div class="slot-title">Cable Car లో Sentosa Island కి</div>
+      <div class="slot-note">ముందే tickets తీసుకున్నారు · పోర్ట్ యొక్క అద్భుతమైన వీక్షణలు · చిన్న పిల్లలు చాలా ఆనందపడతారు!</div>
+      <div class="slot-en">Cable Car to Sentosa. Pre-booked. Stunning harbour views.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">10:30 AM</div>
+    <div class="slot-icon">🐠</div>
+    <div class="slot-body">
+      <div class="slot-title">Singapore Oceanarium (3 గంటలు)</div>
+      <div class="slot-note">ప్రపంచంలోని అతిపెద్ద aquariums లో ఒకటి · అన్ని tickets ముందే book చేసారు · accessibility సౌకర్యాలు ఉన్నాయి</div>
+      <div class="slot-en">One of world's largest aquariums. Pre-booked. Fully accessible.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">1:30 PM</div>
+    <div class="slot-icon">🍜</div>
+    <div class="slot-body">
+      <div class="slot-title">మధ్యాహ్న భోజనం — Malaysian Food Street</div>
+      <div class="slot-note">🦞 ఇక్కడ LAKSA తప్పక తినండి — ఇది సింగపూర్ ప్రత్యేకత!</div>
+      <div class="slot-en">Lunch. ORDER LAKSA HERE — Singapore's signature dish!</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">4:30 PM</div>
+    <div class="slot-icon">🏖️</div>
+    <div class="slot-body">
+      <div class="slot-title">Beach విశ్రాంతి — Siloso లేదా Palawan</div>
+      <div class="slot-note">తాజా కొబ్బరి నీళ్ళు S$3–4 · tau huay తినవచ్చు · నీడలో కూర్చోవచ్చు</div>
+      <div class="slot-en">Beach rest. Fresh coconut S$3–4. Shaded seating available.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">6:30 PM</div>
+    <div class="slot-icon">🍽️</div>
+    <div class="slot-body">
+      <div class="slot-title">రాత్రి భోజనం — beach food court</div>
+      <div class="slot-note">సాయంత్రపు show కి ముందు casual dinner</div>
+      <div class="slot-en">Casual dinner before the evening show.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">7:40 PM</div>
+    <div class="slot-icon">🎆</div>
+    <div class="slot-body">
+      <div class="slot-title">Wings of Time — laser & water show</div>
+      <div class="slot-note">ముందే seats book చేసారు · మనవళ్ళు మొదటిసారి fireworks చూస్తారు!</div>
+      <div class="slot-en">Pre-booked show. Grandchildren's first fireworks-style experience!</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">8:50 PM</div>
+    <div class="slot-icon">🚡</div>
+    <div class="slot-body">
+      <div class="slot-title">Cable Car లో తిరిగి రండి — రాత్రి వీక్షణలు</div>
+      <div class="slot-note">రాత్రి పూట ఇంకా అందంగా ఉంటుంది · చివరి cable car 9:30 PM</div>
+      <div class="slot-en">Cable Car back. Even more beautiful at night. Last car at 9:30 PM.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">9:30 PM</div>
+    <div class="slot-icon">🚇</div>
+    <div class="slot-body">
+      <div class="slot-title">MRT లో హోటల్ కి తిరిగి రండి</div>
+      <div class="slot-en">MRT back to hotel.</div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+  <div class="card card-gray">
+    <div class="card-title">♿ Sentosa గురించి గమనించవలసినవి</div>
+    <ul>
+      <li>అన్ని చోట్లా lifts ఉన్నాయి — మెట్లు అవసరం లేదు</li>
+      <li>Aquarium లో AC ఉంటుంది — తేలికైన శాలువా తీసుకెళ్ళండి</li>
+      <li>Beach కి వెళ్ళాలంటే sandals తీసుకెళ్ళండి</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══ DAY 5 ══ -->
+<div id="d5" class="section d5">
+  <div class="day-hdr">
+    <div class="day-lbl">రోజు 5 · Day 5</div>
+    <div class="day-title">చివరి ఉదయం + Jewel + తిరుగు ప్రయాణం ✈️</div>
+    <div class="day-date">శుక్రవారం, ఏప్రిల్ 10 · Friday 10 April</div>
+  </div>
+
+  <div class="card card-red">
+    <div class="card-title">⚠️ విమానం వివరాలు — గుర్తుంచుకోండి</div>
+    <p><strong>IndiGo 6E1092</strong> — సింగపూర్ → బెంగళూరు</p>
+    <p><strong>Terminal 2</strong> · Check-in తెరుచుకుంటుంది <strong>4:40 PM</strong></p>
+    <p>Boarding <strong>6:40 PM</strong> · బయలుదేరుతుంది <strong>7:40 PM</strong> · BLR చేరుకుంటుంది <strong>9:40 PM</strong></p>
+  </div>
+
+  <div class="slot">
+    <div class="slot-time">8:00 AM</div>
+    <div class="slot-icon">☕</div>
+    <div class="slot-body">
+      <div class="slot-title">చివరి అల్పాహారం — Tekka Centre</div>
+      <div class="slot-note">సింగపూర్ లో చివరి filter coffee మరియు దోశ 🥲</div>
+      <div class="slot-en">Last breakfast. Final filter coffee and dosa in Singapore.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">9:00 AM</div>
+    <div class="slot-icon">🏨</div>
+    <div class="slot-body">
+      <div class="slot-title">హోటల్ చెక్ అవుట్</div>
+      <div class="slot-note">సామాన్లు concierge దగ్గర వదిలివేయవచ్చు</div>
+      <div class="slot-en">Check out. Leave luggage with concierge until departure.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">10:00 AM</div>
+    <div class="slot-icon">🎨</div>
+    <div class="slot-body">
+      <div class="slot-title">ArtScience Museum — Future World</div>
+      <div class="slot-note">అద్భుతమైన digital art · 12 ఏళ్ళ లోపు పిల్లలకు ఉచితం (శుక్రవారం)</div>
+      <div class="slot-en">Amazing digital art museum. Kids under 12 free on Fridays.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">12:00 PM</div>
+    <div class="slot-icon">🌿</div>
+    <div class="slot-body">
+      <div class="slot-title">Cloud Forest — Gardens by the Bay</div>
+      <div class="slot-note">గాజు dome లోపల 35 మీటర్ల జలపాతం! ప్రపంచంలో అద్భుతమైన దృశ్యాలలో ఒకటి.</div>
+      <div class="slot-en">35m waterfall inside a glass dome. One of the world's best sights.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">1:30 PM</div>
+    <div class="slot-icon">🍢</div>
+    <div class="slot-body">
+      <div class="slot-title">చివరి hawker భోజనం — Satay by the Bay</div>
+      <div class="slot-note">నీటి ఒడ్డున open-air hawker · చివరి సింగపూర్ భోజనం</div>
+      <div class="slot-en">Last hawker meal. Open-air by the waterfront. Final Singapore food.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">3:00 PM</div>
+    <div class="slot-icon">🚗</div>
+    <div class="slot-body">
+      <div class="slot-title">Grab లో Jewel Changi Airport కి</div>
+      <div class="slot-note">~25 నిమిషాల ప్రయాణం · అందరూ + సామాన్లు</div>
+      <div class="slot-en">GrabMax to Jewel Changi Airport. ~25 min with all luggage.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">3:30 PM</div>
+    <div class="slot-icon">💧</div>
+    <div class="slot-body">
+      <div class="slot-title">Jewel — Rain Vortex చూడడం</div>
+      <div class="slot-note">ప్రపంచంలోనే అతి ఎత్తైన indoor జలపాతం — ఉచితం, అద్భుతంగా ఉంటుంది</div>
+      <div class="slot-en">World's tallest indoor waterfall. Free. Absolutely stunning.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">3:45 PM</div>
+    <div class="slot-icon">🎁</div>
+    <div class="slot-body">
+      <div class="slot-title">Bengawan Solo — kueh lapis తీసుకోండి</div>
+      <div class="slot-note">⚠️ ఇవి ముందే తీసుకోండి — అయిపోతాయి! బెంగళూరుకి తీసుకెళ్ళే బహుమతి</div>
+      <div class="slot-en">Get these FIRST — they sell out. Perfect gift to take home.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">4:30 PM</div>
+    <div class="slot-icon">🛂</div>
+    <div class="slot-body">
+      <div class="slot-title">Terminal 2 కి నడకకు వెళ్ళండి</div>
+      <div class="slot-note">Jewel నుండి ~10 నిమిషాల నడక · 4:40 కి check-in తెరుచుకుంటుంది</div>
+      <div class="slot-en">Walk to Terminal 2 via Jewel bridge. ~10 min. Check-in opens 4:40 PM.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">6:00 PM</div>
+    <div class="slot-icon">☕</div>
+    <div class="slot-body">
+      <div class="slot-title">Ya Kun Kaya Toast — Airside T2 లో</div>
+      <div class="slot-note">వీడ్కోలు kaya toast + kopi-O 🥲 సింగపూర్ చివరి రుచి</div>
+      <div class="slot-en">Farewell kaya toast and kopi-O. Last taste of Singapore.</div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">6:40 PM</div>
+    <div class="slot-icon">✈️</div>
+    <div class="slot-body">
+      <div class="slot-title">విమానంలో ఎక్కండి — IndiGo 6E1092</div>
+      <div class="slot-note">7:40 PM కి బయలుదేరుతుంది · 9:40 PM కి బెంగళూరు చేరుకుంటుంది 🇮🇳</div>
+      <div class="slot-en">Board at 6:40 PM. Departs 7:40 PM. Arrives Bengaluru 9:40 PM.</div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+  <div class="love-note">
+    మీరు ఇక్కడ ఉన్నారంటే మాకు చాలా సంతోషంగా ఉంది. Supertrees దగ్గర, సముద్రం దగ్గర, దేవాలయాల్లో — మీతో కలిసి ఈ అనుభవాలు మా జీవితమంత గుర్తుంటాయి. అలసిపోతే ఎప్పుడైనా చెప్పండి, విశ్రాంతి తీసుకోవడానికి ముందే plan చేశాం. మీరు ఇక్కడ ఉన్నందుకు చాలా ఆనందంగా ఉంది. 💛
+  </div>
+</div>
+
+<!-- ══ INFO ══ -->
+<div id="info" class="section">
+
+  <div class="flight-card">
+    <div class="flight-row">
+      <div><div style="font-size:11px;opacity:0.5;letter-spacing:1px;font-family:'DM Sans'">రాక</div><div class="flight-city">BLR</div></div>
+      <div class="flight-arrow">✈ ──────</div>
+      <div><div style="font-size:11px;opacity:0.5;letter-spacing:1px;font-family:'DM Sans';text-align:right">Singapore</div><div class="flight-city">SIN</div></div>
+    </div>
+    <div class="flight-info">IndiGo 6E1091 · సోమవారం ఏప్రిల్ 6</div>
+    <div class="flight-hl">10:20 AM బయలుదేరుతుంది · 5:40 PM వస్తుంది</div>
+  </div>
+
+  <div class="flight-card" style="background:#2A1A0E;margin-top:-8px">
+    <div class="flight-row">
+      <div><div style="font-size:11px;opacity:0.5;letter-spacing:1px;font-family:'DM Sans'">తిరుగు ప్రయాణం</div><div class="flight-city">SIN</div></div>
+      <div class="flight-arrow">──────  ✈</div>
+      <div><div style="font-size:11px;opacity:0.5;letter-spacing:1px;font-family:'DM Sans';text-align:right">Bengaluru</div><div class="flight-city">BLR</div></div>
+    </div>
+    <div class="flight-info">IndiGo 6E1092 · శుక్రవారం ఏప్రిల్ 10 · Terminal 2</div>
+    <div class="flight-hl">Check-in 4:40 PM · 7:40 PM బయలుదేరుతుంది · 9:40 PM BLR</div>
+  </div>
+
+  <div class="div"></div>
+
+  <div class="card card-purple">
+    <div class="card-title">🏨 హోటల్</div>
+    <div class="contact-row"><span class="contact-lbl">పేరు</span><span class="contact-val">Novotel Kitchener Road</span></div>
+    <div class="contact-row"><span class="contact-lbl">చిరునామా</span><span class="contact-val">181 Kitchener Rd, Singapore</span></div>
+    <div class="contact-row"><span class="contact-lbl">MRT</span><span class="contact-val">Farrer Park, 5 నిమిషాల నడక</span></div>
+    <div class="contact-row"><span class="contact-lbl">Phone</span><span class="contact-val"><a href="tel:+6564283000">+65 6428 3000</a></span></div>
+  </div>
+
+  <div class="card card-red">
+    <div class="card-title">🆘 అత్యవసర నంబర్లు</div>
+    <div class="contact-row"><span class="contact-lbl">Police</span><span class="contact-val"><a href="tel:999">999</a></span></div>
+    <div class="contact-row"><span class="contact-lbl">Ambulance</span><span class="contact-val"><a href="tel:995">995</a></span></div>
+    <div class="contact-row"><span class="contact-lbl">అబ్బాయి (WhatsApp)</span><span class="contact-val">మీ contacts లో ఉంది</span></div>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-box">
+      <div class="info-box-title" style="color:var(--teal)">🚇 రైలు గురించి</div>
+      <p>ప్రతి station లో <strong>lift</strong> ఉంది — మెట్లు అవసరం లేదు</p>
+      <p>అబ్బాయి phone లో అన్ని <strong>Grab</strong> rides book చేస్తాడు</p>
+    </div>
+    <div class="info-box">
+      <div class="info-box-title" style="color:var(--orange)">☀️ వాతావరణం</div>
+      <p>వేడిగా ఉంటుంది — <strong>~32°C</strong></p>
+      <p>తేలికైన cotton దుస్తులు వేసుకోండి</p>
+      <p>అన్ని మాల్స్ లో <strong>AC</strong> ఉంటుంది</p>
+    </div>
+    <div class="info-box">
+      <div class="info-box-title" style="color:var(--green)">💵 డబ్బు</div>
+      <p>Singapore Dollars (SGD) లో ధరలు</p>
+      <p><strong>S$1 ≈ ₹63</strong> దాదాపు</p>
+      <p>hawker భోజనం S$3–8</p>
+    </div>
+    <div class="info-box">
+      <div class="info-box-title" style="color:var(--purple)">🍽️ తినుబండారాలు</div>
+      <p>తప్పక తినవలసినవి: <strong>Laksa</strong> (రోజు 4)</p>
+      <p>Kaya toast ప్రతి రోజు తినండి</p>
+      <p>మన దోశ, idli కూడా దొరుకుతాయి</p>
+    </div>
+  </div>
+
+  <div class="card card-teal">
+    <div class="card-title">🎁 తీసుకెళ్ళే బహుమతులు</div>
+    <ul>
+      <li><strong>Bengawan Solo kueh lapis tin</strong> — రోజు 5 Jewel లో · ముందే తీసుకోండి</li>
+      <li><strong>Merlion బొమ్మ</strong> — మనవళ్ళ/మనవరాళ్ళకు · ఏ shop లోనైనా దొరుకుతుంది</li>
+      <li><strong>Peranakan కుండీ లేదా tile</strong> — Haji Lane లో · రోజు 2 · S$20–60</li>
+    </ul>
+  </div>
+
+</div>
+
+</div><!-- content -->
+
+<script>
+  function show(t) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(t).classList.add('active');
+    document.querySelector(`[data-t="${t}"]`).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body>
+</html>
