@@ -184,6 +184,7 @@
   .dish-list em{color:#888;font-size:11px;font-style:normal}
 
 </style>
+  <script src="dishes.js"></script>
 </head>
 <body>
 
@@ -297,7 +298,7 @@
   <div class="slot">
     <div class="slot-time">8:00 AM</div>
     <div class="slot-icon">☕</div>
-    <div class="slot-body">
+    <div class="slot-body" data-dishes="tekka_breakfast">
       <div class="slot-title">అల్పాహారం — Tekka Centre food court</div>
       <div class="slot-note">ఇడ్లి, దోశ, పొంగల్, filter coffee — ఇంట్లో లాగే ఉంటుంది! 🌿</div>
       <div class="slot-en">Breakfast. Idli, dosa, pongal, filter coffee — just like home!</div>
@@ -333,7 +334,7 @@
   <div class="slot">
     <div class="slot-time">12:00 PM</div>
     <div class="slot-icon">🍛</div>
-    <div class="slot-body">
+    <div class="slot-body" data-dishes="zam_zam">
       <div class="slot-title">మధ్యాహ్న భోజనం — Zam Zam<a href="https://maps.google.com/?q=Zam+Zam+Restaurant+North+Bridge+Road+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div>
       <div class="slot-note">శాఖాహార వంటకాలు అందుబాటులో ఉన్నాయి 🌿</div>
       <div class="slot-en">Lunch. Vegetarian options available.</div>
@@ -378,11 +379,10 @@
   <div class="slot">
     <div class="slot-time">7:30 PM</div>
     <div class="slot-icon">🍽️</div>
-    <div class="slot-body">
+    <div class="slot-body" data-dishes="banana_leaf">
       <div class="slot-title">రాత్రి భోజనం — Banana Leaf Apolo</div>
       <div class="slot-note">అరటి ఆకులో వడ్డించే దక్షిణ భారత భోజనం</div>
       <div class="slot-en">Dinner. Classic South Indian served on banana leaf.</div>
-      <span class="dish-toggle" onclick="toggleDishes(this)">🍽 Dishes ▾</span><div class="dish-list"><p>⭐ Banana leaf thali 🌿 👶 🍼</p><p>Rasam 🌿 🍼</p><p>Papad 🌿 👶 🍼</p><p>Fish head curry 🍗</p><p>Mutton chops 🍗</p></div>
     </div>
   </div>
 
@@ -424,7 +424,7 @@
   <div class="slot">
     <div class="slot-time">8:30 AM</div>
     <div class="slot-icon">🍳</div>
-    <div class="slot-body">
+    <div class="slot-body" data-dishes="maxwell_breakfast">
       <div class="slot-title">అల్పాహారం — Maxwell Food Centre<a href="https://maps.google.com/?q=Maxwell+Food+Centre+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div>
       <div class="slot-note">కాయా టోస్ట్, congee, roti prata, bandung తాగవచ్చు 🌿</div>
       <div class="slot-en">Breakfast. Kaya toast, congee, roti prata, bandung rose milk.</div>
@@ -451,21 +451,19 @@
   <div class="slot">
     <div class="slot-time">11:15 AM</div>
     <div class="slot-icon">🍗</div>
-    <div class="slot-body">
+    <div class="slot-body" data-dishes="hawker_chan">
       <div class="slot-title">Hainanese Chicken Rice తాగడం — ఇష్టపడినవారికి optional</div>
       <div class="slot-note">Hawker Chan<a href="https://maps.google.com/?q=Hawker+Chan+335+Smith+Street+Singapore" target="_blank" rel="noopener" class="ml">📍</a> + Tian Tian<a href="https://maps.google.com/?q=Tian+Tian+Hainanese+Chicken+Rice+Maxwell+Singapore" target="_blank" rel="noopener" class="ml">📍</a> — Singapore లో Michelin గుర్తింపు పొందిన chicken rice stalls. Non-veg ఇష్టపడేవారు వెళ్ళవచ్చు. వేరే వారు నేరుగా Chinatown Complex కి వెళ్ళి table పట్టుకోండి.</div>
       <div class="slot-en">Optional non-veg detour: Hawker Chan + Tian Tian chicken rice. Others go directly to Chinatown Complex.</div>
-      <span class="dish-toggle" onclick="toggleDishes(this)">🍽 Dishes ▾</span><div class="dish-list"><p>⭐ Soy sauce chicken rice 🍗 👶</p><p>Soy sauce chicken noodles 🍗</p><p>Char siu 🍗 👶</p><p>⭐ Poached Hainanese chicken rice 🍗 👶 🍼 <em>(soft — easy to pull apart)</em></p></div>
     </div>
   </div>
   <div class="slot">
     <div class="slot-time">11:45 AM</div>
     <div class="slot-icon">🍜</div>
-    <div class="slot-body">
+    <div class="slot-body" data-dishes="chinatown_complex">
       <div class="slot-title">మధ్యాహ్న భోజనం — Chinatown Complex hawker centre<a href="https://maps.google.com/?q=Chinatown+Complex+Food+Centre+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div>
       <div class="slot-note">అందరికీ కలిసి భోజనం — veg మరియు non-veg రెండూ ఉన్నాయి. Desserts కూడా ఇక్కడే.</div>
       <div class="slot-en">Main meal for the whole group. Sample across stalls. Desserts follow.</div>
-      <span class="dish-toggle" onclick="toggleDishes(this)">🍽 Dishes ▾</span><div class="dish-list"><p>Char kway teow 🍗</p><p>⭐ Claypot rice — Lian He Ben Ji 🍗 👶</p><p>Braised duck rice 🍗 👶</p><p>Popiah (fresh spring roll) 🌿 👶</p><p>Economic rice (veg options) 🌿 👶 🍼</p><p>Chendol 🌿 👶 <em>(skip for toddler — added sugar)</em></p><p>Ice kachang 🌿 👶 <em>(skip for toddler — added sugar)</em></p><p>Ice cream sandwich 🌿 👶 <em>(skip for toddler — added sugar)</em></p></div>
     </div>
   </div>
   <div class="slot">
@@ -507,7 +505,7 @@
   <div class="slot">
     <div class="slot-time">6:30 PM</div>
     <div class="slot-icon">🍽️</div>
-    <div class="slot-body">
+    <div class="slot-body" data-dishes="rang_mahal">
       <div class="slot-title">రాత్రి భోజనం — Rang Mahal<a href="https://maps.google.com/?q=Rang+Mahal+Pan+Pacific+Singapore" target="_blank" rel="noopener" class="ml">📍</a> (ముందే book చేసారు)</div>
       <div class="slot-note">Pan Pacific Hotel లో ఉన్న Indian restaurant · చక్కని బట్టలు వేసుకోండి</div>
       <div class="slot-en">Dinner at Rang Mahal, Pan Pacific Hotel. Pre-booked. Smart casual dress.</div>
@@ -566,7 +564,7 @@
   <div class="slot">
     <div class="slot-time">8:30 AM</div>
     <div class="slot-icon">🍽️</div>
-    <div class="slot-body">
+    <div class="slot-body" data-dishes="serangoon_bfast">
       <div class="slot-title">అల్పాహారం — Serangoon Road</div>
       <div class="slot-note">parotta + dhal లేదా idli</div>
       <div class="slot-en">Breakfast. Parotta + dhal or idli.</div>
@@ -602,7 +600,7 @@
   <div class="slot">
     <div class="slot-time">1:30 PM</div>
     <div class="slot-icon">🍜</div>
-    <div class="slot-body">
+    <div class="slot-body" data-dishes="malaysian_food_street">
       <div class="slot-title">మధ్యాహ్న భోజనం — Malaysian Food Street<a href="https://maps.google.com/?q=Malaysian+Food+Street+Resorts+World+Sentosa" target="_blank" rel="noopener" class="ml">📍</a></div>
       <div class="slot-note">🦞 ఇక్కడ LAKSA తప్పక తినండి — ఇది సింగపూర్ ప్రత్యేకత!</div>
       <div class="slot-en">Lunch. ORDER LAKSA HERE — Singapore's signature dish!</div>
@@ -629,9 +627,9 @@
   <div class="slot">
     <div class="slot-time">6:30 PM</div>
     <div class="slot-icon">🍽️</div>
-    <div class="slot-body">
+    <div class="slot-body" data-dishes="food_republic_vivo">
       <div class="slot-title">రాత్రి భోజనం — Food Republic, VivoCity<a href="https://maps.google.com/?q=Food+Republic+VivoCity+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div>
-      <div class="slot-note">AC food court · Sentosa నుండి 5 నిమిషాలు · veg మరియు non-veg రెండూ ఉన్నాయి</div><div class="slot-en">Air-conditioned food court at VivoCity, 5 min from Sentosa.</div><span class="dish-toggle" onclick="toggleDishes(this)">🍽 Dishes ▾</span><div class="dish-list"><p>Economic rice 🌿 👶 🍼</p><p>Chicken rice 🍗 👶</p><p>Noodles 🍗 👶</p><p>Laksa 🍗 👶</p></div>
+      <div class="slot-note">AC food court · Sentosa నుండి 5 నిమిషాలు · veg మరియు non-veg రెండూ ఉన్నాయి</div><div class="slot-en">Air-conditioned food court at VivoCity, 5 min from Sentosa.</div>
       <div class="slot-en">Casual dinner before the evening show.</div>
     </div>
   </div>
@@ -732,7 +730,7 @@
   <div class="slot">
     <div class="slot-time">1:30 PM</div>
     <div class="slot-icon">🍢</div>
-    <div class="slot-body">
+    <div class="slot-body" data-dishes="satay_bay">
       <div class="slot-title">చివరి hawker భోజనం — Satay by the Bay<a href="https://maps.google.com/?q=Satay+by+the+Bay+Gardens+by+the+Bay+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div>
       <div class="slot-note">నీటి ఒడ్డున open-air hawker · చివరి సింగపూర్ భోజనం</div>
       <div class="slot-en">Last hawker meal. Open-air by the waterfront. Final Singapore food.</div>
@@ -786,7 +784,7 @@
   <div class="slot">
     <div class="slot-time">6:00 PM</div>
     <div class="slot-icon">☕</div>
-    <div class="slot-body">
+    <div class="slot-body" data-dishes="ya_kun">
       <div class="slot-title">Ya Kun Kaya Toast<a href="https://maps.google.com/?q=Ya+Kun+Kaya+Toast+Changi+Airport+Terminal+2+Singapore" target="_blank" rel="noopener" class="ml">📍</a> — Airside T2 లో</div>
       <div class="slot-note">వీడ్కోలు kaya toast + kopi-O 🥲 సింగపూర్ చివరి రుచి</div>
       <div class="slot-en">Farewell kaya toast and kopi-O. Last taste of Singapore.</div>
