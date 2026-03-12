@@ -170,6 +170,19 @@
   .info-box p { font-size: 13px; color: #555; line-height: 1.5; margin-bottom: 4px; }
   .info-box p strong { color: #1A1A1A; }
 
+
+  /* ── Back to top ── */
+  .back-top{position:fixed;bottom:20px;right:16px;width:42px;height:42px;border-radius:50%;background:#1a1a2e;color:#fff;border:none;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.35);transition:opacity .2s}
+  .back-top.show{display:flex}
+  /* ── Sticky veg banner ── */
+  .veg-sticky{position:sticky;top:52px;z-index:90;background:#e8f5e9;border-left:4px solid #4caf50;padding:8px 16px;font-size:13px;font-weight:600;color:#1b5e20;margin:0 0 12px;border-radius:0 6px 6px 0}
+  /* ── Dish tags ── */
+  .dish-toggle{display:inline-block;margin-top:7px;font-size:12px;color:#1565C0;cursor:pointer;user-select:none}
+  .dish-list{display:none;margin-top:6px;padding:8px 12px;background:#f5f7fa;border-radius:8px;font-size:12.5px;line-height:1.7}
+  .dish-list.open{display:block}
+  .dish-list p{margin:2px 0}
+  .dish-list em{color:#888;font-size:11px;font-style:normal}
+
 </style>
 </head>
 <body>
@@ -354,12 +367,22 @@
     </div>
   </div>
   <div class="slot">
+    <div class="slot-time">5:30 PM</div>
+    <div class="slot-icon">🛍️</div>
+    <div class="slot-body">
+      <div class="slot-title">Local snacks తీసుకోండి — Serangoon Road<a href="https://maps.google.com/?q=Serangoon+Road+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div>
+      <div class="slot-note">Murukku, chakli, banana chips తీసుకోండి హోటల్ కి. తర్వాత hotel pool లో 4 ఏళ్ళ మనవడు ఆడతాడు. మీరు విశ్రాంతి తీసుకోండి లేదా pool దగ్గర కూర్చోండి.</div>
+      <div class="slot-en">Pick up local snacks to bring back. Then hotel pool for the 4-year-old. Rest or join poolside.</div>
+    </div>
+  </div>
+  <div class="slot">
     <div class="slot-time">7:30 PM</div>
     <div class="slot-icon">🍽️</div>
     <div class="slot-body">
       <div class="slot-title">రాత్రి భోజనం — Banana Leaf Apolo</div>
       <div class="slot-note">అరటి ఆకులో వడ్డించే దక్షిణ భారత భోజనం</div>
       <div class="slot-en">Dinner. Classic South Indian served on banana leaf.</div>
+      <span class="dish-toggle" onclick="toggleDishes(this)">🍽 Dishes ▾</span><div class="dish-list"><p>⭐ Banana leaf thali 🌿 👶 🍼</p><p>Rasam 🌿 🍼</p><p>Papad 🌿 👶 🍼</p><p>Fish head curry 🍗</p><p>Mutton chops 🍗</p></div>
     </div>
   </div>
 
@@ -426,12 +449,23 @@
     </div>
   </div>
   <div class="slot">
-    <div class="slot-time">11:30 AM</div>
+    <div class="slot-time">11:15 AM</div>
+    <div class="slot-icon">🍗</div>
+    <div class="slot-body">
+      <div class="slot-title">Hainanese Chicken Rice తాగడం — ఇష్టపడినవారికి optional</div>
+      <div class="slot-note">Hawker Chan<a href="https://maps.google.com/?q=Hawker+Chan+335+Smith+Street+Singapore" target="_blank" rel="noopener" class="ml">📍</a> + Tian Tian<a href="https://maps.google.com/?q=Tian+Tian+Hainanese+Chicken+Rice+Maxwell+Singapore" target="_blank" rel="noopener" class="ml">📍</a> — Singapore లో Michelin గుర్తింపు పొందిన chicken rice stalls. Non-veg ఇష్టపడేవారు వెళ్ళవచ్చు. వేరే వారు నేరుగా Chinatown Complex కి వెళ్ళి table పట్టుకోండి.</div>
+      <div class="slot-en">Optional non-veg detour: Hawker Chan + Tian Tian chicken rice. Others go directly to Chinatown Complex.</div>
+      <span class="dish-toggle" onclick="toggleDishes(this)">🍽 Dishes ▾</span><div class="dish-list"><p>⭐ Soy sauce chicken rice 🍗 👶</p><p>Soy sauce chicken noodles 🍗</p><p>Char siu 🍗 👶</p><p>⭐ Poached Hainanese chicken rice 🍗 👶 🍼 <em>(soft — easy to pull apart)</em></p></div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="slot-time">11:45 AM</div>
     <div class="slot-icon">🍜</div>
     <div class="slot-body">
       <div class="slot-title">మధ్యాహ్న భోజనం — Chinatown Complex hawker centre<a href="https://maps.google.com/?q=Chinatown+Complex+Food+Centre+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div>
-      <div class="slot-note">Char Kway Teow, popiah, వివిధ వంటకాలు</div>
-      <div class="slot-en">Lunch at Chinatown hawker centre. Char Kway Teow, popiah.</div>
+      <div class="slot-note">అందరికీ కలిసి భోజనం — veg మరియు non-veg రెండూ ఉన్నాయి. Desserts కూడా ఇక్కడే.</div>
+      <div class="slot-en">Main meal for the whole group. Sample across stalls. Desserts follow.</div>
+      <span class="dish-toggle" onclick="toggleDishes(this)">🍽 Dishes ▾</span><div class="dish-list"><p>Char kway teow 🍗</p><p>⭐ Claypot rice — Lian He Ben Ji 🍗 👶</p><p>Braised duck rice 🍗 👶</p><p>Popiah (fresh spring roll) 🌿 👶</p><p>Economic rice (veg options) 🌿 👶 🍼</p><p>Chendol 🌿 👶 <em>(skip for toddler — added sugar)</em></p><p>Ice kachang 🌿 👶 <em>(skip for toddler — added sugar)</em></p><p>Ice cream sandwich 🌿 👶 <em>(skip for toddler — added sugar)</em></p></div>
     </div>
   </div>
   <div class="slot">
@@ -575,6 +609,15 @@
     </div>
   </div>
   <div class="slot">
+    <div class="slot-time">3:00 PM</div>
+    <div class="slot-icon">🌈</div>
+    <div class="slot-body">
+      <div class="slot-title">Sensoryscape interactive garden<a href="https://maps.google.com/?q=Sentosa+Sensoryscape+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div>
+      <div class="slot-note">రంగురంగుల light మరియు sound garden. ఉచితం. చిన్నవాడు అన్నిచోట్లా పరిగెత్తుతాడు!</div>
+      <div class="slot-en">Free colourful light and sound garden. The toddler will run everywhere.</div>
+    </div>
+  </div>
+  <div class="slot">
     <div class="slot-time">4:30 PM</div>
     <div class="slot-icon">🏖️</div>
     <div class="slot-body">
@@ -587,8 +630,8 @@
     <div class="slot-time">6:30 PM</div>
     <div class="slot-icon">🍽️</div>
     <div class="slot-body">
-      <div class="slot-title">రాత్రి భోజనం — beach food court</div>
-      <div class="slot-note">సాయంత్రపు show కి ముందు casual dinner</div>
+      <div class="slot-title">రాత్రి భోజనం — Food Republic, VivoCity<a href="https://maps.google.com/?q=Food+Republic+VivoCity+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div>
+      <div class="slot-note">AC food court · Sentosa నుండి 5 నిమిషాలు · veg మరియు non-veg రెండూ ఉన్నాయి</div><div class="slot-en">Air-conditioned food court at VivoCity, 5 min from Sentosa.</div><span class="dish-toggle" onclick="toggleDishes(this)">🍽 Dishes ▾</span><div class="dish-list"><p>Economic rice 🌿 👶 🍼</p><p>Chicken rice 🍗 👶</p><p>Noodles 🍗 👶</p><p>Laksa 🍗 👶</p></div>
       <div class="slot-en">Casual dinner before the evening show.</div>
     </div>
   </div>
@@ -663,7 +706,7 @@
     <div class="slot-time">9:00 AM</div>
     <div class="slot-icon">🏨</div>
     <div class="slot-body">
-      <div class="slot-title">హోటల్ చెక్ అవుట్</div>
+      <div class="slot-title">హోటల్ చెక్ అవుట్ — 11:00 AM లోపు</div>
       <div class="slot-note">సామాన్లు concierge దగ్గర వదిలివేయవచ్చు</div>
       <div class="slot-en">Check out. Leave luggage with concierge until departure.</div>
     </div>
@@ -696,6 +739,15 @@
     </div>
   </div>
   <div class="slot">
+    <div class="slot-time">2:15 PM</div>
+    <div class="slot-icon">🚗</div>
+    <div class="slot-body">
+      <div class="slot-title">Grab లో హోటల్ కి తిరిగి రండి — bags తీసుకోండి</div>
+      <div class="slot-note">Hotel concierge దగ్గర ఉన్న bags అన్నీ తీసుకోండి. GrabMax — 8 మంది అందరికీ.</div>
+      <div class="slot-en">Grab back to hotel to collect all luggage.</div>
+    </div>
+  </div>
+  <div class="slot">
     <div class="slot-time">3:00 PM</div>
     <div class="slot-icon">🚗</div>
     <div class="slot-body">
@@ -709,7 +761,7 @@
     <div class="slot-icon">💧</div>
     <div class="slot-body">
       <div class="slot-title">Jewel — Rain Vortex చూడడం<a href="https://maps.google.com/?q=Jewel+Changi+Airport+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div>
-      <div class="slot-note">ప్రపంచంలోనే అతి ఎత్తైన indoor జలపాతం — ఉచితం, అద్భుతంగా ఉంటుంది</div>
+      <div class="slot-note">ప్రపంచంలోనే అతి ఎత్తైన indoor జలపాతం — ఉచితం. Bags అన్నీ Jewel B1 Left Luggage దగ్గర ఇవ్వండి (~S$6–9 per bag) — Terminal 2 వెళ్ళే ముందు తీసుకోండి.</div>
       <div class="slot-en">World's tallest indoor waterfall. Free. Absolutely stunning.</div>
     </div>
   </div>
@@ -900,9 +952,27 @@
     document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active"));
     document.getElementById(t).classList.add("active");
     document.querySelector(`[data-t="${t}"]`).classList.add("active");
-    window.scrollTo({top:0,behavior:"smooth"});
+    const nh=document.querySelector(".nav");window.scrollTo({top:nh?nh.offsetTop:0,behavior:"smooth"});
   }
   if ("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(()=>{});
+
+  // Back-to-top
+  window.addEventListener('scroll',()=>{
+    const b=document.getElementById('back-top');
+    if(b) b.classList.toggle('show', window.scrollY > 250);
+  });
+  document.addEventListener('DOMContentLoaded',()=>{
+    const b=document.getElementById('back-top');
+    if(b) b.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+  });
+  // Dish toggle
+  function toggleDishes(el){
+    const list=el.nextElementSibling;
+    const open=list.classList.toggle('open');
+    el.textContent=open?'🍽 Dishes ▴':'🍽 Dishes ▾';
+  }
+
 </script>
+<button class="back-top" id="back-top" aria-label="Back to top">↑</button>
 </body>
 </html>
