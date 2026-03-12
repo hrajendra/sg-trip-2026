@@ -1,4 +1,4 @@
-const CACHE = 'sg-trip-v1';
+const CACHE = 'sg-trip-v7';
 const ASSETS = ['./', './index.html', './manifest.json'];
 
 self.addEventListener('install', e => {

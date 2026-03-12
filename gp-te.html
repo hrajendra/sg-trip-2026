@@ -34,8 +34,8 @@
 
   .hero {
     background: linear-gradient(160deg, #5B4A8A 0%, #3D3060 60%, #251E40 100%);
-    padding: 56px 24px 40px;
-    padding-top: max(56px, calc(44px + env(safe-area-inset-top)));
+    padding: 24px 24px 18px;
+    padding-top: max(24px, calc(env(safe-area-inset-top) + 10px));
     color: white;
     position: relative;
     overflow: hidden;
@@ -950,7 +950,7 @@
     document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active"));
     document.getElementById(t).classList.add("active");
     document.querySelector(`[data-t="${t}"]`).classList.add("active");
-    const nh=document.querySelector(".nav");window.scrollTo({top:nh?nh.offsetTop:0,behavior:"smooth"});
+    const nh=document.querySelector(".nav-wrap");if(nh){const navBottom=nh.getBoundingClientRect().bottom+window.scrollY;if(window.scrollY<navBottom-1)window.scrollTo({top:nh.offsetTop,behavior:"smooth"});}
   }
   if ("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(()=>{});
 
