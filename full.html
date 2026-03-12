@@ -38,8 +38,8 @@
   .nav-btn[data-t="d3"].active::after { background: var(--purple); }
   .nav-btn[data-t="d4"].active::after { background: var(--green); }
   .nav-btn[data-t="d5"].active::after { background: var(--gold); }
-  .nav-btn[data-t="info"].active::after { background: #555; }
   .nav-btn[data-t="apps"].active::after { background: #333; }
+  .nav-btn[data-t="info"].active::after { background: #555; }
 
   .content { padding: 0 16px 40px; max-width: 640px; margin: 0 auto; }
   .section { display: none; padding-top: 20px; }
@@ -191,6 +191,7 @@
     <button class="nav-btn" data-t="d4" onclick="show('d4')">Day 4<br><small style="font-weight:400">Thu</small></button>
     <button class="nav-btn" data-t="d5" onclick="show('d5')">Day 5<br><small style="font-weight:400">Fri</small></button>
     <button class="nav-btn" data-t="apps" onclick="show('apps')">📱 Apps</button>
+    <button class="nav-btn" data-t="places" onclick="show('places')">🗺️ Places<br><small style="font-weight:400">& Food</small></button>
     <button class="nav-btn" data-t="info" onclick="show('info')">ℹ️ Info</button>
   </nav>
 </div>
@@ -201,19 +202,18 @@
 <div id="d1" class="section d1 active">
   <div class="day-hdr"><div class="day-lbl">Day 1 · Monday 6 April</div><div class="day-title">Arrival Day 🎉</div></div>
   <div class="card card-teal">
-    <div class="card-title">✈️ Two-wave arrival</div>
-    <p><strong>Grandparents land 5:40 PM</strong> (IndiGo 6E1091 ) — they wait in arrivals.</p>
-    <p><strong>You + family land 6:35 PM</strong> (United UA29 ) — text grandparents when through. Then GrabMax together.</p>
+    <div class="card-title">✈️ Arrivals — Monday 6 April</div>
+    <p><strong>Grandparents land 5:40 PM</strong> (IndiGo 6E1091, BLR→SIN) — wait in arrivals hall.</p>
+    <p><strong>You + family land 6:35 PM</strong> (United UA29, SFO→SIN) — text grandparents when through. GrabMax together.</p>
+    <p style="margin-top:8px"><strong>Return:</strong> IndiGo 6E1092 · Fri Apr 10 · departs SIN 7:40 PM · arrives BLR 9:40 PM · Terminal 2</p>
   </div>
   <div class="slot"><div class="slot-left"><div class="slot-time">5:40 PM</div></div><div class="slot-icon">✈️</div><div class="slot-body"><div class="slot-title">Grandparents land — IndiGo 6E1091</div><div class="slot-note">They wait in arrivals hall. Text on WhatsApp.</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">6:35 PM</div></div><div class="slot-icon">👨‍👩‍👧‍👦</div><div class="slot-body"><div class="slot-title">Family lands — United UA29</div><div class="slot-note">Text grandparents immediately when through customs</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">7:15 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🚗</div><div class="slot-body"><div class="slot-title">GrabMax to hotel — all 8 together<a href="https://maps.google.com/?q=Novotel+Singapore+on+Kitchener+Road" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Book from Grab app · ~S$45–55</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">7:15 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🚗</div><div class="slot-body"><div class="slot-title">GrabMax to hotel — all 8 together<a href="https://maps.google.com/?q=Novotel+Singapore+on+Kitchener+Road" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Book from Grab app</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">8:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🏨</div><div class="slot-body"><div class="slot-title">Check in — Novotel Kitchener Road<a href="https://maps.google.com/?q=Novotel+Singapore+on+Kitchener+Road" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Confirm crib. Request same-floor rooms.</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">9:00 PM</div></div><div class="slot-icon">🍽️</div><div class="slot-body"><div class="slot-title">Dinner — GrabFood, Serangoon Rd<a href="https://maps.google.com/?q=Serangoon+Road+Little+India+Singapore" target="_blank" rel="noopener" class="ml">📍</a>, or Mustafa<a href="https://maps.google.com/?q=Mustafa+Centre+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Mustafa is 24hr if everyone's exhausted</div></div></div>
+    <div class="quote-note">Eight of us, one arrivals hall, two continents. This is where it all comes together. Don't forget to look up.</div>
 </div>
-
-
-<div class="quote-note">Eight of us, one arrivals hall, two continents. This is where it all comes together. Don't forget to look up.</div>
 
 <!-- ═══ DAY 2 ═══ -->
 <div id="d2" class="section d2">
@@ -228,17 +228,14 @@
   <div class="slot"><div class="slot-left"><div class="slot-time">8:00 AM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">☕</div><div class="slot-body"><div class="slot-title">Tekka Centre breakfast<a href="https://maps.google.com/?q=Tekka+Centre+Little+India+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Idli, dosa, pongal, filter coffee 🌿</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">9:15 AM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🥚</div><div class="slot-body"><div class="slot-title">Kaya toast + soft eggs + Milo Dinosaur + teh halia<a href="https://maps.google.com/?q=Serangoon+Road+kopitiam+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Serangoon Rd kopitiam 🌿</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">9:45 AM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🛕</div><div class="slot-body"><div class="slot-title">Sri Veeramakaliamman Temple<a href="https://maps.google.com/?q=Sri+Veeramakaliamman+Temple+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Free entry 🌿</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">10:30 AM</div><div class="tag tag-should">Should</div></div><div class="slot-icon">🛍️</div><div class="slot-body"><div class="slot-title">Serangoon Rd stroll<a href="https://maps.google.com/?q=Serangoon+Road+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Sugarcane juice S$1.50 · Old Chang Kee curry puffs · Mustafa</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">10:30 AM</div><div class="tag tag-should">Should</div></div><div class="slot-icon">🛍️</div><div class="slot-body"><div class="slot-title">Serangoon Rd stroll<a href="https://maps.google.com/?q=Serangoon+Road+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Sugarcane juice · Old Chang Kee curry puffs · Mustafa</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">12:00 PM</div><div class="tag tag-should">Should</div></div><div class="slot-icon">🍛</div><div class="slot-body"><div class="slot-title">Lunch — Zam Zam<a href="https://maps.google.com/?q=Zam+Zam+Restaurant+North+Bridge+Road+Singapore" target="_blank" rel="noopener" class="ml">📍</a> or Hjh Maimunah<a href="https://maps.google.com/?q=Hjh+Maimunah+Restaurant+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Veg options available 🌿</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">1:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🕌</div><div class="slot-body"><div class="slot-title">Sultan Mosque<a href="https://maps.google.com/?q=Sultan+Mosque+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Free · shawl required · stunning inside</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">2:30 PM</div><div class="tag tag-should">Should</div></div><div class="slot-icon">🌸</div><div class="slot-body"><div class="slot-title">Haji Lane<a href="https://maps.google.com/?q=Haji+Lane+Singapore" target="_blank" rel="noopener" class="ml">📍</a> + Arab Street<a href="https://maps.google.com/?q=Arab+Street+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Pomegranate juice S$3–4 · chrysanthemum tea S$1.50 · kueh</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">2:30 PM</div><div class="tag tag-should">Should</div></div><div class="slot-icon">🌸</div><div class="slot-body"><div class="slot-title">Haji Lane<a href="https://maps.google.com/?q=Haji+Lane+Singapore" target="_blank" rel="noopener" class="ml">📍</a> + Arab Street<a href="https://maps.google.com/?q=Arab+Street+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Pomegranate juice · chrysanthemum tea · kueh</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">3:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🏨</div><div class="slot-body"><div class="slot-title">Back to hotel — rest break</div><div class="slot-note">Deliberately scheduled. Everyone use it.</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">5:30 PM</div><div class="tag tag-should">Should</div></div><div class="slot-icon">🚶</div><div class="slot-body"><div class="slot-title">Evening Serangoon Rd walk</div><div class="slot-note">Lit up beautifully in the evening</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">7:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🍽️</div><div class="slot-body"><div class="slot-title">Dinner — Komala Vilas<a href="https://maps.google.com/?q=Komala+Vilas+Restaurant+Singapore" target="_blank" rel="noopener" class="ml">📍</a> or Banana Leaf Apolo<a href="https://maps.google.com/?q=Banana+Leaf+Apolo+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Classic South Indian on banana leaf</div></div></div>
-</div>
-
-
-<div class="wellness">
+  <div class="slot"><div class="slot-left"><div class="slot-time">7:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🍽️</div><div class="slot-body"><div class="slot-title">Dinner — Banana Leaf Apolo<a href="https://maps.google.com/?q=Banana+Leaf+Apolo+Race+Course+Road+Singapore" target="_blank" rel="noopener" class="ml">📍</a> (or Ananda Bhavan<a href="https://maps.google.com/?q=Ananda+Bhavan+Restaurant+Serangoon+Road+Singapore" target="_blank" rel="noopener" class="ml">📍</a> for pure veg)</div><div class="slot-note">⚠️ Komala Vilas temporarily closed. Banana Leaf Apolo: 54 Race Course Rd · 10:30am–10:30pm · banana leaf thali, fish head curry. Ananda Bhavan: 58 Serangoon Rd · veg only · dosa, thali.</div></div></div>
+    <div class="wellness">
   <div class="card-title">💧 Pacing notes for today</div>
   <ul>
     <li>~3–4 km walking total. The 3:30 PM hotel rest break is non-negotiable — use it yourself too.</li>
@@ -246,19 +243,27 @@
     <li>Have GrabMax ready on your phone before leaving each location. Don't scramble at the kerb.</li>
   </ul>
 </div>
-
-<div class="quote-note">There's something irreplaceable about watching grandparents introduce grandchildren to a world that looks like home but isn't quite. Be present for it.</div>
+  <div class="quote-note">There's something irreplaceable about watching grandparents introduce grandchildren to a world that looks like home but isn't quite. Be present for it.</div>
+</div>
 
 <!-- ═══ DAY 3 ═══ -->
 <div id="d3" class="section d3">
   <div class="day-hdr"><div class="day-lbl">Day 3 · Wednesday 8 April</div><div class="day-title">Chinatown + MOIC Split + Marina Bay 🦁</div></div>
   <div class="veg">🌿 Veg only for breakfast — temples 10:00 + 10:30 AM · full menu from 11 AM</div>
+  <div class="card card-gray">
+    <div class="card-title">🚇 MRT Quick Reference</div>
+    <div class="mrt-row"><div class="mrt-journey">Farrer Park → Chinatown</div><div class="mrt-line">Purple NEL · direct</div><div class="mrt-time">10 min</div></div>
+    <div class="mrt-row"><div class="mrt-journey">Farrer Park → HarbourFront</div><div class="mrt-line">Purple NEL · direct</div><div class="mrt-time">15 min</div></div>
+    <div class="mrt-row"><div class="mrt-journey">Little India → Bayfront</div><div class="mrt-line">Blue DTL · direct</div><div class="mrt-time">12 min</div></div>
+    <div class="mrt-row"><div class="mrt-journey">Bayfront → Little India</div><div class="mrt-line">Blue DTL · direct</div><div class="mrt-time">12 min</div></div>
+    <div class="mrt-row"><div class="mrt-journey">→ Airport</div><div class="mrt-line" style="color:var(--red);font-weight:600">Use GrabMax instead</div><div class="mrt-time" style="color:var(--red)">avoid</div></div>
+  </div>
   <div class="slot"><div class="slot-left"><div class="slot-time">8:15 AM</div></div><div class="slot-icon">🚇</div><div class="slot-body"><div class="slot-title">MRT: Farrer Park (NE8) → Chinatown (NE4)</div><div class="slot-note">Purple line · direct · 10 min</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">8:30 AM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🍳</div><div class="slot-body"><div class="slot-title">Maxwell Food Centre breakfast<a href="https://maps.google.com/?q=Maxwell+Food+Centre+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Kaya toast · soft eggs · Milo Dinosaur · congee · roti prata · bandung · kueh 🌿</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">10:00 AM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🛕</div><div class="slot-body"><div class="slot-title">Sri Mariamman Temple<a href="https://maps.google.com/?q=Sri+Mariamman+Temple+Chinatown+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Free · Singapore's oldest Hindu temple 🌿</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">10:30 AM</div><div class="tag tag-should">Should</div></div><div class="slot-icon">🏛️</div><div class="slot-body"><div class="slot-title">Buddha Tooth Relic Temple<a href="https://maps.google.com/?q=Buddha+Tooth+Relic+Temple+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Free · air-conditioned museum inside 🌿</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">11:30 AM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🍜</div><div class="slot-body"><div class="slot-title">Lunch — Chinatown Complex hawker centre<a href="https://maps.google.com/?q=Chinatown+Complex+Food+Centre+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Char Kway Teow · popiah · economic rice</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">12:45 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🍧</div><div class="slot-body"><div class="slot-title">Triple dessert run — Chendol<a href="https://maps.google.com/?q=Lau+Pa+Sat+Chendol+Singapore" target="_blank" rel="noopener" class="ml">📍</a> + Ice Kachang + Ice Cream Sandwich<a href="https://maps.google.com/?q=Ice+Cream+Chinatown+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">All within 2 min of each other · S$2–4 each</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">12:45 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🍧</div><div class="slot-body"><div class="slot-title">Triple dessert run — Chendol<a href="https://maps.google.com/?q=Lau+Pa+Sat+Chendol+Singapore" target="_blank" rel="noopener" class="ml">📍</a> + Ice Kachang + Ice Cream Sandwich<a href="https://maps.google.com/?q=Ice+Cream+Chinatown+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">All within 2 min of each other</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">1:15 PM</div><div class="tag tag-nice">Nice</div></div><div class="slot-icon">🛍️</div><div class="slot-body"><div class="slot-title">Pagoda Street + Temple Street shopping</div></div></div>
 
   <div class="div"></div>
@@ -270,29 +275,26 @@
         <p><strong>Museum of Ice Cream</strong><a href="https://maps.google.com/?q=Museum+of+Ice+Cream+Singapore+Dempsey+Hill" target="_blank" rel="noopener" class="ml">📍</a></p>
         <p>100 Loewen Rd, Dempsey Hill</p>
         <p>~90 min · Pre-book: museumoficecream.sg</p>
-        <p>~S$35–47 adult · ~S$35 child</p>
+        <p></p>
       </div>
       <div class="split-half">
         <div class="split-half-title">👨 Everyone else + toddler</div>
         <p><strong>Dempsey Hill grounds</strong><a href="https://maps.google.com/?q=Dempsey+Hill+Singapore" target="_blank" rel="noopener" class="ml">📍</a></p>
         <p>Grandparents at PS.Café · toddler runs free on colonial lawns</p>
-        <p>OR Hort Park<a href="https://maps.google.com/?q=HortPark+Singapore" target="_blank" rel="noopener" class="ml">📍</a> (S$5 Grab, free, play equipment)</p>
+        <p>OR Hort Park<a href="https://maps.google.com/?q=HortPark+Singapore" target="_blank" rel="noopener" class="ml">📍</a> (free, play equipment)</p>
       </div>
     </div>
     <p style="font-size:12px;color:var(--mid);margin-top:10px">🔁 Regroup at Dempsey Hill main entrance at 3:30 PM</p>
   </div>
   <div class="div"></div>
 
-  <div class="slot"><div class="slot-left"><div class="slot-time">3:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🚗</div><div class="slot-body"><div class="slot-title">Grab to Marina Bay</div><div class="slot-note">~S$15 · ~20 min</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">4:00 PM</div><div class="tag tag-must">Must</div><div class="tag tag-toddle">🍼</div></div><div class="slot-icon">🦁</div><div class="slot-body"><div class="slot-title">Merlion Park<a href="https://maps.google.com/?q=Merlion+Park+Singapore" target="_blank" rel="noopener" class="ml">📍</a> + Helix Bridge<a href="https://maps.google.com/?q=Helix+Bridge+Singapore" target="_blank" rel="noopener" class="ml">📍</a> + fresh coconut</div><div class="slot-note">Free · coconut S$3–4 · the classic Singapore photo</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">3:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🚗</div><div class="slot-body"><div class="slot-title">Grab to Marina Bay</div><div class="slot-note">~20 min</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">4:00 PM</div><div class="tag tag-must">Must</div><div class="tag tag-toddle">🍼</div></div><div class="slot-icon">🦁</div><div class="slot-body"><div class="slot-title">Merlion Park<a href="https://maps.google.com/?q=Merlion+Park+Singapore" target="_blank" rel="noopener" class="ml">📍</a> + Helix Bridge<a href="https://maps.google.com/?q=Helix+Bridge+Singapore" target="_blank" rel="noopener" class="ml">📍</a> + fresh coconut</div><div class="slot-note">Free · the classic Singapore photo</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">5:00 PM</div><div class="tag tag-should">Should</div></div><div class="slot-icon">🛍️</div><div class="slot-body"><div class="slot-title">Rest at Marina Bay Sands Shoppes + cold drink</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">6:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🍽️</div><div class="slot-body"><div class="slot-title">Dinner — Rang Mahal<a href="https://maps.google.com/?q=Rang+Mahal+Pan+Pacific+Singapore" target="_blank" rel="noopener" class="ml">📍</a> (pre-booked)</div><div class="slot-note">Book: rangmahal.com.sg · ~S$50–70/person · smart casual</div><div class="slot-cost">~S$390 for group of 8</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">6:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🍽️</div><div class="slot-body"><div class="slot-title">Dinner — Rang Mahal<a href="https://maps.google.com/?q=Rang+Mahal+Pan+Pacific+Singapore" target="_blank" rel="noopener" class="ml">📍</a> (pre-booked)</div><div class="slot-note">Book: rangmahal.com.sg · smart casual</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">8:45 PM</div><div class="tag tag-must">Must</div><div class="tag tag-toddle">🍼</div></div><div class="slot-icon">✨</div><div class="slot-body"><div class="slot-title">Garden Rhapsody — Supertree light show<a href="https://maps.google.com/?q=Supertree+Grove+Gardens+by+the+Bay+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">FREE · 10 min · also 7:45 PM show · bring light jacket</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">10:00 PM</div></div><div class="slot-icon">🚇</div><div class="slot-body"><div class="slot-title">MRT home: Bayfront (DT16) → Little India (DT12)</div><div class="slot-note">Blue line · direct · 12 min</div></div></div>
-</div>
-
-
-<div class="wellness">
+    <div class="wellness">
   <div class="card-title">🗓️ Logistics + pacing</div>
   <ul>
     <li>MOIC split at 1:45 — confirm Dempsey regroup point with everyone before separating.</li>
@@ -301,29 +303,26 @@
     <li>Long day — carry water from the hotel. Hawker centres don't reliably sell bottled water.</li>
   </ul>
 </div>
-
-<div class="quote-note">Rang Mahal at dusk, Supertrees after dark. Singapore at its most cinematic. Slow down for both.</div>
+  <div class="quote-note">Rang Mahal at dusk, Supertrees after dark. Singapore at its most cinematic. Slow down for both.</div>
+</div>
 
 <!-- ═══ DAY 4 ═══ -->
 <div id="d4" class="section d4">
   <div class="day-hdr"><div class="day-lbl">Day 4 · Thursday 9 April</div><div class="day-title">Sentosa — Full Day 🐠🎡</div></div>
-  <div class="card card-green"><div class="card-title">✅ Oceanarium open Thursdays</div><p>Closed Tue & Wed. Thursday confirmed open. All tickets pre-booked on Klook.</p></div>
+  <div class="card card-green"><div class="card-title">✅ Singapore Oceanarium — open daily 10am–7pm</div><p>Completely rebuilt in 2025 — 3× larger than old S.E.A. Aquarium, 22 zones, 100,000+ marine animals. Tickets pre-booked on Klook. 1.5yr FREE (under 3). Accessible.</p></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">8:30 AM</div><div class="tag tag-should">Should</div></div><div class="slot-icon">🍽️</div><div class="slot-body"><div class="slot-title">Breakfast — Serangoon Rd</div><div class="slot-note">Parotta + dhal or idli before heading out</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">9:30 AM</div></div><div class="slot-icon">🚇</div><div class="slot-body"><div class="slot-title">MRT: Farrer Park (NE8) → HarbourFront (NE1)</div><div class="slot-note">Purple line · direct · 15 min</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">10:00 AM</div><div class="tag tag-must">Must</div><div class="tag tag-toddle">🍼</div></div><div class="slot-icon">🚡</div><div class="slot-body"><div class="slot-title">Cable Car INTO Sentosa<a href="https://maps.google.com/?q=Singapore+Cable+Car+HarbourFront+Station" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Pre-book: singaporecablecar.com.sg · round trip · toddler FREE</div><div class="slot-cost">~S$35 adult · ~S$25 child · toddler FREE</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">10:30 AM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🐠</div><div class="slot-body"><div class="slot-title">Singapore Oceanarium (3 hrs)<a href="https://maps.google.com/?q=Singapore+Oceanarium+Resorts+World+Sentosa" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Pre-booked Klook · 1.5yr FREE · fully accessible</div><div class="slot-cost">~S$320 for group</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">1:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🍜</div><div class="slot-body"><div class="slot-title">Lunch — Malaysian Food Street<a href="https://maps.google.com/?q=Malaysian+Food+Street+Resorts+World+Sentosa" target="_blank" rel="noopener" class="ml">📍</a>, Resorts World</div><div class="slot-note">🦞 ORDER LAKSA HERE · S$6–8 · this is the one</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">10:00 AM</div><div class="tag tag-must">Must</div><div class="tag tag-toddle">🍼</div></div><div class="slot-icon">🚡</div><div class="slot-body"><div class="slot-title">Cable Car INTO Sentosa<a href="https://maps.google.com/?q=Singapore+Cable+Car+HarbourFront+Station" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Pre-book: singaporecablecar.com.sg · round trip · toddler FREE</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">10:30 AM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🐠</div><div class="slot-body"><div class="slot-title">Singapore Oceanarium (3 hrs)<a href="https://maps.google.com/?q=Singapore+Oceanarium+Resorts+World+Sentosa" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Pre-booked Klook · 1.5yr FREE · fully accessible</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">1:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🍜</div><div class="slot-body"><div class="slot-title">Lunch — Malaysian Food Street<a href="https://maps.google.com/?q=Malaysian+Food+Street+Resorts+World+Sentosa" target="_blank" rel="noopener" class="ml">📍</a>, Resorts World</div><div class="slot-note">🦞 ORDER LAKSA HERE — this is the one to have</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">3:00 PM</div><div class="tag tag-should">Should</div></div><div class="slot-icon">🌈</div><div class="slot-body"><div class="slot-title">Sentosa Sensoryscape<a href="https://maps.google.com/?q=Sentosa+Sensoryscape+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Free · download ImagiNite app in advance</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">4:30 PM</div><div class="tag tag-must">Must</div><div class="tag tag-toddle">🍼</div></div><div class="slot-icon">🏖️</div><div class="slot-body"><div class="slot-title">Beach — Siloso<a href="https://maps.google.com/?q=Siloso+Beach+Sentosa+Singapore" target="_blank" rel="noopener" class="ml">📍</a> or Palawan<a href="https://maps.google.com/?q=Palawan+Beach+Sentosa+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Coconut S$3–4 · bandung S$2 · tau huay S$2 · lime juice S$2.50</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">4:30 PM</div><div class="tag tag-must">Must</div><div class="tag tag-toddle">🍼</div></div><div class="slot-icon">🏖️</div><div class="slot-body"><div class="slot-title">Beach — Siloso<a href="https://maps.google.com/?q=Siloso+Beach+Sentosa+Singapore" target="_blank" rel="noopener" class="ml">📍</a> or Palawan<a href="https://maps.google.com/?q=Palawan+Beach+Sentosa+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Fresh coconut · bandung · tau huay · lime juice</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">6:30 PM</div><div class="tag tag-should">Should</div></div><div class="slot-icon">🍽️</div><div class="slot-body"><div class="slot-title">Dinner — Coastes or Beach Station food courts</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">7:40 PM</div><div class="tag tag-must">Must</div><div class="tag tag-toddle">🍼</div></div><div class="slot-icon">🎆</div><div class="slot-body"><div class="slot-title">Wings of Time (7:40 PM show)<a href="https://maps.google.com/?q=Wings+of+Time+Sentosa+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Pre-booked: wingsoftime.com.sg · toddler FREE</div><div class="slot-cost">~S$23 adult · ~S$18 child · toddler FREE</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">7:40 PM</div><div class="tag tag-must">Must</div><div class="tag tag-toddle">🍼</div></div><div class="slot-icon">🎆</div><div class="slot-body"><div class="slot-title">Wings of Time (7:40 PM show)<a href="https://maps.google.com/?q=Wings+of+Time+Sentosa+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Pre-booked: wingsoftime.com.sg · toddler FREE</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">8:05 PM</div><div class="tag tag-should">Should</div><div class="tag tag-toddle">🍼</div></div><div class="slot-icon">🌟</div><div class="slot-body"><div class="slot-title">ImagiNite — Sensoryscape after dark</div><div class="slot-note">Free · needs ImagiNite app installed & set up first</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">8:50 PM</div><div class="tag tag-must">Must</div><div class="tag tag-toddle">🍼</div></div><div class="slot-icon">🚡</div><div class="slot-body"><div class="slot-title">Cable Car BACK at night<a href="https://maps.google.com/?q=Singapore+Cable+Car+HarbourFront+Station" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Last cable car 9:30 PM · even more beautiful at night</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">9:30 PM</div></div><div class="slot-icon">🚇</div><div class="slot-body"><div class="slot-title">MRT home: HarbourFront (NE1) → Farrer Park (NE8)</div></div></div>
-</div>
-
-
-<div class="wellness">
+    <div class="wellness">
   <div class="card-title">🌊 Day 4 pacing</div>
   <ul>
     <li>The 4:30 PM beach slot is not optional for you either — it's reset time. Put the phone down.</li>
@@ -331,8 +330,8 @@
     <li>Last cable car back is 9:30 PM — don't linger too long after the show.</li>
   </ul>
 </div>
-
-<div class="quote-note">Biggest day on paper. The moments that last will probably be the smallest — a face at the fish tank, sugarcane juice on the beach. Watch for them.</div>
+  <div class="quote-note">Biggest day on paper. The moments that last will probably be the smallest — a face at the fish tank, sugarcane juice on the beach. Watch for them.</div>
+</div>
 
 <!-- ═══ DAY 5 ═══ -->
 <div id="d5" class="section d5">
@@ -345,12 +344,12 @@
   <div class="slot"><div class="slot-left"><div class="slot-time">8:00 AM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">☕</div><div class="slot-body"><div class="slot-title">Last breakfast — Tekka Centre<a href="https://maps.google.com/?q=Tekka+Centre+Little+India+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">9:00 AM</div></div><div class="slot-icon">🏨</div><div class="slot-body"><div class="slot-title">Check out · store 7 bags at hotel concierge</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">9:30 AM</div></div><div class="slot-icon">🚇</div><div class="slot-body"><div class="slot-title">MRT: Little India (DT12) → Bayfront (DT16)</div><div class="slot-note">Blue line · direct · 12 min</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">10:00 AM</div><div class="tag tag-must">Must</div><div class="tag tag-toddle">🍼</div></div><div class="slot-icon">🎨</div><div class="slot-body"><div class="slot-title">ArtScience Museum — Future World by teamLab<a href="https://maps.google.com/?q=ArtScience+Museum+Marina+Bay+Sands+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">2 hrs · adults ~S$21 · kids FREE (Friday) · strollers at entrance</div><div class="slot-cost">~S$126 for adults</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">12:00 PM</div><div class="tag tag-must">Must</div><div class="tag tag-toddle">🍼</div></div><div class="slot-icon">🌿</div><div class="slot-body"><div class="slot-title">Cloud Forest — Gardens by the Bay<a href="https://maps.google.com/?q=Cloud+Forest+Gardens+by+the+Bay+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">1.5 hrs · pre-book gardensbythebay.com.sg or Klook</div><div class="slot-cost">~S$32 adult · ~S$18 child · ~S$210 total</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">1:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🍢</div><div class="slot-body"><div class="slot-title">Last hawker lunch — Satay by the Bay<a href="https://maps.google.com/?q=Satay+by+the+Bay+Gardens+by+the+Bay+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">S$6–10 · open air · last hawker meal of the trip</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">10:00 AM</div><div class="tag tag-must">Must</div><div class="tag tag-toddle">🍼</div></div><div class="slot-icon">🎨</div><div class="slot-body"><div class="slot-title">ArtScience Museum — Future World by teamLab<a href="https://maps.google.com/?q=ArtScience+Museum+Marina+Bay+Sands+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">2 hrs · 10am–7pm daily · adults ~S$21 · kids FREE (Friday, non-holiday) · ⚠️ Strollers NOT permitted inside teamLab — park at designated area near entrance. Bring carrier for toddler.</div><div class="slot-cost">~S$126 for adults</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">12:00 PM</div><div class="tag tag-must">Must</div><div class="tag tag-toddle">🍼</div></div><div class="slot-icon">🌿</div><div class="slot-body"><div class="slot-title">Cloud Forest — Gardens by the Bay<a href="https://maps.google.com/?q=Cloud+Forest+Gardens+by+the+Bay+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">1.5 hrs · 9am–9pm · now featuring Jurassic World: The Experience (life-sized dinosaurs!) · ⚠️ loud sound effects + flashing lights — may be intense for toddler · pre-book gardensbythebay.com.sg or Klook</div><div class="slot-cost">~S$38 adult + S$14 JW surcharge · ~S$380 for group</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">1:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🍢</div><div class="slot-body"><div class="slot-title">Last hawker lunch — Satay by the Bay<a href="https://maps.google.com/?q=Satay+by+the+Bay+Gardens+by+the+Bay+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">open air · last hawker meal of the trip</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">2:15 PM</div></div><div class="slot-icon">🚗</div><div class="slot-body"><div class="slot-title">Grab back to hotel · collect bags</div><div class="slot-note">GrabMax for all 8 + bags</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">3:00 PM</div></div><div class="slot-icon">🚗</div><div class="slot-body"><div class="slot-title">GrabMax to Jewel Changi Airport</div><div class="slot-note">~S$40–50 · ~25 min</div></div></div>
-  <div class="slot"><div class="slot-left"><div class="slot-time">3:30 PM</div></div><div class="slot-icon">💧</div><div class="slot-body"><div class="slot-title">Jewel — Rain Vortex (free)<a href="https://maps.google.com/?q=Jewel+Changi+Airport+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">World's tallest indoor waterfall 🍼 · left-luggage B1 ~S$6–10/bag</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">3:00 PM</div></div><div class="slot-icon">🚗</div><div class="slot-body"><div class="slot-title">GrabMax to Jewel Changi Airport</div><div class="slot-note">~25 min</div></div></div>
+  <div class="slot"><div class="slot-left"><div class="slot-time">3:30 PM</div></div><div class="slot-icon">💧</div><div class="slot-body"><div class="slot-title">Jewel — Rain Vortex (free)<a href="https://maps.google.com/?q=Jewel+Changi+Airport+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">World's tallest indoor waterfall 🍼 · left-luggage B1 near entrance</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">3:45 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🎁</div><div class="slot-body"><div class="slot-title">Bengawan Solo — kueh lapis tins<a href="https://maps.google.com/?q=Bengawan+Solo+Jewel+Changi+Airport" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">⚠️ Get these FIRST — they sell out. One per grandparent couple.</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">4:00 PM</div></div><div class="slot-icon">🦁</div><div class="slot-body"><div class="slot-title">Merlion plushies — gift shop</div><div class="slot-note">One per child · any Jewel shop</div></div></div>
   <div class="slot"><div class="slot-left"><div class="slot-time">4:30 PM</div><div class="tag tag-must">Must</div></div><div class="slot-icon">🛂</div><div class="slot-body"><div class="slot-title">Walk to Terminal 2 via Jewel bridge</div><div class="slot-note">~10 min · check-in opens 4:40 PM · Family Assistance Lanes</div></div></div>
@@ -364,10 +363,7 @@
     <p><strong>2nd:</strong> Merlion plushies — any shop, leave these last</p>
     <p><strong>3rd:</strong> Rain Vortex photos — free, just walk under the atrium</p>
   </div>
-</div>
-
-
-<div class="wellness">
+    <div class="wellness">
   <div class="card-title">📌 Hold space today</div>
   <ul>
     <li>Logistically the most packed day — but emotionally the most important. Build in breath.</li>
@@ -375,8 +371,8 @@
     <li>The Ya Kun kaya toast at the gate — eat it slowly. You'll want to remember this.</li>
   </ul>
 </div>
-
-<div class="quote-note">Last kaya toast. Last Rain Vortex. Last MRT beep. It goes fast. Be here.</div>
+  <div class="quote-note">Last kaya toast. Last Rain Vortex. Last MRT beep. It goes fast. Be here.</div>
+</div>
 
 <!-- ═══ APPS ═══ -->
 <div id="apps" class="section">
@@ -405,15 +401,104 @@
   </div>
 </div>
 
+<!-- ═══ PLACES & FOOD ═══ -->
+<div id="places" class="section">
+
+  <div class="card card-teal">
+    <div class="card-title">🏛️ All Places We're Visiting</div>
+    <p style="font-size:13px;color:#555;margin-bottom:10px"><strong>Day 2 — Little India + Kampong Glam</strong></p>
+    <ul>
+      <li><strong>Tekka Centre</strong> — Serangoon Rd · open from ~6am daily · hawker hall</li>
+      <li><strong>Sri Veeramakaliamman Temple</strong> — 141 Serangoon Rd · 5:30am–12pm, 4–9pm · free entry</li>
+      <li><strong>Serangoon Road</strong> — open all day · sugarcane juice, curry puffs, Mustafa Centre (24hr)</li>
+      <li><strong>Sultan Mosque</strong> — 3 Muscat St · Sat–Thu 10am–12pm, 2–4pm, 5:30–6:30pm · free · covered shoulders required</li>
+      <li><strong>Haji Lane &amp; Arab Street</strong> — shops open ~11am–9pm · Kampong Glam heritage district</li>
+    </ul>
+    <p style="font-size:13px;color:#555;margin:10px 0"><strong>Day 3 — Chinatown + Marina Bay</strong></p>
+    <ul>
+      <li><strong>Maxwell Food Centre</strong> — 1 Kadayanallur St · ~8am–late · individual stall hours vary</li>
+      <li><strong>Sri Mariamman Temple</strong> — 244 South Bridge Rd · 7am–12pm, 6–9pm · free entry</li>
+      <li><strong>Buddha Tooth Relic Temple</strong> — 288 South Bridge Rd · 7am–7pm · free · AC</li>
+      <li><strong>Chinatown Complex Food Centre</strong> — 335 Smith St · stalls from 10am</li>
+      <li><strong>Museum of Ice Cream</strong> — 100 Loewen Rd, Dempsey Hill · pre-booked · wife + 4yr old</li>
+      <li><strong>Dempsey Hill</strong> — PS.Café / Bistro · grandparents rest stop during MOIC</li>
+      <li><strong>Merlion Park</strong> — 1 Fullerton Rd · open 24hr · free · flat walk</li>
+      <li><strong>Helix Bridge</strong> — Marina Centre · open 24hr · free · scenic walk</li>
+      <li><strong>Supertree Grove (Garden Rhapsody)</strong> — free light show 7:45 PM &amp; 8:45 PM nightly</li>
+    </ul>
+    <p style="font-size:13px;color:#555;margin:10px 0"><strong>Day 4 — Sentosa</strong></p>
+    <ul>
+      <li><strong>Singapore Cable Car</strong> — HarbourFront Station · 8:45am–9:30pm · pre-booked</li>
+      <li><strong>Singapore Oceanarium</strong> — RWS · 10am–7pm daily · 22 zones · pre-booked · toddler FREE</li>
+      <li><strong>Malaysian Food Street</strong> — RWS B1 · 10am–10pm · Laksa HQ 🌟</li>
+      <li><strong>Sentosa Sensoryscape</strong> — near Beach Station · open all day · free</li>
+      <li><strong>Siloso / Palawan Beach</strong> — western Sentosa · open all day · shaded seating</li>
+      <li><strong>Wings of Time</strong> — Siloso Beach Walk · 7:40 PM show · pre-booked</li>
+    </ul>
+    <p style="font-size:13px;color:#555;margin:10px 0"><strong>Day 5 — Marina Bay + Jewel</strong></p>
+    <ul>
+      <li><strong>ArtScience Museum</strong> — 6 Bayfront Ave · 10am–7pm daily · kids FREE Fri · ⚠️ Strollers parked at entrance, not inside</li>
+      <li><strong>Cloud Forest</strong> — 18 Marina Gardens Dr · 9am–9pm daily · Jurassic World experience inside · ⚠️ loud sounds &amp; flashing lights</li>
+      <li><strong>Satay by the Bay</strong> — 18 Marina Gardens Dr · from noon daily · waterfront hawker</li>
+      <li><strong>Jewel Changi Airport</strong> — 78 Airport Blvd · 10am–10pm · Rain Vortex free · Bengawan Solo inside</li>
+    </ul>
+  </div>
+
+  <div class="card card-orange">
+    <div class="card-title">🍽️ All Restaurants &amp; Hawker Centres</div>
+    <ul>
+      <li><strong>Tekka Centre</strong> — D2 breakfast · Serangoon Rd · from 6am daily · idli, dosa, filter coffee, pongal</li>
+      <li><strong>Kopitiam (Serangoon Rd)</strong> — D2 · kaya toast, soft-boiled eggs, Milo Dinosaur</li>
+      <li><strong>Zam Zam</strong> — D2 lunch · 697 North Bridge Rd · 7am–11pm daily · murtabak, biryani · veg options available</li>
+      <li><strong>Hjh Maimunah</strong> — D2 lunch alt · 11 Jalan Pisang, Kampong Glam · Mon–Sat 7am–8pm · <em>Closed Sundays</em> · Michelin Bib Gourmand Nasi Padang</li>
+      <li><strong>Banana Leaf Apolo</strong> — D2 dinner · 54 Race Course Rd · 10:30am–10:30pm daily · banana leaf thali + fish head curry</li>
+      <li><strong>Ananda Bhavan</strong> — D2 dinner alt (pure veg) · 58 Serangoon Rd · 7am–10:30pm · dosa, thali · ⚠️ Komala Vilas temporarily closed</li>
+      <li><strong>Maxwell Food Centre</strong> — D3 breakfast · 1 Kadayanallur St, Chinatown · open daily · Tian Tian chicken rice, prata, kaya toast</li>
+      <li><strong>Chinatown Complex Food Centre</strong> — D3 lunch · 335 Smith St · open daily · char kway teow, popiah, economic rice</li>
+      <li><strong>Dempsey Hill cafés</strong> — D3 · PS.Café / Bistro · grandparents rest while MOIC</li>
+      <li><strong>Rang Mahal</strong> — D3 dinner · Pan Pacific Hotel Level 3 · dinner 6:30pm–10:30pm · <strong>Closed Mon &amp; Sat</strong> · Wed ✅ · pre-booked · smart casual</li>
+      <li><strong>Malaysian Food Street</strong> — D4 lunch · RWS Sentosa · 10am–10pm daily · LAKSA here 🌟</li>
+      <li><strong>Satay by the Bay</strong> — D5 lunch · 18 Marina Gardens Dr · open from noon daily · satay, laksa, carrot cake · open-air waterfront</li>
+      <li><strong>Bengawan Solo</strong> — D5 Jewel · get kueh lapis tins FIRST — sells out · multiple Jewel outlets</li>
+      <li><strong>Ya Kun Kaya Toast</strong> — D5 · T2 airside, after check-in · farewell kaya toast + kopi-O</li>
+    </ul>
+  </div>
+
+  <div class="card card-green">
+    <div class="card-title">☕ Must-Try Food &amp; Drinks (full list)</div>
+    <ul>
+      <li><strong>Kaya toast + soft-boiled eggs</strong> — have every morning. Non-negotiable.</li>
+      <li><strong>Filter coffee (kopi) / teh halia</strong> — Indian drip coffee or ginger milk tea</li>
+      <li><strong>Milo Dinosaur</strong> — cold Milo + undissolved powder on top · kids obsessed</li>
+      <li><strong>Idli, dosa, pongal</strong> — South Indian breakfast at Tekka Centre</li>
+      <li><strong>Sugarcane juice</strong> — pressed fresh on Serangoon Rd</li>
+      <li><strong>Murtabak</strong> — stuffed crispy savoury pancake at Zam Zam · Singapore institution</li>
+      <li><strong>Chendol</strong> — shaved ice with pandan jelly, coconut milk &amp; palm sugar · Day 3</li>
+      <li><strong>Ice Kachang</strong> — rainbow shaved ice tower · Day 3</li>
+      <li><strong>Ice cream sandwich</strong> — rainbow bread or wafer with slab ice cream · Day 3</li>
+      <li><strong>Char Kway Teow</strong> — smoky wok-fried flat noodles at Maxwell</li>
+      <li><strong>Laksa 🌟</strong> — THE Singapore dish. Spicy coconut noodle soup. Malaysian Food Street Day 4.</li>
+      <li><strong>Satay</strong> — charcoal-grilled skewers with peanut sauce at Satay by the Bay</li>
+      <li><strong>Fresh coconut water</strong> — at Sentosa beach · most refreshing thing on earth</li>
+      <li><strong>Bandung rose milk</strong> — sweet pink drink served cold · Maxwell / hawker centres</li>
+      <li><strong>Kopi-O</strong> — strong local black coffee · farewell cup at Ya Kun</li>
+      <li><strong>Kueh lapis</strong> — Peranakan layered cake from Bengawan Solo · bring home</li>
+    </ul>
+  </div>
+
+</div><!-- places -->
+
+
+
 <!-- ═══ INFO ═══ -->
 <div id="info" class="section">
 
   <div class="card card-dark">
     <div class="card-title">✈️ All Flights</div>
-    <p><strong>You + Family (SFO→SIN)</strong> · United UA29 · Apr 5 10:25 AM → Apr 6 6:35 PM </p>
-    <p><strong>Grandparents Booking 1 (BLR→SIN)</strong> · IndiGo 6E1091 · Apr 6 10:20 AM → 5:40 PM </p>
-    <p><strong>Grandparents Booking 2 (BLR→SIN)</strong> · IndiGo 6E1091 · Apr 6 10:20 AM → 5:40 PM </p>
-    <p><strong>All 8 Return (SIN→BLR)</strong> · IndiGo 6E1092 · Apr 10 7:40 PM → 9:40 PM  · T2</p>
+    <p><strong>You + Family (SFO→SIN)</strong> · United UA29 · Apr 5 10:25 AM → Apr 6 6:35 PM</p>
+    <p><strong>Grandparents Booking 1 (BLR→SIN)</strong> · IndiGo 6E1091 · Apr 6 10:20 AM → 5:40 PM</p>
+    <p><strong>Grandparents Booking 2 (BLR→SIN)</strong> · IndiGo 6E1091 · Apr 6 10:20 AM → 5:40 PM</p>
+    <p><strong>All 8 Return (SIN→BLR)</strong> · IndiGo 6E1092 · Apr 10 7:40 PM → 9:40 PM · T2</p>
   </div>
 
   <div class="card card-orange">
@@ -421,23 +506,7 @@
     <div class="cost-row"><span class="cost-label">Address</span><span class="cost-val">181 Kitchener Rd, S208533<a href="https://maps.google.com/?q=Novotel+Singapore+on+Kitchener+Road" target="_blank" rel="noopener" class="ml">📍</a></span></div>
     <div class="cost-row"><span class="cost-label">MRT</span><span class="cost-val">Farrer Park NE8 · 5 min walk</span></div>
     <div class="cost-row"><span class="cost-label">Tel</span><span class="cost-val"><a href="tel:+6564283000" style="color:var(--orange)">+65 6428 3000</a></span></div>
-    <div class="cost-row"><span class="cost-label">Room 1</span><span class="cost-val">Premier Family 86sqm ~S$300/night</span></div>
-    <div class="cost-row"><span class="cost-label">Room 2</span><span class="cost-val">Family Quad 48sqm ~S$225/night</span></div>
-    <div class="cost-row"><span class="cost-label">Room 3</span><span class="cost-val">Deluxe 28sqm ~S$175/night</span></div>
-    <div class="cost-total-row"><span>4 nights total</span><span>~S$2,800</span></div>
-  </div>
-
-  <div class="card card-teal">
-    <div class="card-title">💰 Ticket Cost Summary (8 pax)</div>
-    <div class="cost-row"><span class="cost-label">Singapore Oceanarium</span><span class="cost-val">~S$320</span></div>
-    <div class="cost-row"><span class="cost-label">Cable Car Round Trip</span><span class="cost-val">~S$235</span></div>
-    <div class="cost-row"><span class="cost-label">Wings of Time</span><span class="cost-val">~S$155</span></div>
-    <div class="cost-row"><span class="cost-label">Museum of Ice Cream (wife + 4yr)</span><span class="cost-val">~S$75</span></div>
-    <div class="cost-row"><span class="cost-label">ArtScience Museum</span><span class="cost-val">~S$126</span></div>
-    <div class="cost-row"><span class="cost-label">Cloud Forest</span><span class="cost-val">~S$210</span></div>
-    <div class="cost-row"><span class="cost-label">Rang Mahal dinner (Day 3)</span><span class="cost-val">~S$390</span></div>
-    <div class="cost-row"><span class="cost-label">Garden Rhapsody · Sensoryscape · Rain Vortex</span><span class="cost-free">FREE</span></div>
-    <div class="cost-total-row"><span>Attractions + dinner</span><span>~S$1,511</span></div>
+    <div class="cost-row"><span class="cost-label">Rooms</span><span class="cost-val">3 rooms, same floor · crib confirmed</span></div>
   </div>
 
   <div class="card card-gray">
@@ -452,28 +521,27 @@
   <div class="card card-green">
     <div class="card-title">🎁 Memorabilia</div>
     <ul>
-      <li><strong>Bengawan Solo kueh lapis tins</strong> — Jewel Day 5 · get first · one per household</li>
+      <li><strong>Bengawan Solo kueh lapis tins</strong> — Jewel Day 5 · get first, they sell out · one per household</li>
       <li><strong>Merlion plushies</strong> — one per child · any Jewel gift shop</li>
-      <li><strong>Singapore stamp passport</strong> — blank booklet · collect stamps at each attraction · 4yr old loves it</li>
-      <li><strong>Peranakan pottery / tile</strong> — Haji Lane Day 2 · S$20–60 · genuinely Singaporean</li>
-      <li><strong>Custom star map</strong> — underluckystars.com · sky over SG on Apr 8 (Supertrees night) · order after trip</li>
-      <li><strong>Photo book</strong> — Artifact Uprising · order from shared Google Photos album · one per household</li>
-      <li><strong>Printed photo calendar</strong> — one per household · they'll look at it every day</li>
-      <li><strong>1 Second Everyday film</strong> — 5 sec clip · export after Day 5 · watch every anniversary</li>
+      <li><strong>Singapore stamp passport</strong> — collect stamps at each attraction · 4yr old will treasure it</li>
+      <li><strong>Peranakan pottery / tile</strong> — Haji Lane Day 2 · genuinely Singaporean</li>
+      <li><strong>Custom star map</strong> — underluckystars.com · sky over SG on Apr 8 · order after trip</li>
+      <li><strong>Photo book</strong> — Artifact Uprising · from shared Google Photos album · one per household</li>
+      <li><strong>Printed photo calendar</strong> — one per household</li>
+      <li><strong>1 Second Everyday film</strong> — 5 sec/day · export after Day 5</li>
     </ul>
   </div>
-
 
   <div class="info-grid" style="margin-top:16px">
     <div class="info-box">
       <div class="info-box-title" style="color:#E05C2A">☀️ Weather</div>
       <p>~<strong>32°C</strong> every day, humid</p>
-      <p>Light cotton. All museums & malls are heavily AC'd.</p>
+      <p>Light cotton. All museums &amp; malls are heavily AC'd.</p>
     </div>
     <div class="info-box">
       <div class="info-box-title" style="color:#2E7A3A">💵 Money</div>
-      <p><strong>S$1 ≈ ₹63 ≈ US$0.74</strong></p>
-      <p>Cards everywhere. ~S$20 cash per person for hawkers.</p>
+      <p>Singapore Dollars (SGD). Cards everywhere.</p>
+      <p>Carry ~S$20 cash per person for hawkers.</p>
     </div>
     <div class="info-box">
       <div class="info-box-title" style="color:#1B7A8A">🍽️ Must Eats</div>
@@ -482,7 +550,7 @@
     </div>
     <div class="info-box">
       <div class="info-box-title" style="color:#5B4A8A">📡 Data</div>
-      <p>Upgrade Fi to <strong>Unlimited Premium</strong> before SFO departure</p>
+      <p>Upgrade Fi to <strong>Unlimited Premium</strong> before SFO</p>
       <p>Or Singtel SIM at Changi arrivals (~S$15)</p>
     </div>
   </div>
