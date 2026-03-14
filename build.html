@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Built with Claude</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1A4A6B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+:root {
+  --navy:   #1A4A6B;
+  --orange: #E05C2A;
+  --teal:   #1B7A8A;
+  --green:  #2E7A3A;
+  --dark:   #1A1A1A;
+  --mid:    #555;
+  --light:  #888;
+  --rule:   #EEEEEE;
+  --bg:     #F4F7FA;
+}
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom: max(32px, env(safe-area-inset-bottom)); }
+
+.hero { background: linear-gradient(160deg, #1A4A6B 0%, #0D2E45 100%); padding: 24px 24px 28px; padding-top: max(24px, calc(env(safe-area-inset-top) + 10px)); color: white; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); }
+.hero-back { position: relative; font-size: 13px; opacity: 0.7; text-decoration: none; color: white; display: inline-flex; align-items: center; gap: 4px; margin-bottom: 14px; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 26px; line-height: 1.2; margin-bottom: 6px; position: relative; }
+.hero-sub { font-size: 14px; opacity: 0.75; position: relative; }
+
+.content { padding: 24px 20px 0; max-width: 640px; margin: 0 auto; }
+
+/* Stats grid */
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 28px; }
+.stat-box { background: white; border-radius: 14px; padding: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--navy); line-height: 1; }
+.stat-label { font-size: 11px; color: var(--light); margin-top: 4px; line-height: 1.4; }
+.stat-box.accent .stat-num { color: var(--orange); }
+.stat-box.teal .stat-num { color: var(--teal); }
+.stat-box.green .stat-num { color: var(--green); }
+
+/* Section headings */
+.section-head { font-size: 13px; font-weight: 700; color: var(--light); letter-spacing: 1px; text-transform: uppercase; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--rule); }
+
+/* Story cards */
+.phase { background: white; border-radius: 14px; padding: 16px 18px; margin-bottom: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 4px solid var(--navy); }
+.phase.orange { border-left-color: var(--orange); }
+.phase.teal  { border-left-color: var(--teal); }
+.phase.green { border-left-color: var(--green); }
+.phase-title { font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+.phase-body  { font-size: 13px; color: var(--mid); line-height: 1.6; }
+
+/* Retro */
+.retro-row { background: white; border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+.retro-label { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 5px; }
+.retro-label.good { color: var(--green); }
+.retro-label.improve { color: var(--orange); }
+.retro-body { font-size: 13px; color: var(--mid); line-height: 1.6; }
+
+/* Prompt blocks */
+.prompt-block { background: #1A1A2E; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+.prompt-block p { font-family: 'DM Sans', monospace; font-size: 12.5px; color: #A8C5DA; line-height: 1.7; }
+.prompt-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #4A7FA0; margin-bottom: 8px; }
+
+/* Tip rows */
+.tip-row { display: flex; gap: 12px; background: white; border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; box-shadow: 0 1px 6px rgba(0,0,0,0.05); }
+.tip-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.tip-text { font-size: 13px; color: var(--mid); line-height: 1.55; }
+.tip-text strong { color: var(--dark); }
+
+/* Table */
+.ref-table { width: 100%; border-collapse: collapse; font-size: 12.5px; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 12px; }
+.ref-table th { background: var(--navy); color: white; padding: 10px 12px; text-align: left; font-weight: 600; font-size: 11px; letter-spacing: 0.5px; }
+.ref-table td { padding: 10px 12px; border-bottom: 1px solid var(--rule); color: var(--mid); vertical-align: top; }
+.ref-table tr:last-child td { border-bottom: none; }
+.ref-table td:first-child { color: var(--dark); font-weight: 500; }
+
+.gh-link { display: block; background: var(--navy); color: white; text-align: center; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 14px; margin: 24px 0 8px; }
+.gh-link:active { opacity: 0.85; }
+.footer { text-align: center; font-size: 12px; color: var(--light); margin-top: 24px; padding-bottom: 8px; }
+.footer a { color: var(--orange); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <a href="index.html" class="hero-back">← Home</a>
+  <h1>Built with Claude</h1>
+  <p class="hero-sub">How this app was made — and how you can build one too</p>
+</div>
+
+<div class="content">
+
+  <!-- ── Stats ── -->
+  <div class="section-head">By the numbers</div>
+  <div class="stats-grid">
+    <div class="stat-box">
+      <div class="stat-num">~120</div>
+      <div class="stat-label">Conversation turns across 3 sessions</div>
+    </div>
+    <div class="stat-box accent">
+      <div class="stat-num">300+</div>
+      <div class="stat-label">Code executions, file edits & debug runs</div>
+    </div>
+    <div class="stat-box teal">
+      <div class="stat-num">7</div>
+      <div class="stat-label">PWA versions shipped (v1 → v7)</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">9</div>
+      <div class="stat-label">Word doc versions of the itinerary</div>
+    </div>
+    <div class="stat-box green">
+      <div class="stat-num">4</div>
+      <div class="stat-label">HTML pages maintained in parallel</div>
+    </div>
+    <div class="stat-box accent">
+      <div class="stat-num">30+</div>
+      <div class="stat-label">Dishes with stall numbers & dietary tags</div>
+    </div>
+    <div class="stat-box" style="grid-column: span 2; border-left: 4px solid var(--orange); border-radius: 14px;">
+      <div class="stat-num" style="font-size:24px; color: var(--orange);">0 lines of code written by hand</div>
+      <div class="stat-label">Every file was generated and edited through conversation</div>
+    </div>
+  </div>
+
+  <!-- ── Story ── -->
+  <div class="section-head">How it unfolded</div>
+
+  <div class="phase">
+    <div class="phase-title">Phase 1 — Trip planning (no app yet)</div>
+    <div class="phase-body">It started with flights. "Help me plan a family trip to Singapore." Visa requirements, hotel shortlisting, day-by-day itinerary — the app didn't exist yet. The key insight that shaped everything: different members needed the same trip communicated completely differently.</div>
+  </div>
+
+  <div class="phase orange">
+    <div class="phase-title">Phase 2 — First app, one page</div>
+    <div class="phase-body">"Can you turn this itinerary into a mobile web app?" One HTML file, tabbed day view. Functional but basic — no audience separation, no food details, no dietary tags.</div>
+  </div>
+
+  <div class="phase teal">
+    <div class="phase-title">Phase 3 — Multi-page architecture</div>
+    <div class="phase-body">"The grandparents need their own simpler guide — one in English, one in Telugu." This expanded the app to four pages. The grandparent pages became progressively simpler: fewer slots, larger text, no logistics they didn't need.</div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-title">Phase 4 — PWA and installability</div>
+    <div class="phase-body">"Can this be installed as an app on their phones?" First attempt had a subtle bug: <code>start_url: "/"</code> pointed to the GitHub Pages root, not the app's subdirectory, so installs silently failed. Fixed to <code>"./index.html"</code>.</div>
+  </div>
+
+  <div class="phase green">
+    <div class="phase-title">Phase 5 — Food as a feature</div>
+    <div class="phase-body">Dish lists with dietary tags (🌿 🍗 👶 🍼 ⭐), stall numbers, sugar flags for the toddler. Then <code>dishes.js</code> — a single data file powering all three pages so updating one venue updates everywhere.</div>
+  </div>
+
+  <div class="phase orange">
+    <div class="phase-title">Phase 6 — Polish</div>
+    <div class="phase-body">Countdown timer, shortened hero, Places and Food split into separate tabs, custom hibiscus icon generated in Python, hotel updated across 14 references in one pass, nav bugs tracked down to orphaned closing divs.</div>
+  </div>
+
+  <!-- ── Retrospective ── -->
+  <div class="section-head">Retrospective</div>
+
+  <div class="retro-row">
+    <div class="retro-label good">✓ What worked well</div>
+    <div class="retro-body"><strong>Plain English is enough.</strong> "The nav is broken — clicking Day 2 does nothing" produced a fix faster than any Stack Overflow search. Describing problems in human terms was more useful than technical descriptions.</div>
+  </div>
+
+  <div class="retro-row">
+    <div class="retro-label good">✓ What worked well</div>
+    <div class="retro-body"><strong>Small changes, deploy often.</strong> Testing each change in the browser before requesting the next kept the app stable. When three things changed at once and something broke, it was harder to isolate.</div>
+  </div>
+
+  <div class="retro-row">
+    <div class="retro-label good">✓ What worked well</div>
+    <div class="retro-body"><strong>No framework was the right call.</strong> Pure HTML/CSS/JS meant last-minute itinerary edits could be made directly on GitHub from a phone — no local setup, no build step.</div>
+  </div>
+
+  <div class="retro-row">
+    <div class="retro-label improve">△ Do differently next time</div>
+    <div class="retro-body"><strong>Start with <code>dishes.js</code> from day one.</strong> Dish lists were copy-pasted into each HTML file individually before the shared data architecture arrived. Starting centralised saves several rounds of syncing.</div>
+  </div>
+
+  <div class="retro-row">
+    <div class="retro-label improve">△ Do differently next time</div>
+    <div class="retro-body"><strong>Run div balance checks from the start.</strong> The most frustrating bugs were unbalanced HTML divs — a missing <code>&lt;/div&gt;</code> causing an entire day's content to bleed across all tabs. Became standard practice by phase 5, should have been from phase 1.</div>
+  </div>
+
+  <div class="retro-row">
+    <div class="retro-label improve">△ Do differently next time</div>
+    <div class="retro-body"><strong>Establish "nothing private in the app" on day one.</strong> Confirmation numbers started appearing in app code before someone caught that the repo is public. Set the rule early.</div>
+  </div>
+
+  <div class="retro-row">
+    <div class="retro-label improve">△ Do differently next time</div>
+    <div class="retro-body"><strong>One consistent HTML structure across all pages.</strong> The three guides ended up with slightly different attribute patterns (<code>data-day</code> vs <code>data-t</code>). A shared base structure defined upfront would have kept cross-page changes simpler.</div>
+  </div>
+
+  <!-- ── Build your own ── -->
+  <div class="section-head">Build your own</div>
+
+  <div class="tip-row">
+    <div class="tip-icon">1️⃣</div>
+    <div class="tip-text">Get a free account at <a href="https://claude.ai" style="color:var(--orange)">claude.ai</a> and a free account at <a href="https://github.com" style="color:var(--orange)">github.com</a>. That's all you need.</div>
+  </div>
+  <div class="tip-row">
+    <div class="tip-icon">2️⃣</div>
+    <div class="tip-text">Paste your trip details and itinerary into Claude. Be specific about your group — who they are, what languages they speak, any dietary needs.</div>
+  </div>
+  <div class="tip-row">
+    <div class="tip-icon">3️⃣</div>
+    <div class="tip-text">Ask for a mobile PWA with separate views per audience. Tell Claude: <em>"No framework, no build step, pure HTML/CSS/JS — I need to edit files directly on GitHub."</em></div>
+  </div>
+  <div class="tip-row">
+    <div class="tip-icon">4️⃣</div>
+    <div class="tip-text">Upload the files to a new GitHub repo and enable GitHub Pages (Settings → Pages → main branch). Live in 60 seconds.</div>
+  </div>
+  <div class="tip-row">
+    <div class="tip-icon">5️⃣</div>
+    <div class="tip-text">Iterate. Test in your browser, describe what's wrong or what you want to add, get new code. Repeat.</div>
+  </div>
+
+  <div class="section-head">Useful prompts</div>
+
+  <table class="ref-table">
+    <tr><th>Goal</th><th>Say to Claude</th></tr>
+    <tr><td>Add a new day</td><td>"Add a Day 6 tab. Here's the schedule: [paste]"</td></tr>
+    <tr><td>Add a language</td><td>"Add a Hindi grandparent guide. Mirror gp-en.html."</td></tr>
+    <tr><td>Fix nav</td><td>"Clicking tabs does nothing on X. Here's the HTML: [paste]"</td></tr>
+    <tr><td>Custom icon</td><td>"Generate a [motif] icon at 192×192 and 512×512 in colour #XXXXXX"</td></tr>
+    <tr><td>Dietary tags</td><td>"Tag all dishes with 🌿/🍗/👶. Flag added sugar for the toddler."</td></tr>
+    <tr><td>Debug layout</td><td>"Run a div balance check on all sections and report imbalances."</td></tr>
+    <tr><td>Update a venue</td><td>"We changed dinner on Day 3 from X to Y. Update all references."</td></tr>
+  </table>
+
+  <a href="https://github.com/hrajendra/sg-trip-2026" class="gh-link" target="_blank" rel="noopener">View source on GitHub →</a>
+
+  <p class="footer">Built with <a href="https://claude.ai">Claude</a> · No code written by hand</p>
+
+</div>
+
+<script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});</script>
+</body>
+</html>
