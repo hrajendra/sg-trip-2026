@@ -129,7 +129,7 @@ The `manifest.json` uses `"start_url": "./index.html"` and `"scope": "./"` — t
 
 ## 🤖 Build your own with Claude
 
-This entire app was built through conversation with Claude — no code was written by hand. The full story, stats, retrospective, and a step-by-step guide for building your own version is in **[BUILDING.md](BUILDING.md)**, and also available as a page inside the app at [build.html](https://hrajendra.github.io/sg-trip-2026/build.html).
+This entire app was built through conversation with Claude — no code was written by hand. The full story, stats, retrospective, and a step-by-step guide for building your own version is in **[build.html](https://hrajendra.github.io/sg-trip-2026/build.html)** — readable in any browser, and linked from the app home screen.
 
 ---
 
@@ -148,7 +148,6 @@ This entire app was built through conversation with Claude — no code was writt
 | `icon-192.png` | App icon 192×192 |
 | `icon-512.png` | App icon 512×512 |
 | `docs/` | README screenshots and assets |
-| `BUILDING.md` | Full build story, stats, retrospective, and how-to guide |
 
 ---
 
