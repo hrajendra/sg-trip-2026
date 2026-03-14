@@ -16,7 +16,7 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 body { font-family: 'DM Sans', sans-serif; background: #FDF8F3; min-height: 100vh; display: flex; flex-direction: column; padding-bottom: env(safe-area-inset-bottom, 24px); }
-.hero { background: linear-gradient(160deg, #E05C2A 0%, #C4441A 60%, #9A2E0E 100%); padding: 64px 28px 44px; padding-top: max(64px, calc(44px + env(safe-area-inset-top))); color: white; text-align: center; position: relative; overflow: hidden; }
+.hero { background: linear-gradient(160deg, #E05C2A 0%, #C4441A 60%, #9A2E0E 100%); padding: 44px 28px 32px; padding-top: max(44px, calc(44px + env(safe-area-inset-top))); color: white; text-align: center; position: relative; overflow: hidden; }
 .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); }
 .flag { font-size: 64px; display: block; margin-bottom: 16px; position: relative; }
 h1 { font-family: 'Playfair Display', serif; font-size: 28px; line-height: 1.2; margin-bottom: 8px; position: relative; }
@@ -35,6 +35,12 @@ h1 { font-family: 'Playfair Display', serif; font-size: 28px; line-height: 1.2; 
 .card-gpen .card-title { color: #1B7A8A; }
 .card-gpte .card-title { color: #5B4A8A; }
 .tip { margin: 0 20px 28px; background: #F0F4FF; border-radius: 12px; padding: 14px 16px; font-size: 13px; color: #555; line-height: 1.5; text-align: center; }
+.countdown { display: flex; justify-content: center; gap: 12px; margin-top: 20px; position: relative; }
+.cd-unit { display: flex; flex-direction: column; align-items: center; min-width: 56px; }
+.cd-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; line-height: 1; background: rgba(255,255,255,0.18); border-radius: 10px; padding: 8px 10px; min-width: 56px; text-align: center; letter-spacing: -1px; }
+.cd-label { font-size: 10px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; opacity: 0.7; margin-top: 5px; }
+.cd-sep { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; opacity: 0.4; align-self: flex-start; padding-top: 10px; }
+.cd-msg { font-size: 13px; opacity: 0.8; margin-top: 14px; font-weight: 500; position: relative; }
 
   .hero-back { position: relative; font-size: 13px; opacity: 0.75; margin-bottom: 12px;
     text-decoration: none; color: white; display: inline-flex; align-items: center; gap: 4px; }
@@ -61,6 +67,14 @@ h1 { font-family: 'Playfair Display', serif; font-size: 28px; line-height: 1.2; 
   <span class="flag">🇸🇬</span>
   <h1>Singapore Family Trip</h1>
   <p class="dates">6 – 10 April 2026</p>
+  <div class="countdown" id="countdown">
+    <div class="cd-unit"><div class="cd-num" id="cd-d">--</div><div class="cd-label">Days</div></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><div class="cd-num" id="cd-h">--</div><div class="cd-label">Hours</div></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><div class="cd-num" id="cd-m">--</div><div class="cd-label">Mins</div></div>
+  </div>
+  <p class="cd-msg" id="cd-msg">Until we land in Singapore ✈️</p>
 </div>
 <div class="cards">
   <a href="full.html" class="card card-full">
@@ -86,6 +100,51 @@ h1 { font-family: 'Playfair Display', serif; font-size: 28px; line-height: 1.2; 
   </a>
 </div>
 <div class="tip"><strong>📲 Add to Home Screen</strong> — open each guide in Safari, tap the Share button → "Add to Home Screen" to install as its own app icon</div>
-<script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});</script>
+<script>
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
+
+  (function() {
+    var TARGET = new Date('2026-04-06T18:35:00+08:00'); // UA29 lands 6:35 PM SGT
+    var pad = function(n){ return String(n).padStart(2,'0'); };
+
+    function tick() {
+      var diff = TARGET - new Date();
+      var cd   = document.getElementById('countdown');
+      var msg  = document.getElementById('cd-msg');
+      if (!cd) return;
+
+      if (diff <= 0) {
+        // Trip has started — hide countdown entirely
+        cd.style.display  = 'none';
+        msg.style.display = 'none';
+        return;
+      }
+
+      var days = Math.floor(diff / 86400000);
+      var hrs  = Math.floor((diff % 86400000) / 3600000);
+      var mins = Math.floor((diff % 3600000)  / 60000);
+      var secs = Math.floor((diff % 60000)    / 1000);
+
+      if (days > 0) {
+        document.getElementById('cd-d').textContent = days;
+        document.getElementById('cd-h').textContent = pad(hrs);
+        document.getElementById('cd-m').textContent = pad(mins);
+        msg.textContent = days === 1 ? 'Tomorrow we fly! ✈️' : 'Until we land in Singapore ✈️';
+      } else {
+        // Under 24 hrs — switch to H : M : S
+        document.getElementById('cd-d').textContent = pad(hrs);
+        document.getElementById('cd-h').textContent = pad(mins);
+        document.getElementById('cd-m').textContent = pad(secs);
+        document.querySelectorAll('.cd-label')[0].textContent = 'Hours';
+        document.querySelectorAll('.cd-label')[1].textContent = 'Mins';
+        document.querySelectorAll('.cd-label')[2].textContent = 'Secs';
+        msg.textContent = 'Almost there — boarding soon! ✈️';
+      }
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
 </body>
 </html>
