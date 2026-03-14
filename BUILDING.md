@@ -93,7 +93,7 @@ The last phase was a long series of smaller changes that made the app genuinely 
 
 **Start with `dishes.js` from the beginning.** The dish lists were originally copy-pasted into each HTML file individually. The shared architecture only came after all three pages existed and were diverging. Starting with a shared data layer from day one would have saved several rounds of syncing.
 
-**Establish a div-balancing check earlier.** The most frustrating bugs in the whole project were unbalanced HTML divs — a missing `</div>` that caused an entire day's content to leak across all tabs. Running a balance check (`div.count('<div') - div.count('</div>')`) after every structural edit would have caught these instantly. It became standard practice by Phase 5, but should have been from the start.
+**Check the structure after every major edit.** The most frustrating bugs in the whole project were small structural mistakes in the HTML — a single missing closing tag that caused an entire day's content to bleed across all tabs. Asking Claude to verify the structure after each change would have caught these instantly. It became standard practice later in the project, but should have been from the start.
 
 **One canonical HTML structure, not three.** The three guide pages ended up with slightly different HTML patterns — `gp-en.html` uses `data-day` attributes while `full.html` uses `data-t`, for instance. This created friction whenever something needed to be applied across all pages. A shared base structure defined up front would have kept everything consistent.
 
@@ -105,57 +105,43 @@ The last phase was a long series of smaller changes that made the app genuinely 
 
 ## 🚀 Build your own
 
-### What you need
+### Option A — Start from scratch
 
-- A [Claude.ai](https://claude.ai) account (free tier works; Pro gives more message volume for long sessions)
-- A [GitHub](https://github.com) account (free)
-- A trip you're planning
+1. **Create two free accounts.** One at [claude.ai](https://claude.ai) and one at [github.com](https://github.com). No credit card needed for either.
 
-That's it. No code editor, no terminal, no prior experience.
+2. **Tell Claude about your trip.** Paste your itinerary and describe your group in plain English — who's coming, what languages the grandparents speak, any food restrictions, anything that makes your group unique.
 
-### The starting prompt
+3. **Ask Claude to build the app.** Say something like: *"Turn this into a mobile app guide that works on phones, with a simpler version for the grandparents. I want to be able to share a link with everyone."* Claude handles all the code.
 
-Paste something like this into Claude:
+4. **Put it online.** Claude will give you files to download. Go to [github.com/new](https://github.com/new), create a free repository (think of it as a folder on the internet), upload the files Claude gave you, then go to Settings → Pages and turn it on. Your app is live at a free shareable link within a minute.
 
-> I'm planning a family trip to [destination] from [start date] to [end date]. Our group is [describe — e.g. 2 parents, 2 young children aged 1 and 4, and 4 grandparents who speak Telugu]. Here's our rough itinerary:
->
-> [paste your itinerary]
->
-> I want a mobile PWA trip guide with:
-> - A landing page with a countdown timer
-> - A full detailed guide for me and my partner
-> - A simpler guide for the grandparents
-> - Food lists with dietary notes for the kids
->
-> Build it as plain HTML/CSS/JS with no framework — I want to be able to edit files directly on GitHub.
+5. **Keep improving it.** Open the link on your phone, notice what you'd like to change, describe it to Claude in plain English, get updated files, upload. That's the whole loop — no technical knowledge needed at any point.
 
-### Getting it onto GitHub Pages
+### Option B — Start from this app
 
-1. Create a new repo at [github.com/new](https://github.com/new)
-2. Upload the files Claude gives you (or paste them one by one)
-3. Go to **Settings → Pages**, set source to `main`, folder to `/`
-4. Your site is live at `https://yourusername.github.io/your-repo-name/`
+1. **Get the source files.** Go to the [GitHub repo](https://github.com/hrajendra/sg-trip-2026), click the green Code button, and choose Download ZIP.
 
-### Key prompts to have ready
+2. **Put your copy online.** Go to [github.com/new](https://github.com/new), create a free folder, upload the files from the ZIP, then turn on GitHub Pages in Settings. Your own copy is live at a free link within a minute.
 
-| You want to... | Say to Claude... |
+3. **Share the files with Claude.** Open Claude, upload the HTML files, and say: *"I've downloaded this Singapore trip app. I want to adapt it for my trip to [destination] from [dates] with [describe your group]. Here's my itinerary: [paste]."*
+
+4. **Let Claude rewrite the content.** Claude will replace the Singapore-specific details — dates, hotel, restaurants, itinerary — keeping all the features intact: countdown timer, dish toggles, dietary tags, offline use.
+
+5. **Personalise.** Ask Claude to change the colour scheme, swap the icon, add or remove tabs, translate guides into your grandparents' language. Upload the updated files and you're done.
+
+### Things to ask Claude
+
+| When you want to… | Say this |
 |---|---|
-| Add a new day | "Add a Day 6 tab. Here's the schedule: [paste]" |
-| Fix broken navigation | "Clicking any tab does nothing on gp-en.html. Here's the HTML: [paste section]" |
-| Add dietary tags | "Tag all dishes with 🌿 veg / 🍗 non-veg / 👶 kid-safe. Flag anything with added sugar for the toddler." |
-| Update a venue | "We've changed the dinner on Day 3 from X to Y. Update all references." |
-| Add a language | "Add a Hindi grandparent guide. Mirror the structure of gp-en.html." |
-| Change the colour scheme | "Change the primary colour from orange #E05C2A to deep blue #1A4A6B throughout." |
-| Generate an icon | "Create a custom app icon using a [motif] in [colour]. Generate at 192×192 and 512×512 PNG." |
-| Check for bugs | "Run a div balance check on all sections in full.html and report any imbalances." |
-
-### Tips
-
-- **Share the actual code** when debugging. "The nav is broken" + pasted HTML gets a fix in one message. "The nav is broken" alone takes three.
-- **Deploy between changes.** Test each change before requesting the next one.
-- **Name your versions.** Ask Claude to track versions (v1, v2...) so you can roll back if something goes wrong.
-- **Use one source of truth for repeated data.** If you have food lists, ask Claude to put them in a shared JS file from the start.
-- **Tell Claude your constraints upfront.** "No frameworks, no build steps, editable on GitHub" shapes every decision.
+| Get a guided walkthrough | "I want to build a trip guide app like the Singapore one. Can you ask me everything you need to know — my destination, group, dates, itinerary, dietary needs — and build it step by step as I answer?" |
+| Add another day | "Add a Day 6 to the app. Here's what we're doing that day: [describe]" |
+| Add a guide in another language | "Add a grandparent guide in Hindi. Keep it simple — just where to be and when." |
+| Something isn't working | "When I tap on Day 2 nothing happens. Can you fix it?" |
+| Change how the app looks | "Change the colours to feel more like Japan — cherry blossom pinks and deep indigo." |
+| Add food recommendations | "Add a food guide for Day 3 and flag anything with nuts or dairy." |
+| Update a booking | "We changed our Day 3 dinner from X to Y. Update everywhere it's mentioned." |
+| Make a new icon | "Make a home screen icon using a cherry blossom. Pink and white, simple and clean." |
+| Make it work offline | "Make sure the app works without internet so the family can use it without roaming data." |
 
 ---
 

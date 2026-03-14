@@ -184,7 +184,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
 
   <div class="retro-row">
     <div class="retro-label improve">△ Do differently next time</div>
-    <div class="retro-body"><strong>Run div balance checks from the start.</strong> The most frustrating bugs were unbalanced HTML divs — a missing <code>&lt;/div&gt;</code> causing an entire day's content to bleed across all tabs. Became standard practice by phase 5, should have been from phase 1.</div>
+    <div class="retro-body"><strong>Ask Claude to check the structure after every major edit.</strong> The most frustrating bugs were small structural mistakes — a single missing closing tag that caused an entire day's content to bleed across all tabs. Asking Claude to verify the structure after each change would have caught these instantly. Standard practice later, should have been from the start.</div>
   </div>
 
   <div class="retro-row">
@@ -197,41 +197,95 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
     <div class="retro-body"><strong>One consistent HTML structure across all pages.</strong> The three guides ended up with slightly different attribute patterns (<code>data-day</code> vs <code>data-t</code>). A shared base structure defined upfront would have kept cross-page changes simpler.</div>
   </div>
 
-  <!-- ── Build your own ── -->
-  <div class="section-head">Build your own</div>
+  <!-- ── Build from scratch ── -->
+  <div class="section-head">Start from scratch — your own trip</div>
 
   <div class="tip-row">
     <div class="tip-icon">1️⃣</div>
-    <div class="tip-text">Get a free account at <a href="https://claude.ai" style="color:var(--orange)">claude.ai</a> and a free account at <a href="https://github.com" style="color:var(--orange)">github.com</a>. That's all you need.</div>
+    <div class="tip-text"><strong>Create two free accounts.</strong> One at <a href="https://claude.ai" style="color:var(--orange)">claude.ai</a> (your AI collaborator) and one at <a href="https://github.com" style="color:var(--orange)">github.com</a> (where your app will be hosted). No credit card needed for either.</div>
   </div>
   <div class="tip-row">
     <div class="tip-icon">2️⃣</div>
-    <div class="tip-text">Paste your trip details and itinerary into Claude. Be specific about your group — who they are, what languages they speak, any dietary needs.</div>
+    <div class="tip-text"><strong>Tell Claude about your trip.</strong> Paste your itinerary and describe your group in plain English — who's coming, what languages the grandparents speak, any food restrictions, anything that makes your group unique.</div>
   </div>
   <div class="tip-row">
     <div class="tip-icon">3️⃣</div>
-    <div class="tip-text">Ask for a mobile PWA with separate views per audience. Tell Claude: <em>"No framework, no build step, pure HTML/CSS/JS — I need to edit files directly on GitHub."</em></div>
+    <div class="tip-text"><strong>Ask Claude to build the app.</strong> Say something like: <em>"Turn this into a mobile app guide that works on phones, with a simpler version for the grandparents. I want to be able to share a link with everyone."</em> Claude handles all the code.</div>
   </div>
   <div class="tip-row">
     <div class="tip-icon">4️⃣</div>
-    <div class="tip-text">Upload the files to a new GitHub repo and enable GitHub Pages (Settings → Pages → main branch). Live in 60 seconds.</div>
+    <div class="tip-text"><strong>Put it online.</strong> Claude will give you files to download. Go to <a href="https://github.com/new" style="color:var(--orange)" target="_blank" rel="noopener">github.com/new</a>, create a free folder on the internet, upload the files Claude gave you, then go to Settings → Pages and turn it on. Your app is live at a free shareable link within a minute.</div>
   </div>
   <div class="tip-row">
     <div class="tip-icon">5️⃣</div>
-    <div class="tip-text">Iterate. Test in your browser, describe what's wrong or what you want to add, get new code. Repeat.</div>
+    <div class="tip-text"><strong>Keep improving it.</strong> Open the link on your phone, notice what you'd like to change, describe it to Claude in plain English, get updated files, upload. That's the whole loop — no technical knowledge needed at any point.</div>
   </div>
 
-  <div class="section-head">Useful prompts</div>
+  <!-- ── Start from this app ── -->
+  <div class="section-head">Start from this app — adapt it for your trip</div>
+
+  <div class="tip-row">
+    <div class="tip-icon">1️⃣</div>
+    <div class="tip-text"><strong>Get the source files.</strong> Go to the <a href="https://github.com/hrajendra/sg-trip-2026" style="color:var(--orange)" target="_blank" rel="noopener">GitHub repo</a>, click the green Code button, and choose Download ZIP. You now have everything.</div>
+  </div>
+  <div class="tip-row">
+    <div class="tip-icon">2️⃣</div>
+    <div class="tip-text"><strong>Put your copy online.</strong> Go to <a href="https://github.com/new" style="color:var(--orange)" target="_blank" rel="noopener">github.com/new</a>, create a free folder, upload the files from the ZIP, then turn on GitHub Pages in Settings. Your own copy is live at a free link within a minute.</div>
+  </div>
+  <div class="tip-row">
+    <div class="tip-icon">3️⃣</div>
+    <div class="tip-text"><strong>Share the files with Claude.</strong> Open Claude, upload the HTML files, and say: <em>"I've downloaded this Singapore trip app. I want to adapt it for my trip to [destination] from [dates] with [describe your group]. Here's my itinerary: [paste]."</em></div>
+  </div>
+  <div class="tip-row">
+    <div class="tip-icon">4️⃣</div>
+    <div class="tip-text"><strong>Let Claude rewrite the content.</strong> Claude will replace the Singapore-specific details, dates, hotel, restaurants, and itinerary with your trip — keeping all the features (countdown, dish toggles, dietary tags, offline use) intact.</div>
+  </div>
+  <div class="tip-row">
+    <div class="tip-icon">5️⃣</div>
+    <div class="tip-text"><strong>Personalise.</strong> Ask Claude to change the colour scheme to something that feels like your destination, swap the icon, add or remove tabs, translate guides into your grandparents' language — anything. Then upload the updated files and you're done.</div>
+  </div>
+
+  <!-- ── Useful prompts ── -->
+  <div class="section-head">Things to ask Claude</div>
 
   <table class="ref-table">
-    <tr><th>Goal</th><th>Say to Claude</th></tr>
-    <tr><td>Add a new day</td><td>"Add a Day 6 tab. Here's the schedule: [paste]"</td></tr>
-    <tr><td>Add a language</td><td>"Add a Hindi grandparent guide. Mirror gp-en.html."</td></tr>
-    <tr><td>Fix nav</td><td>"Clicking tabs does nothing on X. Here's the HTML: [paste]"</td></tr>
-    <tr><td>Custom icon</td><td>"Generate a [motif] icon at 192×192 and 512×512 in colour #XXXXXX"</td></tr>
-    <tr><td>Dietary tags</td><td>"Tag all dishes with 🌿/🍗/👶. Flag added sugar for the toddler."</td></tr>
-    <tr><td>Debug layout</td><td>"Run a div balance check on all sections and report imbalances."</td></tr>
-    <tr><td>Update a venue</td><td>"We changed dinner on Day 3 from X to Y. Update all references."</td></tr>
+    <tr><th>When you want to…</th><th>Say this to Claude</th></tr>
+    <tr>
+      <td>Get a guided walkthrough</td>
+      <td>"I want to build a trip guide app like this one. Can you ask me everything you need — my destination, group, dates, itinerary, dietary needs — and build it step by step as I answer?"</td>
+    </tr>
+    <tr>
+      <td>Add another day to the trip</td>
+      <td>"Add a Day 6 to the app. Here's what we're doing that day: [describe your plans]"</td>
+    </tr>
+    <tr>
+      <td>Add a guide in another language</td>
+      <td>"Add a grandparent guide in Hindi. Keep it simple — just where to be and when, with one short note per activity."</td>
+    </tr>
+    <tr>
+      <td>Something isn't working right</td>
+      <td>"When I tap on Day 2 nothing happens. Can you fix it?" — Claude will ask for the file if needed.</td>
+    </tr>
+    <tr>
+      <td>Change how the app looks</td>
+      <td>"Change the colours to feel more like Japan — think cherry blossom pinks and deep indigo."</td>
+    </tr>
+    <tr>
+      <td>Add food and drink recommendations</td>
+      <td>"Add a food guide for Day 3 with the dishes we're planning to try, and flag anything that has nuts or dairy."</td>
+    </tr>
+    <tr>
+      <td>Update a booking or venue</td>
+      <td>"We changed our Day 3 dinner from Restaurant A to Restaurant B. Update everywhere it's mentioned."</td>
+    </tr>
+    <tr>
+      <td>Make a new icon for the app</td>
+      <td>"Make a home screen icon using a cherry blossom. Pink and white, simple and clean."</td>
+    </tr>
+    <tr>
+      <td>Make it work offline</td>
+      <td>"Make sure the app works without internet so the family can use it without roaming data."</td>
+    </tr>
   </table>
 
   <a href="https://github.com/hrajendra/sg-trip-2026" class="gh-link" target="_blank" rel="noopener">View source on GitHub →</a>
