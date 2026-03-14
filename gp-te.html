@@ -60,6 +60,8 @@
   .nav-btn[data-t="d4"].active::after { background: var(--green); }
   .nav-btn[data-t="d5"].active::after { background: var(--gold); }
   .nav-btn[data-t="info"].active::after { background: #555; }
+  .nav-btn[data-t="places"].active::after { background: #1B7A8A; }
+  .nav-btn[data-t="food"].active::after { background: #2E7A3A; }
 
   .content { padding: 0 16px 40px; max-width: 640px; margin: 0 auto; }
   .section { display: none; padding-top: 20px; }
@@ -206,6 +208,8 @@
     <button class="nav-btn" data-t="d3" onclick="show('d3')">రోజు 3<br><small style="font-weight:400;font-size:11px;font-family:'DM Sans'">Wed Apr 8</small></button>
     <button class="nav-btn" data-t="d4" onclick="show('d4')">రోజు 4<br><small style="font-weight:400;font-size:11px;font-family:'DM Sans'">Thu Apr 9</small></button>
     <button class="nav-btn" data-t="d5" onclick="show('d5')">రోజు 5<br><small style="font-weight:400;font-size:11px;font-family:'DM Sans'">Fri Apr 10</small></button>
+    <button class="nav-btn" data-t="places" onclick="show('places')">🗺️ ప్రదేశాలు</button>
+    <button class="nav-btn" data-t="food" onclick="show('food')">🍽️ భోజనం</button>
     <button class="nav-btn" data-t="info" onclick="show('info')">ℹ️ సమాచారం</button>
   </nav>
 </div>
@@ -284,7 +288,7 @@
     <p><strong>One Farrer Hotel</strong></p>
     <p>1 Farrer Park Station Rd, S217562</p>
     <p>Farrer Park MRT నుండి 5 నిమిషాల నడక</p>
-    <p><strong>Phone:</strong> <a href="tel:+6564283000" style="color:var(--teal)">+65 6428 3000</a></p>
+    <p><strong>Phone:</strong> <a href="tel:+6563630101" style="color:var(--teal)">+65 6363 0101</a></p>
   </div>
 </div>
 
@@ -815,47 +819,89 @@
   </ul>
 </div>
 
-<div class="div"></div>
+
+<div id="places" class="section">
+
 <div class="card card-teal">
-  <div class="card-title">🏛️ మనం వెళ్ళే ప్రదేశాలు — All Places</div>
+  <div class="card-title">🏛️ మనం వెళ్ళే ప్రదేశాలు</div>
   <ul>
-    <li><strong>Sri Veeramakaliamman Temple</strong> — Day 2 · Serangoon Rd · ఉదయం 5:30 – 9pm</li>
-    <li><strong>Sultan Mosque</strong> — Day 2 · 3 Muscat St · ఉచితం · 10am–6pm</li>
-    <li><strong>Haji Lane</strong> — Day 2 · Arab Street · షాపింగ్ · 11am–9pm</li>
-    <li><strong>Sri Mariamman Temple</strong> — Day 3 · Chinatown · ఉచితం</li>
-    <li><strong>Buddha Tooth Relic Temple</strong> — Day 3 · AC లో · ఉచితం</li>
-    <li><strong>Merlion Park</strong> — Day 3 · ఉచితం · 24hr</li>
-    <li><strong>Supertrees Light Show</strong> — Day 3 · రాత్రి 8:45 PM · ఉచితం</li>
-    <li><strong>Singapore Oceanarium</strong> — Day 4 · 10am–7pm · tickets ready</li>
-    <li><strong>Sentosa Beach</strong> — Day 4 · Siloso / Palawan</li>
+    <li><strong>One Farrer Hotel</strong> — 1 Farrer Park Station Rd · Farrer Park MRT · +65 6363 0101</li>
+    <li><strong>Tekka Centre</strong> — Day 2 · Little India · breakfast hall · 6am నుండి</li>
+    <li><strong>Sri Veeramakaliamman Temple</strong> — Day 2 · Serangoon Rd · ఉచితం · 5:30am–9pm</li>
+    <li><strong>Serangoon Road &amp; Mustafa Centre</strong> — Day 2 · Little India · 24hr</li>
+    <li><strong>Sultan Mosque</strong> — Day 2 · 3 Muscat St · ఉచితం · కప్పబడిన భుజాలు అవసరం</li>
+    <li><strong>Haji Lane &amp; Arab Street</strong> — Day 2 · రంగురంగుల shops · 11am–9pm</li>
+    <li><strong>Maxwell Food Centre</strong> — Day 3 · Chinatown · 8am నుండి</li>
+    <li><strong>Sri Mariamman Temple</strong> — Day 3 · Chinatown · ఉచితం · 7am–12pm, 6–9pm</li>
+    <li><strong>Buddha Tooth Relic Temple</strong> — Day 3 · AC లో · ఉచితం · 7am–7pm</li>
+    <li><strong>Chinatown Complex Food Centre</strong> — Day 3 · 335 Smith St · 10am నుండి</li>
+    <li><strong>Merlion Park</strong> — Day 3 · ఉచితం · 24hr · flat walk</li>
+    <li><strong>Helix Bridge</strong> — Day 3 · ఉచితం · scenic walk</li>
+    <li><strong>Supertrees — Garden Rhapsody</strong> — Day 3 · రాత్రి 8:45 PM · ఉచితం</li>
+    <li><strong>Singapore Cable Car</strong> — Day 4 · HarbourFront నుండి Sentosa · pre-booked</li>
+    <li><strong>Singapore Oceanarium</strong> — Day 4 · 10am–7pm · pre-booked · చిన్న పిల్లలకు FREE</li>
+    <li><strong>Sentosa Sensoryscape</strong> — Day 4 · ఉచితం · అన్ని రోజులు</li>
+    <li><strong>Siloso / Palawan Beach</strong> — Day 4 · Sentosa beach · shaded seating</li>
     <li><strong>Wings of Time</strong> — Day 4 · 7:40 PM · pre-booked</li>
     <li><strong>ArtScience Museum</strong> — Day 5 · 10am–7pm · ⚠️ stroller లోపల రాదు</li>
-    <li><strong>Cloud Forest</strong> — Day 5 · 9am–9pm · Jurassic World ⚠️ పెద్ద శబ్దాలు</li>
-    <li><strong>Jewel Changi Airport</strong> — Day 5 · Rain Vortex ఉచితం</li>
+    <li><strong>Cloud Forest</strong> — Day 5 · 9am–9pm · Jurassic World · ⚠️ పెద్ద శబ్దాలు</li>
+    <li><strong>Satay by the Bay</strong> — Day 5 · నీటి ఒడ్డున · noon నుండి</li>
+    <li><strong>Jewel Changi Airport</strong> — Day 5 · Rain Vortex ఉచితం · Bengawan Solo లోపల</li>
   </ul>
 </div>
+
+</div><!-- places -->
+
+<div id="food" class="section">
 
 <div class="card card-orange">
-  <div class="card-title">🍽️ భోజన స్థలాలు — Restaurants &amp; Hawker Centres</div>
+  <div class="card-title">🍽️ భోజన స్థలాలు</div>
   <ul>
     <li><strong>Tekka Centre</strong> — Day 2 breakfast · idli, dosa, filter coffee · 6am నుండి</li>
-    <li><strong>Zam Zam</strong> — Day 2 lunch · murtabak · 7am–11pm daily</li>
+    <li><strong>Zam Zam</strong> — Day 2 lunch · murtabak, biryani · 697 North Bridge Rd · 7am–11pm</li>
     <li><strong>Hjh Maimunah</strong> — Day 2 lunch option · Nasi Padang (Michelin!) · Mon–Sat 7am–8pm</li>
-    <li><strong>Banana Leaf Apolo</strong> — Day 2 dinner · banana leaf · 10:30am–10:30pm</li>
-    <li><strong>Maxwell Food Centre</strong> — Day 3 breakfast · chicken rice, kaya toast</li>
-    <li><strong>Chinatown Complex</strong> — Day 3 lunch · char kway teow, chendol</li>
-    <li><strong>Rang Mahal</strong> — Day 3 dinner · Pan Pacific Hotel · 6:30 PM · pre-booked</li>
-    <li><strong>Malaysian Food Street</strong> — Day 4 lunch · Laksa 🌟 · 10am–10pm</li>
-    <li><strong>Satay by the Bay</strong> — Day 5 lunch · నీటి ఒడ్డున · noon నుండి</li>
+    <li><strong>Banana Leaf Apolo</strong> — Day 2 dinner · banana leaf thali · 54 Race Course Rd · 10:30am–10:30pm</li>
+    <li><strong>Ananda Bhavan</strong> — Day 2 dinner alt (pure veg) · 58 Serangoon Rd · 7am–10:30pm</li>
+    <li><strong>Maxwell Food Centre</strong> — Day 3 breakfast · chicken rice, kaya toast, prata</li>
+    <li><strong>Chinatown Complex</strong> — Day 3 lunch + desserts · char kway teow, claypot rice, chendol</li>
+    <li><strong>Rang Mahal</strong> — Day 3 dinner · Pan Pacific Hotel Level 3 · 6:30 PM · pre-booked</li>
+    <li><strong>Malaysian Food Street</strong> — Day 4 lunch · Laksa 🌟 · RWS Sentosa · 10am–10pm</li>
+    <li><strong>Food Republic (VivoCity)</strong> — Day 4 dinner · HarbourFront Walk Level 3 · 10am–10pm</li>
+    <li><strong>Satay by the Bay</strong> — Day 5 lunch · satay, lontong · noon నుండి</li>
     <li><strong>Bengawan Solo</strong> — Day 5 Jewel · kueh lapis · ముందే తీసుకోండి!</li>
-    <li><strong>Ya Kun Kaya Toast</strong> — Day 5 · T2 airport · farewell kaya toast</li>
+    <li><strong>Ya Kun Kaya Toast</strong> — Day 5 · T2 airport airside · farewell kaya toast</li>
   </ul>
 </div>
 
-
+<div class="card card-green">
+  <div class="card-title">☕ పానీయాలు — Drinks to Try</div>
+  <ul>
+    <li><strong>Teh halia</strong> — అల్లం పాల టీ · warming, aromatic 🌿 👶</li>
+    <li><strong>Kopi-O</strong> — strong black coffee, local style 🌿</li>
+    <li><strong>Teh tarik</strong> — pulled milk tea, frothy and rich 🌿 👶</li>
+    <li><strong>Milo Dinosaur</strong> — iced Milo with powder on top 👶</li>
+    <li><strong>Sugarcane juice</strong> — Serangoon Rd లో fresh గా press చేస్తారు 🌿 👶</li>
+    <li><strong>Bandung</strong> — rose syrup milk, sweet pink drink 👶</li>
+    <li><strong>Fresh coconut water</strong> — Sentosa beach లో 🌿 👶 🍼</li>
+    <li><strong>Barley water</strong> — mild, cooling, any hawker centre 🌿 👶 🍼</li>
+    <li>Order tip: <em>kosong</em> = sugar లేదు · <em>siu dai</em> = తక్కువ తీపి</li>
+  </ul>
 </div>
 
+<div class="card card-teal">
+  <div class="card-title">⭐ తప్పక తినాల్సినవి</div>
+  <ul>
+    <li><strong>Kaya toast + soft-boiled eggs</strong> — రోజూ తినండి. Singapore breakfast ritual.</li>
+    <li><strong>Idli, dosa, pongal</strong> — ఇంటిలాగే ఉంటుంది · Tekka Centre Day 2</li>
+    <li><strong>Laksa 🌟</strong> — THE Singapore dish. Malaysian Food Street Day 4.</li>
+    <li><strong>Chendol</strong> — shaved ice with coconut milk &amp; pandan jelly · Day 3</li>
+    <li><strong>Ice Kachang</strong> — rainbow shaved ice tower · Day 3</li>
+    <li><strong>Satay</strong> — charcoal grilled skewers with peanut sauce · Day 5</li>
+    <li><strong>Kueh lapis</strong> — Bengawan Solo నుండి bring home · Day 5 Jewel</li>
+  </ul>
+</div>
 
+</div><!-- food -->
 
 <!-- ══ INFO ══ -->
 <div id="info" class="section">
@@ -887,7 +933,7 @@
     <div class="contact-row"><span class="contact-lbl">పేరు</span><span class="contact-val">One Farrer Hotel<a href="https://maps.google.com/?q=One+Farrer+Hotel+Singapore" target="_blank" rel="noopener" class="ml">📍</a></span></div>
     <div class="contact-row"><span class="contact-lbl">చిరునామా</span><span class="contact-val">1 Farrer Park Station Rd, Singapore</span></div>
     <div class="contact-row"><span class="contact-lbl">MRT</span><span class="contact-val">Farrer Park, 5 నిమిషాల నడక</span></div>
-    <div class="contact-row"><span class="contact-lbl">Phone</span><span class="contact-val"><a href="tel:+6564283000">+65 6428 3000</a></span></div>
+    <div class="contact-row"><span class="contact-lbl">Phone</span><span class="contact-val"><a href="tel:+6563630101">+65 6363 0101</a></span></div>
   </div>
 
   <div class="card card-red">
