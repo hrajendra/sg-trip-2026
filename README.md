@@ -138,6 +138,10 @@ The `manifest.json` uses `"start_url": "./index.html"` and `"scope": "./"` — t
 
 ## 🤖 Build your own with Claude
 
+This entire app was built the long way — through open-ended exploration, wrong turns, and figuring out the right architecture from scratch. Every edge case surfaced, every decision tested across 10 days, 6 active sessions, ~240 conversation turns, and ~1,000 tool calls — from "help me plan a trip to Singapore" to a fully offline installable PWA with multilingual guides, dietary-tagged food lists, and a share button on every page. Zero lines of code written by hand.
+
+**That exploration is the point.** It produced the template, the guided mode prompt, and the step-by-step path below — so your version takes a few conversations, not hundreds.
+
 This entire app was built through conversation with Claude — no code was written by hand. The full story, stats, retrospective, and guided mode for building your own is in **[build.html](https://hrajendra.github.io/sg-trip-2026/build.html)** — linked from the app home screen.
 
 The fastest way to start: **[✦ Open guided mode in Claude](https://hrajendra.github.io/sg-trip-2026/build.html#guided-mode)** — a pre-filled prompt that kicks off a step-by-step conversation to build your own trip guide. Or go straight to Claude with the prompt: [claude.ai/new](https://claude.ai/new).
