@@ -4,6 +4,8 @@
 
 **Live site:** [hrajendra.github.io/sg-trip-2026](https://hrajendra.github.io/sg-trip-2026)
 
+**[✦ Build your own trip guide with Claude →](https://claude.ai/new?q=I%20want%20to%20build%20a%20mobile%20trip%20guide%20app%20for%20my%20family%20%E2%80%94%20a%20shareable%20link%20that%20works%20fully%20offline%20%28all%20pages%20cached%20on%20the%20very%20first%20load%2C%20so%20the%20whole%20family%20can%20use%20it%20without%20any%20internet%20connection%20even%20if%20they%20only%20opened%20the%20home%20page%29%2C%20with%20a%20day-by-day%20schedule%20and%20food%20recommendations%2C%20tailored%20for%20different%20members%20of%20my%20group%20%28like%20grandparents%20who%20may%20need%20a%20simpler%20version%29.%0A%0AI%20have%20no%20coding%20experience.%20Please%20guide%20me%20step%20by%20step.%20If%20I%27m%20ever%20stuck%20or%20unsure%20what%20to%20do%20next%2C%20just%20tell%20me%20exactly%20what%20to%20do.%0A%0AFor%20reference%2C%20here%27s%20an%20example%20of%20what%20we%27re%20building%3A%20https%3A//github.com/hrajendra/sg-trip-2026%20%E2%80%94%20feel%20free%20to%20use%20this%20as%20a%20starting%20template%20and%20adapt%20the%20structure%2C%20features%2C%20and%20design%20for%20my%20trip.%0A%0AStart%20by%20asking%20me%20everything%20you%20need%20to%20know%20about%20the%20trip%20%E2%80%94%20one%20topic%20at%20a%20time%20so%20it%27s%20not%20overwhelming.%20Once%20you%20have%20the%20full%20picture%2C%20first%20build%20me%20a%20clean%20itinerary%20document%20I%20can%20review.%20After%20I%20approve%20it%2C%20build%20the%20mobile%20app.%20At%20the%20end%2C%20give%20me%20simple%20instructions%20to%20put%20it%20online%20for%20free%20so%20I%20can%20share%20the%20link%20with%20everyone.)**
+
 A mobile-first Progressive Web App built as a personal trip guide for a multigenerational family trip to Singapore — 8 people across three generations, 5 days, April 6–10 2026.
 
 The app was entirely designed, written, and iterated with [Claude](https://claude.ai) over a series of conversations — no prior web development was needed. It's shared here as a template and starting point for anyone who wants to build something similar for their own trip.
@@ -25,7 +27,7 @@ The app was entirely designed, written, and iterated with [Claude](https://claud
 
 ## ✨ What this app is
 
-Most travel planning lives in a mess of tabs, PDFs, and WhatsApp threads. This app replaces all of that with a single offline-capable link you can share with everyone in your group — each person gets a view tailored to them.
+Most travel planning lives in a mess of tabs, PDFs, and WhatsApp threads. This app replaces all of that with a single link you can share with everyone in your group — each person gets a view tailored to them. It works fully offline (no signal needed at temples, beaches, or airports), installs on home screens as its own icon, and has a share button on every page.
 
 The specific problem it solves: **multigenerational travel** where different members of the group have very different needs. Parents want every detail. Grandparents want to know where to be and when, in language they can read. Young children have dietary restrictions. Everyone needs the same trip, but communicated differently.
 
@@ -45,8 +47,9 @@ The specific problem it solves: **multigenerational travel** where different mem
 - **Tab navigation** — Days 1–5, Places, Food, Info (and Apps tab in the full guide)
 - **Dish toggles** — every hawker centre and restaurant has a collapsible dish list with stall numbers, dietary tags (🌿 🍗 👶 🍼 ⭐), and sugar flags
 - **Single source of truth** — `dishes.js` powers dish lists across all three guide pages; update once, all pages reflect it
-- **Offline-first PWA** — service worker caches all assets on first load; works without internet
+- **Offline-first PWA** — service worker pre-caches all pages on install; works without any internet after first load, even pages not yet visited
 - **Installable** — full `manifest.json` with custom hibiscus icon, works on iOS Safari and Android Chrome
+- **Share buttons** — every page has a native share button; opens the share sheet on mobile (WhatsApp, iMessage, etc.) or copies link to clipboard with a toast on desktop
 - **Cultural dietary rules** — vegetarian-only flags before temple visits baked into the schedule notes
 - **Places & Food tabs** — separate reference tabs for all venues (with opening hours) and all food/drink recommendations
 - **Telugu guide** — full translation with English subtitles for non-Telugu readers in the group
@@ -129,7 +132,9 @@ The `manifest.json` uses `"start_url": "./index.html"` and `"scope": "./"` — t
 
 ## 🤖 Build your own with Claude
 
-This entire app was built through conversation with Claude — no code was written by hand. The full story, stats, retrospective, and a step-by-step guide for building your own version is in **[build.html](https://hrajendra.github.io/sg-trip-2026/build.html)** — readable in any browser, and linked from the app home screen.
+This entire app was built through conversation with Claude — no code was written by hand. The full story, stats, retrospective, and guided mode for building your own is in **[build.html](https://hrajendra.github.io/sg-trip-2026/build.html)** — linked from the app home screen.
+
+The fastest way to start: **[✦ Open guided mode in Claude](https://hrajendra.github.io/sg-trip-2026/build.html#guided-mode)** — a pre-filled prompt that kicks off a step-by-step conversation to build your own trip guide. Or go straight to Claude with the prompt: [claude.ai/new](https://claude.ai/new).
 
 ---
 

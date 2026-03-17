@@ -214,28 +214,34 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
 
   <!-- ── Guided mode ── -->
   <a id="guided-mode"></a>
-  <div class="section-head">✨ Start here — guided mode</div>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin:28px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--rule);">
+    <span style="font-size:13px;font-weight:700;color:var(--light);letter-spacing:1px;text-transform:uppercase;">✨ Start here — guided mode</span>
+    <button onclick="shareLink('https://hrajendra.github.io/sg-trip-2026/build.html#guided-mode','Build a trip guide app with Claude')"
+      style="display:inline-flex;align-items:center;gap:5px;background:var(--bg);border:1px solid var(--rule);border-radius:20px;padding:5px 12px;font-size:12px;font-weight:600;color:var(--mid);cursor:pointer;font-family:'DM Sans',sans-serif;">
+      🔗 Share link
+    </button>
+  </div>
 
   <div style="background:#1A4A6B;border-radius:16px;padding:20px;margin-bottom:12px;">
     <div style="font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:10px;">Copy this prompt into Claude</div>
     <p style="font-size:13px;color:rgba(255,255,255,0.92);line-height:1.75;font-family:'DM Sans',sans-serif;margin:0;">
-      I want to build a mobile trip guide app for my family — a shareable link that works offline, with a day-by-day schedule and food recommendations, tailored for different members of my group (like grandparents who may need a simpler version).<br><br>
+      I want to build a mobile trip guide app for my family — a shareable link that works fully offline (all pages cached on the very first load, so the whole family can use it without any internet connection even if they only opened the home page), with a day-by-day schedule and food recommendations, tailored for different members of my group (like grandparents who may need a simpler version).<br><br>
       I have no coding experience. Please guide me step by step. If I'm ever stuck or unsure what to do next, just tell me exactly what to do.<br><br>
       For reference, here's an example of what we're building: <span style="color:#7FB8D4">https://github.com/hrajendra/sg-trip-2026</span> — feel free to use this as a starting template and adapt the structure, features, and design for my trip.<br><br>
       Start by asking me everything you need to know about the trip — one topic at a time so it's not overwhelming. Once you have the full picture, first build me a clean itinerary document I can review. After I approve it, build the mobile app. At the end, give me simple instructions to put it online for free so I can share the link with everyone.
     </p>
   <div style="display:flex;gap:10px;margin-top:14px;">
-    <a href="https://claude.ai/new?q=I%20want%20to%20build%20a%20mobile%20trip%20guide%20app%20for%20my%20family%20%E2%80%94%20a%20shareable%20link%20that%20works%20fully%20offline%20%28all%20pages%20cached%20on%20first%20load%29%2C%20with%20a%20day-by-day%20schedule%20and%20food%20recommendations%2C%20tailored%20for%20different%20members%20of%20my%20group%20%28like%20grandparents%20who%20may%20need%20a%20simpler%20version%29.%0A%0AI%20have%20no%20coding%20experience.%20Please%20guide%20me%20step%20by%20step.%20If%20I%27m%20ever%20stuck%20or%20unsure%20what%20to%20do%20next%2C%20just%20tell%20me%20exactly%20what%20to%20do.%0A%0AFor%20reference%2C%20here%27s%20an%20example%20of%20what%20we%27re%20building%3A%20https%3A//github.com/hrajendra/sg-trip-2026%20%E2%80%94%20feel%20free%20to%20use%20this%20as%20a%20starting%20template%20and%20adapt%20the%20structure%2C%20features%2C%20and%20design%20for%20my%20trip.%0A%0AStart%20by%20asking%20me%20everything%20you%20need%20to%20know%20about%20the%20trip%20%E2%80%94%20one%20topic%20at%20a%20time%20so%20it%27s%20not%20overwhelming.%20Once%20you%20have%20the%20full%20picture%2C%20first%20build%20me%20a%20clean%20itinerary%20document%20I%20can%20review.%20After%20I%20approve%20it%2C%20build%20the%20mobile%20app.%20At%20the%20end%2C%20give%20me%20simple%20instructions%20to%20put%20it%20online%20for%20free%20so%20I%20can%20share%20the%20link%20with%20everyone." target="_blank" rel="noopener"
+    <a href="https://claude.ai/new?q=I%20want%20to%20build%20a%20mobile%20trip%20guide%20app%20for%20my%20family%20%E2%80%94%20a%20shareable%20link%20that%20works%20fully%20offline%20%28all%20pages%20cached%20on%20the%20very%20first%20load%2C%20so%20the%20whole%20family%20can%20use%20it%20without%20any%20internet%20connection%20even%20if%20they%20only%20opened%20the%20home%20page%29%2C%20with%20a%20day-by-day%20schedule%20and%20food%20recommendations%2C%20tailored%20for%20different%20members%20of%20my%20group%20%28like%20grandparents%20who%20may%20need%20a%20simpler%20version%29.%0A%0AI%20have%20no%20coding%20experience.%20Please%20guide%20me%20step%20by%20step.%20If%20I%27m%20ever%20stuck%20or%20unsure%20what%20to%20do%20next%2C%20just%20tell%20me%20exactly%20what%20to%20do.%0A%0AFor%20reference%2C%20here%27s%20an%20example%20of%20what%20we%27re%20building%3A%20https%3A//github.com/hrajendra/sg-trip-2026%20%E2%80%94%20feel%20free%20to%20use%20this%20as%20a%20starting%20template%20and%20adapt%20the%20structure%2C%20features%2C%20and%20design%20for%20my%20trip.%0A%0AStart%20by%20asking%20me%20everything%20you%20need%20to%20know%20about%20the%20trip%20%E2%80%94%20one%20topic%20at%20a%20time%20so%20it%27s%20not%20overwhelming.%20Once%20you%20have%20the%20full%20picture%2C%20first%20build%20me%20a%20clean%20itinerary%20document%20I%20can%20review.%20After%20I%20approve%20it%2C%20build%20the%20mobile%20app.%20At%20the%20end%2C%20give%20me%20simple%20instructions%20to%20put%20it%20online%20for%20free%20so%20I%20can%20share%20the%20link%20with%20everyone." target="_blank" rel="noopener"
       style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
         background:white;color:#1A4A6B;border-radius:10px;padding:11px;
         font-size:13px;font-weight:700;text-decoration:none;font-family:'DM Sans',sans-serif;">
       ✦ Start in Claude →
     </a>
-    <button onclick="shareLink('https://hrajendra.github.io/sg-trip-2026/build.html#guided-mode','Build a trip guide app with Claude')"
+    <button onclick="copyPrompt()"
       style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
         background:rgba(255,255,255,0.14);border:none;border-radius:10px;padding:11px;
         color:white;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;">
-      🔗 Copy link
+      📋 Copy prompt
     </button>
   </div>
   </div>
@@ -290,7 +296,21 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
 
 </div>
 
-<script>  function shareLink(url, title) {
+<script>  function copyPrompt() {
+    var text = `I want to build a mobile trip guide app for my family — a shareable link that works fully offline (all pages cached on the very first load, so the whole family can use it without any internet connection even if they only opened the home page), with a day-by-day schedule and food recommendations, tailored for different members of my group (like grandparents who may need a simpler version).
+
+I have no coding experience. Please guide me step by step. If I'm ever stuck or unsure what to do next, just tell me exactly what to do.
+
+For reference, here's an example of what we're building: https://github.com/hrajendra/sg-trip-2026 — feel free to use this as a starting template and adapt the structure, features, and design for my trip.
+
+Start by asking me everything you need to know about the trip — one topic at a time so it's not overwhelming. Once you have the full picture, first build me a clean itinerary document I can review. After I approve it, build the mobile app. At the end, give me simple instructions to put it online for free so I can share the link with everyone.`;
+    navigator.clipboard.writeText(text).then(function() {
+      showToast('Prompt copied! ✓');
+    }).catch(function() {
+      showToast('Copy failed — select the text manually');
+    });
+  }
+  function shareLink(url, title) {
     if (navigator.share) {
       navigator.share({ title: title, url: url }).catch(function(){});
     } else {
