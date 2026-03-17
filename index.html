@@ -121,6 +121,7 @@ h1 { font-family: 'Playfair Display', serif; font-size: 28px; line-height: 1.2; 
   </a>
 </div>
 <div class="tip"><strong>📲 Add to Home Screen</strong> — open each guide in Safari, tap the Share button → "Add to Home Screen" to install as its own app icon</div>
+<script>
   function shareLink(url, title) {
     if (navigator.share) {
       navigator.share({ title: title, url: url }).catch(function(){});
@@ -138,7 +139,8 @@ h1 { font-family: 'Playfair Display', serif; font-size: 28px; line-height: 1.2; 
     clearTimeout(t._timer);
     t._timer = setTimeout(function(){ t.classList.remove('show'); }, 2200);
   }
-  <script>
+</script>
+<script>
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
 
   (function() {
