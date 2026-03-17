@@ -21,13 +21,11 @@ The app was entirely designed, written, and iterated with [Claude](https://claud
     <td align="center"><img src="docs/ss_index_framed.png" width="180"><br><sub>Home · countdown + share</sub></td>
     <td align="center"><img src="docs/ss_full_framed.png" width="180"><br><sub>Full itinerary · Day 1</sub></td>
     <td align="center"><img src="docs/ss_gpen_framed.png" width="180"><br><sub>Grandparent guide (English)</sub></td>
-    <td align="center"><img src="docs/ss_gpte_framed.png" width="180"><br><sub>Grandparent guide (Telugu)</sub></td>
   </tr>
   <tr>
+    <td align="center"><img src="docs/ss_gpte_framed.png" width="180"><br><sub>Grandparent guide (Telugu)</sub></td>
     <td align="center"><img src="docs/ss_build_story_framed.png" width="180"><br><sub>Built with Claude · stats</sub></td>
     <td align="center"><img src="docs/ss_build_guided_framed.png" width="180"><br><sub>Guided mode · start in Claude</sub></td>
-    <td></td>
-    <td></td>
   </tr>
 </table>
 
