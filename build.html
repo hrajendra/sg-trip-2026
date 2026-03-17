@@ -105,40 +105,78 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
 
 <div class="content">
 
+  <!-- ── Intro ── -->
+  <div style="background:white;border-radius:14px;padding:18px 20px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);border-left:4px solid var(--orange);">
+    <p style="font-size:14px;color:var(--dark);line-height:1.7;margin:0;">This app was built the long way — through open-ended exploration, wrong turns, and figuring out the right architecture from scratch. Every edge case surfaced, every decision tested. <strong>That exploration is the point.</strong> It produced the template, the guided mode prompt, and the step-by-step path at the bottom of this page — so your version takes a few conversations, not hundreds.</p>
+  </div>
+
   <!-- ── Stats ── -->
-  <div class="section-head">By the numbers</div>
+  <div class="section-head">What the exploration took</div>
+
+  <div style="background:white;border-radius:14px;padding:14px 16px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--light);margin-bottom:12px;">The trip guide app — Mar 8 to Mar 12</div>
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-num">~150</div>
+        <div class="stat-label">Conversation turns — planning, building, and debugging</div>
+      </div>
+      <div class="stat-box accent">
+        <div class="stat-num">700+</div>
+        <div class="stat-label">Code executions, file edits & debug runs</div>
+      </div>
+      <div class="stat-box teal">
+        <div class="stat-num">7</div>
+        <div class="stat-label">PWA versions shipped (v1 → v7)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">9</div>
+        <div class="stat-label">Word doc versions of the itinerary</div>
+      </div>
+      <div class="stat-box green">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Guide pages kept in sync throughout</div>
+      </div>
+      <div class="stat-box accent">
+        <div class="stat-num">30+</div>
+        <div class="stat-label">Dishes catalogued with stall numbers & dietary tags</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:white;border-radius:14px;padding:14px 16px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--light);margin-bottom:12px;">This page — Mar 12 to Mar 17</div>
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-num">~90</div>
+        <div class="stat-label">Conversation turns to design, write, and refine</div>
+      </div>
+      <div class="stat-box accent">
+        <div class="stat-num">300+</div>
+        <div class="stat-label">Code executions, screenshots retaken, copy refined</div>
+      </div>
+      <div class="stat-box teal">
+        <div class="stat-num">6</div>
+        <div class="stat-label">Screenshots retaken as the app evolved</div>
+      </div>
+      <div class="stat-box green">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Versions of the guided mode prompt, iterated with the family</div>
+      </div>
+    </div>
+  </div>
+
   <div class="stats-grid">
-    <div class="stat-box">
-      <div class="stat-num">~120</div>
-      <div class="stat-label">Conversation turns across 3 sessions</div>
-    </div>
-    <div class="stat-box accent">
-      <div class="stat-num">300+</div>
-      <div class="stat-label">Code executions, file edits & debug runs</div>
-    </div>
-    <div class="stat-box teal">
-      <div class="stat-num">7</div>
-      <div class="stat-label">PWA versions shipped (v1 → v7)</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-num">9</div>
-      <div class="stat-label">Word doc versions of the itinerary</div>
-    </div>
-    <div class="stat-box green">
-      <div class="stat-num">4</div>
-      <div class="stat-label">HTML pages maintained in parallel</div>
-    </div>
-    <div class="stat-box accent">
-      <div class="stat-num">30+</div>
-      <div class="stat-label">Dishes with stall numbers & dietary tags</div>
+    <div class="stat-box" style="grid-column: span 2; border-left: 4px solid var(--navy); border-radius: 14px;">
+      <div class="stat-num" style="font-size:20px; color: var(--navy);">10 days · 6 active · 16 sessions · ~240 turns · ~1,000 tool calls</div>
+      <div class="stat-label">Mar 8 to Mar 17, 2026 — from "help me plan a trip to Singapore" to this page</div>
     </div>
     <div class="stat-box" style="grid-column: span 2; border-left: 4px solid var(--orange); border-radius: 14px;">
       <div class="stat-num" style="font-size:24px; color: var(--orange);">0 lines of code written by hand</div>
-      <div class="stat-label">Every file was generated and edited through conversation</div>
+      <div class="stat-label">Every file — HTML, CSS, JavaScript, service worker, manifest, icons — generated and edited through conversation</div>
     </div>
     <div class="stat-box" style="grid-column: span 2; border-left: 4px solid var(--teal); border-radius: 14px;">
       <div class="stat-num" style="font-size:22px; color: var(--teal);">Works fully offline ✈️</div>
-      <div class="stat-label">All pages pre-cached on first load — no internet needed at temples, beaches, or airports. Install once, use everywhere.</div>
+      <div class="stat-label">All pages pre-cached on first load — no internet needed at temples, hawker centres, beaches, or airports. Install once, use everywhere.</div>
     </div>
   </div>
 
@@ -178,39 +216,51 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
   <!-- ── Retrospective ── -->
   <div class="section-head">Retrospective</div>
 
-  <div class="retro-row">
-    <div class="retro-label good">✓ What worked well</div>
-    <div class="retro-body"><strong>Plain English is enough.</strong> "The nav is broken — clicking Day 2 does nothing" produced a fix faster than any Stack Overflow search. Describing problems in human terms was more useful than technical descriptions.</div>
-  </div>
 
   <div class="retro-row">
     <div class="retro-label good">✓ What worked well</div>
-    <div class="retro-body"><strong>Small changes, deploy often.</strong> Testing each change in the browser before requesting the next kept the app stable. When three things changed at once and something broke, it was harder to isolate.</div>
+    <div class="retro-body"><strong>Plain English is enough.</strong> "The nav is broken — clicking Day 2 does nothing" produced a fix faster than any Stack Overflow search. "The grandparents' page is missing content on the Places tab" pinpointed a single missing HTML closing tag that had stumped several debug passes. Describing the symptom in plain language, not the cause, was consistently more effective than trying to sound technical.</div>
   </div>
 
   <div class="retro-row">
     <div class="retro-label good">✓ What worked well</div>
-    <div class="retro-body"><strong>No framework was the right call.</strong> Pure HTML/CSS/JS meant last-minute itinerary edits could be made directly on GitHub from a phone — no local setup, no build step.</div>
+    <div class="retro-body"><strong>Small changes, deploy often.</strong> The sessions that went smoothest were ones where each change was tested in the browser before the next was requested. When three things changed at once and something broke, isolating the cause took four times as long. One request, one check, one request — that rhythm produced the best results.</div>
   </div>
 
   <div class="retro-row">
-    <div class="retro-label improve">△ Do differently next time</div>
-    <div class="retro-body"><strong>Start with <code>dishes.js</code> from day one.</strong> Dish lists were copy-pasted into each HTML file individually before the shared data architecture arrived. Starting centralised saves several rounds of syncing.</div>
+    <div class="retro-label good">✓ What worked well</div>
+    <div class="retro-body"><strong>No framework was the right call.</strong> Pure HTML/CSS/JS meant last-minute itinerary changes — switching from ArtScience Museum to Cloud Forest + Flower Dome three weeks before departure — could be made directly on GitHub from a phone. No build step, no local environment, no friction. The simplicity constraint made the app genuinely more useful.</div>
   </div>
 
   <div class="retro-row">
-    <div class="retro-label improve">△ Do differently next time</div>
-    <div class="retro-body"><strong>Ask Claude to check the structure after every major edit.</strong> The most frustrating bugs were small structural mistakes — a single missing closing tag that caused an entire day's content to bleed across all tabs. Asking Claude to verify the structure after each change would have caught these instantly. Standard practice later, should have been from the start.</div>
+    <div class="retro-label good">✓ What worked well</div>
+    <div class="retro-body"><strong>Saying exactly what the audience needs.</strong> "The grandparents speak Telugu and need a simpler guide — just where to be and when, no logistics" produced a better guide than any amount of tweaking after the fact. The more specific the audience description upfront, the less cleanup later. This turned out to apply to dietary needs, language, and even attention span.</div>
   </div>
 
   <div class="retro-row">
-    <div class="retro-label improve">△ Do differently next time</div>
-    <div class="retro-body"><strong>Establish "nothing private in the app" on day one.</strong> Confirmation numbers started appearing in app code before someone caught that the repo is public. Set the rule early.</div>
+    <div class="retro-label improve">△ Do differently next time — and what the guided mode does instead</div>
+    <div class="retro-body"><strong>Start with a shared data layer from day one.</strong> Dish lists were copy-pasted into each HTML file individually and diverged immediately. When stall numbers were added, it meant three separate updates. The <code>dishes.js</code> architecture — one file, all pages read from it — only arrived after the mess. <em>The guided mode prompts Claude to set this up before writing a single HTML file.</em></div>
   </div>
 
   <div class="retro-row">
-    <div class="retro-label improve">△ Do differently next time</div>
-    <div class="retro-body"><strong>One consistent HTML structure across all pages.</strong> The three guides ended up with slightly different attribute patterns (<code>data-day</code> vs <code>data-t</code>). A shared base structure defined upfront would have kept cross-page changes simpler.</div>
+    <div class="retro-label improve">△ Do differently next time — and what the guided mode does instead</div>
+    <div class="retro-body"><strong>Verify structure after every major edit.</strong> The single most frustrating bug across all sessions: a missing closing tag that caused an entire day's content to bleed invisibly into the wrong tab. It took multiple sessions to catch. Asking Claude to check structural balance after each significant change became standard practice by session 3 — it should have been from session 1. <em>The guided mode includes this as a built-in step.</em></div>
+  </div>
+
+  <div class="retro-row">
+    <div class="retro-label improve">△ Do differently next time — and what the guided mode does instead</div>
+    <div class="retro-body"><strong>Establish "nothing private in the app" as the first rule.</strong> Confirmation numbers and booking references started appearing in the HTML before anyone caught that the repo is public. A rule set on day one would have prevented multiple cleanup passes. <em>The guided mode flags this before generating any content.</em></div>
+  </div>
+
+  <div class="retro-row">
+    <div class="retro-label improve">△ Do differently next time — and what the guided mode does instead</div>
+    <div class="retro-body"><strong>One consistent structure across all pages from the start.</strong> The full itinerary and grandparent guides ended up with slightly different tab attribute patterns (<code>data-t</code> vs <code>data-day</code>), different hero CSS, different section naming. Every cross-page change required three separate edits. <em>The guided mode uses the architecture from this repo as a template — the consistency is already built in.</em></div>
+  </div>
+
+  <!-- ── Guided mode transition ── -->
+  <div style="background:linear-gradient(135deg,#1A4A6B 0%,#0D2E45 100%);border-radius:14px;padding:20px;margin:28px 0 0;text-align:center;">
+    <p style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.6;margin:0 0 6px;">Everything above is what it took to discover what's below.</p>
+    <p style="font-size:15px;color:white;font-weight:700;line-height:1.5;margin:0;">The guided mode has all of this baked in — the right architecture, the right questions, the right order. Your version starts here.</p>
   </div>
 
   <!-- ── Guided mode ── -->

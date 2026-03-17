@@ -18,7 +18,7 @@
 body { font-family: 'DM Sans', sans-serif; background: #FDF8F3; min-height: 100vh; display: flex; flex-direction: column; padding-bottom: env(safe-area-inset-bottom, 24px); }
 .hero { background: linear-gradient(160deg, #E05C2A 0%, #C4441A 60%, #9A2E0E 100%); padding: 44px 28px 32px; padding-top: max(44px, calc(44px + env(safe-area-inset-top))); color: white; text-align: center; position: relative; overflow: hidden; }
 .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); }
-.flag { font-size: 64px; display: block; margin-bottom: 16px; position: relative; }
+  .flag { display: none; }
 h1 { font-family: 'Playfair Display', serif; font-size: 28px; line-height: 1.2; margin-bottom: 8px; position: relative; }
 .dates { font-size: 15px; opacity: 0.8; font-weight: 500; position: relative; }
 .cards { padding: 28px 20px; display: flex; flex-direction: column; gap: 14px; flex: 1; max-width: 520px; margin: 0 auto; width: 100%; }
@@ -77,8 +77,7 @@ h1 { font-family: 'Playfair Display', serif; font-size: 28px; line-height: 1.2; 
 </head>
 <body>
 <div class="hero">
-  <span class="flag">🇸🇬</span>
-  <h1>Singapore Family Trip</h1>
+  <h1>🇸🇬 Singapore Family Trip</h1>
   <p class="dates">6 – 10 April 2026</p>
   <div class="countdown" id="countdown">
     <div class="cd-unit"><div class="cd-num" id="cd-d">--</div><div class="cd-label">Days</div></div>

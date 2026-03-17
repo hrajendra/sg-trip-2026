@@ -49,7 +49,7 @@ The specific problem it solves: **multigenerational travel** where different mem
 ## 📋 Features
 
 - **Countdown timer** — live days/hours/mins countdown to arrival, switches to hours/mins/secs under 24 hrs, disappears once the trip begins
-- **Four tailored guides** — landing page, full adult itinerary, English grandparent guide, Telugu grandparent guide
+- **Five pages** — home with countdown, full adult itinerary, English grandparent guide, Telugu grandparent guide, and a "Built with Claude" page with guided mode for others to build their own
 - **Tab navigation** — Days 1–5, Places, Food, Info (and Apps tab in the full guide)
 - **Dish toggles** — every hawker centre and restaurant has a collapsible dish list with stall numbers, dietary tags (🌿 🍗 👶 🍼 ⭐), and sugar flags
 - **Single source of truth** — `dishes.js` powers dish lists across all three guide pages; update once, all pages reflect it
@@ -99,7 +99,7 @@ gp-en.html          English grandparent guide
 gp-te.html          Telugu grandparent guide
 dishes.js           Shared dish/drink data (single source of truth)
 manifest.json       PWA config (name, icon, theme colour, start URL)
-sw.js               Service worker (network-first, offline fallback)
+sw.js               Service worker (cache-first for app assets, offline after first load)
 icon-192.png        Home screen icon — 192×192
 icon-512.png        Home screen icon — 512×512
 docs/               README assets (screenshots, icon)
