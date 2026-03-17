@@ -197,52 +197,23 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
     <div class="retro-body"><strong>One consistent HTML structure across all pages.</strong> The three guides ended up with slightly different attribute patterns (<code>data-day</code> vs <code>data-t</code>). A shared base structure defined upfront would have kept cross-page changes simpler.</div>
   </div>
 
-  <!-- ── Build from scratch ── -->
-  <div class="section-head">Start from scratch — your own trip</div>
+  <!-- ── Guided mode ── -->
+  <a id="guided-mode"></a>
+  <div class="section-head">✨ Start here — guided mode</div>
 
-  <div class="tip-row">
-    <div class="tip-icon">1️⃣</div>
-    <div class="tip-text"><strong>Create two free accounts.</strong> One at <a href="https://claude.ai" style="color:var(--orange)">claude.ai</a> (your AI collaborator) and one at <a href="https://github.com" style="color:var(--orange)">github.com</a> (where your app will be hosted). No credit card needed for either.</div>
-  </div>
-  <div class="tip-row">
-    <div class="tip-icon">2️⃣</div>
-    <div class="tip-text"><strong>Tell Claude about your trip.</strong> Paste your itinerary and describe your group in plain English — who's coming, what languages the grandparents speak, any food restrictions, anything that makes your group unique.</div>
-  </div>
-  <div class="tip-row">
-    <div class="tip-icon">3️⃣</div>
-    <div class="tip-text"><strong>Ask Claude to build the app.</strong> Say something like: <em>"Turn this into a mobile app guide that works on phones, with a simpler version for the grandparents. I want to be able to share a link with everyone."</em> Claude handles all the code.</div>
-  </div>
-  <div class="tip-row">
-    <div class="tip-icon">4️⃣</div>
-    <div class="tip-text"><strong>Put it online.</strong> Claude will give you files to download. Go to <a href="https://github.com/new" style="color:var(--orange)" target="_blank" rel="noopener">github.com/new</a>, create a free folder on the internet, upload the files Claude gave you, then go to Settings → Pages and turn it on. Your app is live at a free shareable link within a minute.</div>
-  </div>
-  <div class="tip-row">
-    <div class="tip-icon">5️⃣</div>
-    <div class="tip-text"><strong>Keep improving it.</strong> Open the link on your phone, notice what you'd like to change, describe it to Claude in plain English, get updated files, upload. That's the whole loop — no technical knowledge needed at any point.</div>
+  <div style="background:#1A4A6B;border-radius:16px;padding:20px;margin-bottom:12px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:10px;">Copy this prompt into Claude</div>
+    <p style="font-size:13px;color:rgba(255,255,255,0.92);line-height:1.75;font-family:'DM Sans',sans-serif;margin:0;">
+      I want to build a mobile trip guide app for my family — a shareable link that works offline, with a day-by-day schedule and food recommendations, tailored for different members of my group (like grandparents who may need a simpler version).<br><br>
+      I have no coding experience. Please guide me step by step. If I'm ever stuck or unsure what to do next, just tell me exactly what to do.<br><br>
+      For reference, here's an example of what we're building: <span style="color:#7FB8D4">https://github.com/hrajendra/sg-trip-2026</span> — feel free to use this as a starting template and adapt the structure, features, and design for my trip.<br><br>
+      Start by asking me everything you need to know about the trip — one topic at a time so it's not overwhelming. Once you have the full picture, first build me a clean itinerary document I can review. After I approve it, build the mobile app. At the end, give me simple instructions to put it online for free so I can share the link with everyone.
+    </p>
   </div>
 
-  <!-- ── Start from this app ── -->
-  <div class="section-head">Start from this app — adapt it for your trip</div>
-
-  <div class="tip-row">
-    <div class="tip-icon">1️⃣</div>
-    <div class="tip-text"><strong>Fork the repo.</strong> Go to the <a href="https://github.com/hrajendra/sg-trip-2026" style="color:var(--orange)" target="_blank" rel="noopener">GitHub repo</a> and click <strong>Fork</strong> (top right). This creates your own copy under your GitHub account instantly — no downloading or re-uploading needed. Your copy is live at <em>yourusername.github.io/sg-trip-2026</em> within a minute.</div>
-  </div>
-  <div class="tip-row">
-    <div class="tip-icon">2️⃣</div>
-    <div class="tip-text"><strong>Share the repo link with Claude.</strong> Open <a href="https://claude.ai" style="color:var(--orange)" target="_blank" rel="noopener">Claude</a> and say: <em>"Here is a GitHub repo for a Singapore family trip app: github.com/[your-username]/sg-trip-2026. I want to adapt it for my trip to [destination] from [dates]. My group is [describe]. Here's my itinerary: [paste]."</em></div>
-  </div>
-  <div class="tip-row">
-    <div class="tip-icon">3️⃣</div>
-    <div class="tip-text"><strong>Let Claude rewrite the files.</strong> Claude will update the itinerary, hotel, restaurants, dates, and all content for your trip — keeping the countdown timer, dish toggles, dietary tags, and offline features intact. Claude will give you updated files to download.</div>
-  </div>
-  <div class="tip-row">
-    <div class="tip-icon">4️⃣</div>
-    <div class="tip-text"><strong>Upload the updated files to your fork.</strong> In your GitHub repo, click on each file, click the pencil icon to edit, paste the new content, and save. Or upload all files at once by dragging them into the repo. Your live site updates within a minute.</div>
-  </div>
-  <div class="tip-row">
-    <div class="tip-icon">5️⃣</div>
-    <div class="tip-text"><strong>Keep going.</strong> Ask Claude to change the colour scheme, swap the icon for something that matches your destination, add more languages, or tweak anything you'd like. Every change is just a conversation — no technical knowledge needed at any point.</div>
+  <div style="background:white;border-radius:12px;padding:14px 16px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-left:4px solid #1A4A6B;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--navy);margin-bottom:8px;">What happens next</div>
+    <div style="font-size:13px;color:var(--mid);line-height:1.6;">Claude will ask you questions one at a time — destination, dates, who's travelling, dietary needs, bookings — then build your itinerary for review, then build the app, then tell you exactly how to put it online. You don't need to know anything in advance.</div>
   </div>
 
   <!-- ── Useful prompts ── -->
@@ -250,10 +221,6 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
 
   <table class="ref-table">
     <tr><th>When you want to…</th><th>Say this to Claude</th></tr>
-    <tr>
-      <td>Get a guided walkthrough</td>
-      <td>"I want to build a trip guide app like this one. Can you ask me everything you need — my destination, group, dates, itinerary, dietary needs — and build it step by step as I answer?"</td>
-    </tr>
     <tr>
       <td>Add another day to the trip</td>
       <td>"Add a Day 6 to the app. Here's what we're doing that day: [describe your plans]"</td>
