@@ -142,9 +142,9 @@ This entire app was built the long way — through open-ended exploration, wrong
 
 **That exploration is the point.** It produced the template, the guided mode prompt, and the step-by-step path below — so your version takes a few conversations, not hundreds.
 
-This entire app was built through conversation with Claude — no code was written by hand. The full story, stats, retrospective, and guided mode for building your own is in **[build.html](https://hrajendra.github.io/sg-trip-2026/build.html)** — linked from the app home screen.
+The guided mode prompt is structured in three phases — trip planning, building the app, and publishing — mirroring how this one was actually built. The full story, stats, and retrospective are in **[build.html](https://hrajendra.github.io/sg-trip-2026/build.html)**.
 
-The fastest way to start: **[✦ Open guided mode in Claude](https://hrajendra.github.io/sg-trip-2026/build.html#guided-mode)** — a pre-filled prompt that kicks off a step-by-step conversation to build your own trip guide. Or go straight to Claude with the prompt: [claude.ai/new](https://claude.ai/new).
+**[✦ Open guided mode in Claude](https://hrajendra.github.io/sg-trip-2026/build.html#guided-mode)** — a pre-filled three-phase prompt that kicks off the conversation. Or browse [claude.ai/new](https://claude.ai/new) to start fresh.
 
 ---
 
