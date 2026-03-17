@@ -81,6 +81,17 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
 .gh-link:active { opacity: 0.85; }
 .footer { text-align: center; font-size: 12px; color: var(--light); margin-top: 24px; padding-bottom: 8px; }
 .footer a { color: var(--orange); text-decoration: none; }
+
+  .share-btn { display:inline-flex; align-items:center; gap:5px; background:rgba(255,255,255,0.18);
+    border:none; border-radius:20px; padding:6px 12px; color:white; font-size:12px; font-weight:600;
+    cursor:pointer; font-family:'DM Sans',sans-serif; letter-spacing:0.3px; margin-top:10px;
+    position:relative; -webkit-tap-highlight-color:transparent; }
+  .share-btn:active { background:rgba(255,255,255,0.28); }
+  .toast { position:fixed; bottom:max(28px,env(safe-area-inset-bottom,28px)); left:50%;
+    transform:translateX(-50%) translateY(20px); background:#1A1A1A; color:white; font-size:13px;
+    font-weight:500; padding:10px 20px; border-radius:20px; opacity:0; pointer-events:none;
+    transition:opacity 0.2s, transform 0.2s; z-index:999; white-space:nowrap; font-family:'DM Sans',sans-serif; }
+  .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
 </style>
 </head>
 <body>
@@ -124,6 +135,10 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
       <div class="stat-num" style="font-size:24px; color: var(--orange);">0 lines of code written by hand</div>
       <div class="stat-label">Every file was generated and edited through conversation</div>
     </div>
+    <div class="stat-box" style="grid-column: span 2; border-left: 4px solid var(--teal); border-radius: 14px;">
+      <div class="stat-num" style="font-size:22px; color: var(--teal);">Works fully offline ✈️</div>
+      <div class="stat-label">All pages pre-cached on first load — no internet needed at temples, beaches, or airports. Install once, use everywhere.</div>
+    </div>
   </div>
 
   <!-- ── Story ── -->
@@ -146,7 +161,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
 
   <div class="phase">
     <div class="phase-title">Phase 4 — PWA and installability</div>
-    <div class="phase-body">"Can this be installed as an app on their phones?" First attempt had a subtle bug: <code>start_url: "/"</code> pointed to the GitHub Pages root, not the app's subdirectory, so installs silently failed. Fixed to <code>"./index.html"</code>.</div>
+    <div class="phase-body">"Can this be installed as an app on their phones?" First attempt had a subtle bug: <code>start_url: "/"</code> pointed to the GitHub Pages root, not the app's subdirectory, so installs silently failed. Fixed to <code>"./index.html"</code>. The service worker was also updated to pre-cache all pages on install — so the app works fully offline from the very first visit, with no internet connection needed after that.</div>
   </div>
 
   <div class="phase green">
@@ -209,6 +224,20 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
       For reference, here's an example of what we're building: <span style="color:#7FB8D4">https://github.com/hrajendra/sg-trip-2026</span> — feel free to use this as a starting template and adapt the structure, features, and design for my trip.<br><br>
       Start by asking me everything you need to know about the trip — one topic at a time so it's not overwhelming. Once you have the full picture, first build me a clean itinerary document I can review. After I approve it, build the mobile app. At the end, give me simple instructions to put it online for free so I can share the link with everyone.
     </p>
+  <div style="display:flex;gap:10px;margin-top:14px;">
+    <a href="https://claude.ai/new?q=I%20want%20to%20build%20a%20mobile%20trip%20guide%20app%20for%20my%20family%20%E2%80%94%20a%20shareable%20link%20that%20works%20fully%20offline%20%28all%20pages%20cached%20on%20first%20load%29%2C%20with%20a%20day-by-day%20schedule%20and%20food%20recommendations%2C%20tailored%20for%20different%20members%20of%20my%20group%20%28like%20grandparents%20who%20may%20need%20a%20simpler%20version%29.%0A%0AI%20have%20no%20coding%20experience.%20Please%20guide%20me%20step%20by%20step.%20If%20I%27m%20ever%20stuck%20or%20unsure%20what%20to%20do%20next%2C%20just%20tell%20me%20exactly%20what%20to%20do.%0A%0AFor%20reference%2C%20here%27s%20an%20example%20of%20what%20we%27re%20building%3A%20https%3A//github.com/hrajendra/sg-trip-2026%20%E2%80%94%20feel%20free%20to%20use%20this%20as%20a%20starting%20template%20and%20adapt%20the%20structure%2C%20features%2C%20and%20design%20for%20my%20trip.%0A%0AStart%20by%20asking%20me%20everything%20you%20need%20to%20know%20about%20the%20trip%20%E2%80%94%20one%20topic%20at%20a%20time%20so%20it%27s%20not%20overwhelming.%20Once%20you%20have%20the%20full%20picture%2C%20first%20build%20me%20a%20clean%20itinerary%20document%20I%20can%20review.%20After%20I%20approve%20it%2C%20build%20the%20mobile%20app.%20At%20the%20end%2C%20give%20me%20simple%20instructions%20to%20put%20it%20online%20for%20free%20so%20I%20can%20share%20the%20link%20with%20everyone." target="_blank" rel="noopener"
+      style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+        background:white;color:#1A4A6B;border-radius:10px;padding:11px;
+        font-size:13px;font-weight:700;text-decoration:none;font-family:'DM Sans',sans-serif;">
+      ✦ Start in Claude →
+    </a>
+    <button onclick="shareLink('https://hrajendra.github.io/sg-trip-2026/build.html#guided-mode','Build a trip guide app with Claude')"
+      style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+        background:rgba(255,255,255,0.14);border:none;border-radius:10px;padding:11px;
+        color:white;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;">
+      🔗 Copy link
+    </button>
+  </div>
   </div>
 
   <div style="background:white;border-radius:12px;padding:14px 16px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-left:4px solid #1A4A6B;">
@@ -251,7 +280,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
     </tr>
     <tr>
       <td>Make it work offline</td>
-      <td>"Make sure the app works without internet so the family can use it without roaming data."</td>
+      <td>"Make sure the app works without internet — pre-cache all pages so it works from the very first visit, even with no signal."</td>
     </tr>
   </table>
 
@@ -261,6 +290,23 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
 
 </div>
 
-<script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});</script>
+<script>  function shareLink(url, title) {
+    if (navigator.share) {
+      navigator.share({ title: title, url: url }).catch(function(){});
+    } else {
+      navigator.clipboard.writeText(url).then(function() {
+        showToast('Link copied! ✓');
+      }).catch(function() { showToast('Copy: ' + url); });
+    }
+  }
+  function showToast(msg) {
+    var t = document.getElementById('sg-toast');
+    if (!t) { t = document.createElement('div'); t.id='sg-toast'; t.className='toast'; document.body.appendChild(t); }
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer = setTimeout(function(){ t.classList.remove('show'); }, 2200);
+  }
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});</script>
 </body>
 </html>
