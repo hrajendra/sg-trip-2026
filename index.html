@@ -75,12 +75,15 @@ h1 { font-family: 'Playfair Display', serif; font-size: 28px; line-height: 1.2; 
   .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
 
   .meta-divider { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #aaa; text-align: center; padding: 16px 0 10px; }
-  .meta-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .meta-card { background: white; border-radius: 12px; padding: 14px 14px 12px; text-decoration: none; box-shadow: 0 1px 8px rgba(0,0,0,0.06); border: 1px solid #eee; display: block; }
-  .meta-card:active { transform: scale(0.97); }
-  .meta-icon { font-size: 20px; margin-bottom: 6px; }
-  .meta-title { font-size: 13px; font-weight: 700; color: #1A4A6B; margin-bottom: 3px; }
-  .meta-sub { font-size: 11px; color: #999; line-height: 1.4; }
+  .meta-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .meta-card { background: white; border-radius: 0; padding: 10px 14px; text-decoration: none; border: 0.5px solid #eee; display: flex; flex-direction: column; justify-content: center; }
+  .meta-card:first-child { border-radius: 0 0 0 12px; border-right: none; }
+  .meta-card:last-child { border-radius: 0 0 12px 0; }
+  .meta-card:active { background: #f9f9f9; }
+  .meta-icon { display: none; }
+  .meta-title { font-size: 13px; font-weight: 700; color: #1A4A6B; }
+  .meta-sub { font-size: 11px; color: #999; margin-top: 2px; }
+  .meta-arrow { display: none; }
 </style>
 </head>
 <body>
@@ -99,16 +102,16 @@ h1 { font-family: 'Playfair Display', serif; font-size: 28px; line-height: 1.2; 
   <button class="share-btn" onclick="shareLink('https://hrajendra.github.io/sg-trip-2026/','Singapore Family Trip 2026')">📤 Share</button></div>
 <div class="cards">
   <a href="full.html" class="card card-full">
-    <div class="card-icon">🗓️</div>
+    <div class="card-icon">🧭</div>
     <div>
       <div class="card-title">Full Itinerary</div>
       <div class="card-sub">Complete plan with all details, priority tags &amp; tips — for you &amp; your wife</div>
     </div>
   </a>
   <a href="gp-en.html" class="card card-gpen">
-    <div class="card-icon">🌺</div>
+    <div class="card-icon">☕</div>
     <div>
-      <div class="card-title">Grandparent Guide — English</div>
+      <div class="card-title">Grandparent Guide</div>
       <div class="card-sub">Simple schedule with tips in English — for our parents</div>
     </div>
   </a>
@@ -122,14 +125,10 @@ h1 { font-family: 'Playfair Display', serif; font-size: 28px; line-height: 1.2; 
   <div class="meta-divider">Built with Claude</div>
   <div class="meta-cards">
     <a href="build.html" class="meta-card">
-      <div class="meta-icon">📖</div>
-      <div class="meta-title">How it was built</div>
-      <div class="meta-sub">Story, stats &amp; retrospective</div>
+      <div><div class="meta-title">⚡ How it was built</div><div class="meta-sub">Story, stats &amp; retrospective</div></div>
     </a>
     <a href="guide.html" class="meta-card">
-      <div class="meta-icon">✦</div>
-      <div class="meta-title">Build your own</div>
-      <div class="meta-sub">Start with a guided prompt</div>
+      <div><div class="meta-title">🚀 Build your own</div><div class="meta-sub">Start with a guided prompt</div></div>
     </a>
   </div>
 </div>
