@@ -6,7 +6,7 @@ window.TRIP_PROMPT = `I want to build a mobile trip guide app for my family — 
 
 I have no coding experience. Please guide me step by step. If I'm ever stuck, tell me exactly what to do.
 
-For reference: https://github.com/hrajendra/sg-trip-2026 — use this as a starting template and adapt it for my trip.
+For reference: https://github.com/your-username/your-trip-repo — use this as a starting template and adapt it for my trip.
 
 ━━━ HOW TO WORK WITH ME ━━━
 
@@ -36,18 +36,28 @@ Time & climate: home timezone vs destination timezone — calculate the jet lag 
 Emotional goal: what is this trip actually for? First international trip for the kids? Making memories with ageing grandparents? A reunion? This should shape the whole itinerary, not just the activities.
 Activities: prioritise by person, not just by attraction. Who will love this? Who will struggle? What's the backup if someone's too tired?
 
-GATE — before finalising the itinerary, run this scrutiny checklist and share the results with me:
+When building the day schedule, always account for realistic transport time between locations — not just activity duration. Include travel time between slots, factor in loading/unloading with children or elderly, and flag when two activities are geographically far apart. A day that looks reasonable on paper can become exhausting when you add 45 minutes of transit between each slot.
+
+GATE — before finalising the itinerary, run this stress-test and share the results with me:
 □ Jet lag: does the hardest day fall on the worst jet lag night? If yes, flag it and suggest adjusting.
 □ Pacing: is there at least one meaningful rest break per day? Are Days 1–2 lighter while everyone acclimatises?
 □ Meals: is every person fed at every meal? Check dietary needs against each slot.
-□ Weather: is the climate delta flagged? Are outdoor activities during coolest parts of the day?
-□ Hydration: are water/cooling breaks built into the schedule, especially for children and elderly?
+□ Weather: is the climate delta flagged? Are outdoor activities during cooler parts of the day?
+□ Weather contingency: if a key outdoor activity is rained out or too hot, is there a backup plan?
+□ Hydration: are water and cooling breaks built into the schedule, especially for children and elderly?
+□ Mobility reality check: does each day's physical load genuinely match each person's capacity — not just noted in intake but actually reflected in the schedule?
+□ Age-appropriate activities: are all activities suitable for the specific ages present? Flag anything that doesn't work for the youngest or oldest in the group.
+□ Cultural requirements: are dress codes, prayer time closures, and site-specific behaviour rules baked into the day slots — not just mentioned in notes?
 □ Single points of failure: is there any moment where one cancelled booking, one missed transport, or one tired child derails the whole day? Suggest a backup.
+□ Flight delay cascade: if the first flight is delayed, what breaks downstream? Flag the worst single delay that creates a domino effect and whether there is enough buffer.
+□ Emergency medical plan: which hospital is nearest the hotel? Does travel insurance cover emergency evacuation? Flag any pre-existing conditions that could flare.
 □ Pre-trip prep window: how many weeks until departure? Recommend what to do each week (sleep shift, packing, bookings, SIM cards, shared photos album).
 □ Travel insurance: is it confirmed? If not, flag it as urgent.
 □ Visa/entry: is every passport's entry confirmed for every country on the route?
+□ Budget reality: does the daily spend estimate match the stated budget when hidden costs are included — airport taxes, resort fees, tipping norms, activity entry fees, local transport?
+□ Memory moments: are the once-in-a-lifetime gatherings and photo moments explicitly flagged in the schedule so no one misses them?
 
-Show me the checklist results. Ask: "Anything here you want to adjust before I build the app?"
+Show me the stress-test results. Ask: "Anything here you want to adjust before I build the app?"
 
 ━━━ PHASE 2 — BUILDING THE APP ━━━
 
