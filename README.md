@@ -19,11 +19,11 @@ The app was entirely designed, written, and iterated with [Claude](https://claud
 <table>
   <tr>
     <td align="center"><img src="docs/ss_index_framed.png" width="240"><br><sub>Home · countdown + share</sub></td>
-    <td align="center"><img src="docs/ss_full_framed.png" width="240"><br><sub>Full itinerary · Day 1</sub></td>
-    <td align="center"><img src="docs/ss_gpen_framed.png" width="240"><br><sub>Grandparent guide (English)</sub></td>
+    <td align="center"><img src="docs/ss_full_framed.png" width="240"><br><sub>Full itinerary · Day 1 arrival</sub></td>
+    <td align="center"><img src="docs/ss_gpen_framed.png" width="240"><br><sub>Grandparent guide (English) · Prep tab</sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="docs/ss_gpte_framed.png" width="240"><br><sub>Grandparent guide (Telugu)</sub></td>
+    <td align="center"><img src="docs/ss_gpte_framed.png" width="240"><br><sub>Grandparent guide (Telugu) · Day 2</sub></td>
     <td align="center"><img src="docs/ss_build_story_framed.png" width="240"><br><sub>Built with Claude · stats</sub></td>
     <td align="center"><img src="docs/ss_build_guided_framed.png" width="240"><br><sub>Guided mode · start in Claude</sub></td>
   </tr>
@@ -50,7 +50,7 @@ The specific problem it solves: **multigenerational travel** where different mem
 
 - **Countdown timer** — live days/hours/mins countdown to arrival, switches to hours/mins/secs under 24 hrs, disappears once the trip begins
 - **Five pages** — home with countdown, full adult itinerary, English grandparent guide, Telugu grandparent guide, and a "Built with Claude" page with guided mode for others to build their own
-- **Tab navigation** — Days 1–5, Places, Food, Info (and Apps tab in the full guide)
+- **Tab navigation** — Prep, Days 1–5, Places, Food, Info (and Apps tab in the full guide)
 - **Dish toggles** — every hawker centre and restaurant has a collapsible dish list with stall numbers, dietary tags (🌿 🍗 👶 🍼 ⭐), and sugar flags
 - **Single source of truth** — `dishes.js` powers dish lists across all three guide pages; update once, all pages reflect it
 - **Offline-first PWA** — service worker pre-caches all pages on install; works without any internet after first load, even pages not yet visited

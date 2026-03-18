@@ -227,3 +227,5 @@ The prompt should also explicitly cover:
 *Trip fixes complete ✅. Remaining: 1 (SIM plan gp-te note), 3 (cash plan), 6/7 (grandparent Sentosa options added), 8 (toddler nap Sentosa), 11 (carrier reminder), 12 (formula), 14 (MOIC framing), 15 (Wings 4yr old), 20 (Satay seating), 22 (Google Photos), 23 (1SE reminder), 24 (photo moments), 26 (Haji Lane shops), 28 (grandparent meds), 29 (medicine kit), 31 (Day 3 length), 34 (GrabMax capacity), 36 (Telugu moment), 37 (farewell), 50 (return jet lag).*
 *After trip: prompt rewrite incorporating 51–57.*
 *Longer term: distribution approaches (52).*
+
+58. **Prompt: include a validation step after each change.** After building or updating anything — itinerary, app, page content — Claude should explicitly confirm that changes landed as expected. This means: re-read the relevant section, summarise what was added, and ask "does this look right to you?" before moving on. Prevents silent failures where code runs but the wrong anchor is matched, or the right content ends up in the wrong place.
