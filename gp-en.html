@@ -489,7 +489,7 @@
 <!-- NAV -->
 <div class="nav-wrap">
   <nav class="nav">
-    <button class="nav-btn active" data-day="1" onclick="showDay('1')">Day 1<br><small style="font-weight:400;font-size:11px">Mon Apr 6</small></button>
+    <button class="nav-btn active" data-day="prep" onclick="showDay('prep')">✈️ Prep</button><button class="nav-btn" data-day="1" onclick="showDay('1')">Day 1<br><small style="font-weight:400;font-size:11px">Mon Apr 6</small></button>
     <button class="nav-btn" data-day="2" onclick="showDay('2')">Day 2<br><small style="font-weight:400;font-size:11px">Tue Apr 7</small></button>
     <button class="nav-btn" data-day="3" onclick="showDay('3')">Day 3<br><small style="font-weight:400;font-size:11px">Wed Apr 8</small></button>
     <button class="nav-btn" data-day="4" onclick="showDay('4')">Day 4<br><small style="font-weight:400;font-size:11px">Thu Apr 9</small></button>
@@ -504,6 +504,57 @@
 </div>
 
 <div class="content">
+
+  <!-- ══ PREP ══ -->
+  <div id="day-prep" class="day-section day-1 active">
+    <div class="day-header"><div class="day-label">Before You Board</div><div class="day-title">What to Know + Pack ✈️</div></div>
+
+    <div class="info-card" style="background:#FFF3F0;border-left:4px solid #E05C2A;border-radius:10px;padding:14px 16px;margin-bottom:12px;">
+      <div style="font-weight:700;font-size:13px;color:#E05C2A;margin-bottom:8px;">📱 Before you leave Bengaluru</div>
+      <ul style="font-size:13px;color:var(--dark);line-height:1.7;margin:0;padding-left:18px;">
+        <li><strong>SIM card</strong> — buy an Airtel International or Singtel SIM at BLR airport before boarding. Without data, you cannot WhatsApp the family during the 55-minute wait at Singapore arrivals.</li>
+        <li><strong>Google Photos</strong> — install the app and join the family shared album (link will be shared before departure).</li>
+      </ul>
+    </div>
+
+    <div class="info-card" style="background:#FFF8F0;border-left:4px solid #E8A050;border-radius:10px;padding:14px 16px;margin-bottom:12px;">
+      <div style="font-weight:700;font-size:13px;color:#C07030;margin-bottom:8px;">🌡️ Singapore weather</div>
+      <ul style="font-size:13px;color:var(--dark);line-height:1.7;margin:0;padding-left:18px;">
+        <li><strong>32°C and very humid</strong> — wear light cotton only</li>
+        <li>You will feel the heat more on Days 1–2. Drink water regularly.</li>
+        <li>All museums and malls are heavily air-conditioned — bring a light layer if you get cold</li>
+      </ul>
+    </div>
+
+    <div class="info-card" style="background:#F0F8F0;border-left:4px solid #4CAF78;border-radius:10px;padding:14px 16px;margin-bottom:12px;">
+      <div style="font-weight:700;font-size:13px;color:#2E7A3A;margin-bottom:8px;">🎒 What to pack</div>
+      <ul style="font-size:13px;color:var(--dark);line-height:1.7;margin:0;padding-left:18px;">
+        <li><strong>Slip-on shoes</strong> — you remove shoes outside temples on Days 2 and 3</li>
+        <li><strong>Covered shoulders + knees</strong> for Day 2 Sultan Mosque — sarees are fine, check grandfathers have a long-sleeved or collared shirt</li>
+        <li><strong>Medications</strong> — enough for 5 days + a few extra, in hand luggage</li>
+        <li><strong>Comfortable walking shoes</strong> — Day 4 Sentosa involves 2–3 km walking</li>
+      </ul>
+    </div>
+
+    <div class="info-card" style="background:#F0F4FF;border-left:4px solid #5B7ABA;border-radius:10px;padding:14px 16px;margin-bottom:12px;">
+      <div style="font-weight:700;font-size:13px;color:#3A5A9A;margin-bottom:8px;">🛬 When you land at Changi T2</div>
+      <ul style="font-size:13px;color:var(--dark);line-height:1.7;margin:0;padding-left:18px;">
+        <li>Follow signs for <strong>Immigration</strong> → collect bags → exit through green channel</li>
+        <li>Walk into the <strong>Arrivals Hall</strong> — find the green <strong>Meeting Point</strong> signs</li>
+        <li><strong>Do not leave the arrivals hall</strong> — wait here. Family lands 55 minutes after you.</li>
+        <li>WhatsApp the family when you clear customs</li>
+      </ul>
+    </div>
+
+    <div class="info-card" style="background:#F5F5F5;border-radius:10px;padding:14px 16px;margin-bottom:12px;">
+      <div style="font-weight:700;font-size:13px;color:var(--dark);margin-bottom:8px;">💰 Money + 📞 Emergency contacts</div>
+      <ul style="font-size:13px;color:var(--dark);line-height:1.7;margin:0;padding-left:18px;">
+        <li>Singapore Dollars (SGD) — family carries cash for hawker meals, cards work everywhere</li>
+        <li>Police: <strong>999</strong> · Ambulance: <strong>995</strong> · Hotel: <strong>+65 6363 0101</strong></li>
+      </ul>
+    </div>
+
+  </div><!-- day-prep -->
 
   <!-- ══ DAY 1 ══ -->
   <div id="day-1" class="section day-1 active">
@@ -686,8 +737,8 @@
       <div class="slot"><div class="slot-time">1:30 PM</div><div class="slot-icon">🍢</div><div class="slot-body" data-dishes="satay_bay"><div class="slot-title">Last hawker lunch — Satay by the Bay<a href="https://maps.google.com/?q=Satay+by+the+Bay+Gardens+by+the+Bay+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">Open-air hawker by the waterfront. Satay, laksa, carrot cake.</div></div></div>
       <div class="slot"><div class="slot-time">2:15 PM</div><div class="slot-icon">🚗</div><div class="slot-body"><div class="slot-title">Grab back to hotel — collect luggage</div><div class="slot-note">We'll book a GrabMax for all 8 + bags</div></div></div>
       <div class="slot"><div class="slot-time">3:00 PM</div><div class="slot-icon">🚗</div><div class="slot-body"><div class="slot-title">GrabMax to Jewel Changi Airport<a href="https://maps.google.com/?q=Jewel+Changi+Airport+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">~25 min</div></div></div>
-      <div class="slot"><div class="slot-time">3:30 PM</div><div class="slot-icon">💧</div><div class="slot-body"><div class="slot-title">Jewel — Rain Vortex<a href="https://maps.google.com/?q=Jewel+Changi+Airport+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">World's tallest indoor waterfall — free to see. Bags are stored at One Farrer Hotel — collect them on the way back before heading to T2.</div></div></div>
-      <div class="slot"><div class="slot-time">3:45 PM</div><div class="slot-icon">🎁</div><div class="slot-body"><div class="slot-title">Bengawan Solo<a href="https://maps.google.com/?q=Bengawan+Solo+Jewel+Changi+Airport" target="_blank" rel="noopener" class="ml">📍</a> — kueh lapis tins</div><div class="slot-note">Get these FIRST — they sell out. Perfect takeaway gift for family.</div></div></div>
+      <div class="slot"><div class="slot-time">3:30 PM</div><div class="slot-icon">🎁</div><div class="slot-body"><div class="slot-title">Bengawan Solo<a href="https://maps.google.com/?q=Bengawan+Solo+Jewel+Changi+Airport" target="_blank" rel="noopener" class="ml">📍</a> — kueh lapis tins</div><div class="slot-note">⚠️ Get these THE MOMENT you enter Jewel — they sell out by mid-afternoon. Do this before anything else.</div></div></div>
+      <div class="slot"><div class="slot-time">3:50 PM</div><div class="slot-icon">💧</div><div class="slot-body"><div class="slot-title">Jewel — Rain Vortex<a href="https://maps.google.com/?q=Jewel+Changi+Airport+Singapore" target="_blank" rel="noopener" class="ml">📍</a></div><div class="slot-note">World's tallest indoor waterfall — free to see. Stand under it for a moment. Bags are stored at One Farrer Hotel — collect on the way back before heading to T2.</div></div></div>
       <div class="slot"><div class="slot-time">4:30 PM</div><div class="slot-icon">🛂</div><div class="slot-body"><div class="slot-title">Walk to Terminal 2 (via bridge from Jewel)</div><div class="slot-note">~10 min walk. Check-in opens 4:40 PM. Use Family Assistance Lanes.</div></div></div>
       <div class="slot"><div class="slot-time">6:00 PM</div><div class="slot-icon">☕</div><div class="slot-body" data-dishes="ya_kun"><div class="slot-title">Ya Kun Kaya Toast<a href="https://maps.google.com/?q=Ya+Kun+Kaya+Toast+Changi+Airport+Terminal+2+Singapore" target="_blank" rel="noopener" class="ml">📍</a> — airside Terminal 2</div><div class="slot-note">Farewell kaya toast + kopi-O 🥲 Last taste of Singapore.</div></div></div>
       <div class="slot"><div class="slot-time">6:40 PM</div><div class="slot-icon">✈️</div><div class="slot-body"><div class="slot-title">Board IndiGo 6E1092 at Terminal 2</div><div class="slot-note">Departs 7:40 PM · Arrives Bengaluru 9:40 PM</div></div></div>
