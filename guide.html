@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Build Your Own Trip Guide with Claude</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1A4A6B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+:root {
+  --navy:   #1A4A6B;
+  --orange: #E05C2A;
+  --teal:   #1B7A8A;
+  --green:  #2E7A3A;
+  --dark:   #1A1A1A;
+  --mid:    #555;
+  --light:  #888;
+  --rule:   #EEEEEE;
+  --bg:     #F4F7FA;
+}
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom: max(32px, env(safe-area-inset-bottom)); }
+
+.hero { background: linear-gradient(160deg, #1A4A6B 0%, #0D2E45 100%); padding: 24px 24px 22px; padding-top: max(24px, calc(env(safe-area-inset-top) + 10px)); color: white; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); }
+.hero-back { position: relative; font-size: 13px; opacity: 0.7; text-decoration: none; color: white; display: inline-flex; align-items: center; gap: 4px; margin-bottom: 8px; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 22px; line-height: 1.2; margin-bottom: 6px; position: relative; }
+.hero-sub { font-size: 14px; opacity: 0.75; position: relative; }
+
+.content { padding: 24px 20px 0; max-width: 640px; margin: 0 auto; }
+
+/* Stats grid */
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 28px; }
+.stat-box { background: white; border-radius: 14px; padding: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--navy); line-height: 1; }
+.stat-label { font-size: 11px; color: var(--light); margin-top: 4px; line-height: 1.4; }
+.stat-box.accent .stat-num { color: var(--orange); }
+.stat-box.teal .stat-num { color: var(--teal); }
+.stat-box.green .stat-num { color: var(--green); }
+
+/* Section headings */
+.section-head { font-size: 13px; font-weight: 700; color: var(--light); letter-spacing: 1px; text-transform: uppercase; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--rule); }
+
+/* Story cards */
+.phase { background: white; border-radius: 14px; padding: 16px 18px; margin-bottom: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 4px solid var(--navy); }
+.phase.orange { border-left-color: var(--orange); }
+.phase.teal  { border-left-color: var(--teal); }
+.phase.green { border-left-color: var(--green); }
+.phase-title { font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+.phase-body  { font-size: 13px; color: var(--mid); line-height: 1.6; }
+
+/* Retro */
+.retro-row { background: white; border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+.retro-label { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 5px; }
+.retro-label.good { color: var(--green); }
+.retro-label.improve { color: var(--orange); }
+.retro-body { font-size: 13px; color: var(--mid); line-height: 1.6; }
+
+/* Prompt blocks */
+.prompt-block { background: #1A1A2E; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+.prompt-block p { font-family: 'DM Sans', monospace; font-size: 12.5px; color: #A8C5DA; line-height: 1.7; }
+.prompt-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #4A7FA0; margin-bottom: 8px; }
+
+/* Tip rows */
+.tip-row { display: flex; gap: 12px; background: white; border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; box-shadow: 0 1px 6px rgba(0,0,0,0.05); }
+.tip-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.tip-text { font-size: 13px; color: var(--mid); line-height: 1.55; }
+.tip-text strong { color: var(--dark); }
+
+/* Table */
+.ref-table { width: 100%; border-collapse: collapse; font-size: 12.5px; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 12px; }
+.ref-table th { background: var(--navy); color: white; padding: 10px 12px; text-align: left; font-weight: 600; font-size: 11px; letter-spacing: 0.5px; }
+.ref-table td { padding: 10px 12px; border-bottom: 1px solid var(--rule); color: var(--mid); vertical-align: top; }
+.ref-table tr:last-child td { border-bottom: none; }
+.ref-table td:first-child { color: var(--dark); font-weight: 500; }
+
+.gh-link { display: block; background: var(--navy); color: white; text-align: center; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 14px; margin: 24px 0 8px; }
+.gh-link:active { opacity: 0.85; }
+.footer { text-align: center; font-size: 12px; color: var(--light); margin-top: 24px; padding-bottom: 8px; }
+.footer a { color: var(--orange); text-decoration: none; }
+
+  .share-btn { display:inline-flex; align-items:center; gap:5px; background:rgba(255,255,255,0.18);
+    border:none; border-radius:20px; padding:6px 12px; color:white; font-size:12px; font-weight:600;
+    cursor:pointer; font-family:'DM Sans',sans-serif; letter-spacing:0.3px; margin-top:10px;
+    position:relative; -webkit-tap-highlight-color:transparent; }
+  .share-btn:active { background:rgba(255,255,255,0.28); }
+  .toast { position:fixed; bottom:max(28px,env(safe-area-inset-bottom,28px)); left:50%;
+    transform:translateX(-50%) translateY(20px); background:#1A1A1A; color:white; font-size:13px;
+    font-weight:500; padding:10px 20px; border-radius:20px; opacity:0; pointer-events:none;
+    transition:opacity 0.2s, transform 0.2s; z-index:999; white-space:nowrap; font-family:'DM Sans',sans-serif; }
+  .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+</style>
+  <script src="./prompt.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var el = document.getElementById("start-claude-link");
+      if (el && window.TRIP_PROMPT) {
+        el.href = "https://claude.ai/new?q=" + encodeURIComponent(window.TRIP_PROMPT);
+      }
+    });
+  </script>
+</head>
+<body>
+
+<div class="hero">
+  <a href="index.html" class="hero-back">← Home</a>
+  <h1>Build your own trip guide</h1>
+  <p class="hero-sub">with Claude · no coding needed</p>
+  <button class="share-btn" onclick="shareLink('https://hrajendra.github.io/sg-trip-2026/guide.html','Build your own trip guide with Claude')">📤 Share this page</button>
+</div>
+
+<div class="content">
+  <!-- ── Story teaser ── -->
+  <div style="background:white;border-radius:14px;padding:16px 18px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;">
+      <div><div style="font-size:20px;font-weight:700;color:var(--orange)">~240</div><div style="font-size:11px;color:var(--light)">turns</div></div>
+      <div><div style="font-size:20px;font-weight:700;color:var(--teal)">1,000+</div><div style="font-size:11px;color:var(--light)">tool calls</div></div>
+      <div><div style="font-size:20px;font-weight:700;color:var(--navy)">10</div><div style="font-size:11px;color:var(--light)">days</div></div>
+      <div><div style="font-size:20px;font-weight:700;color:var(--green)">0</div><div style="font-size:11px;color:var(--light)">lines of code</div></div>
+    </div>
+    <p style="font-size:13px;color:var(--mid);line-height:1.65;margin:0 0 8px;font-style:italic;">This prompt was distilled from 240+ conversation turns building a real family trip — 8 people, 3 generations, 2 languages, 5 days. Every gate and checklist item was chosen because we got it wrong without it.</p>
+    <a href="build.html" style="font-size:12px;color:var(--orange);text-decoration:none;font-weight:600;">Read the full story →</a>
+  </div>
+
+<a id="guided-mode"></a>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin:28px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--rule);">
+    <span style="font-size:13px;font-weight:700;color:var(--light);letter-spacing:1px;text-transform:uppercase;">✨ Start here — guided mode</span>
+    <button onclick="shareLink('https://hrajendra.github.io/sg-trip-2026/build.html#guided-mode','Build a trip guide app with Claude')"
+      style="display:inline-flex;align-items:center;gap:5px;background:var(--bg);border:1px solid var(--rule);border-radius:20px;padding:5px 12px;font-size:12px;font-weight:600;color:var(--mid);cursor:pointer;font-family:'DM Sans',sans-serif;">
+      🔗 Share link
+    </button>
+  </div>
+
+  <div style="background:#1A4A6B;border-radius:16px;padding:20px;margin-bottom:12px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:10px;">Copy this prompt into Claude</div>
+    <p style="font-size:12.5px;color:rgba(255,255,255,0.88);line-height:1.75;font-family:'DM Sans',sans-serif;margin:0;">
+      I want to build a mobile trip guide app for my family — a shareable link that works fully offline after the first load, with a day-by-day schedule tailored for different members of the group.<br><br>I have no coding experience. Please guide me step by step. If I'm ever stuck, tell me exactly what to do.<br><br>For reference: https://github.com/hrajendra/sg-trip-2026 — use this as a starting template and adapt it for my trip.<br><br><strong style="color:white;display:block;margin:14px 0 6px;">HOW TO WORK WITH ME</strong><br>Work in three phases — but don't ask 50 questions before building anything. The goal is to feel like we're co-designing this together in real time.<br><br>Start with just these 5 questions, one at a time:<br>1. Where are you going, and when? (destination + dates)<br>2. Who's coming? (ages, generations, any special needs or mobility considerations)<br>3. What's the one thing you're most worried about for this trip?<br>4. What do you want everyone to feel at the end of it?<br>5. Is there anything already booked (flights, hotel) or is everything still open?<br><br>After those 5 answers, build a rough Day 1 skeleton immediately — don't wait for more information. Show it to me and ask: "Does this feel right? Too packed? Anyone I haven't accounted for yet?" Then use my feedback to decide what to ask next.<br><br><strong style="color:white;display:block;margin:14px 0 6px;">YOUR INTERNAL CHECKLIST</strong><br>Maintain a checklist of what you know and what you're still missing. Before moving between phases, always show me this checklist — what's confirmed, what's assumed, what's unresolved. I can ask "show me your checklist" or "what are you still missing?" at any time. If you try to skip ahead, I'll say "check your list first."<br><br><strong style="color:white;display:block;margin:14px 0 6px;">PHASE 1 — TRIP PLANNING</strong><br>Build the itinerary progressively. After each draft, ask the single most important missing question — not ten at once. Work through these topics in the order that matters most for my trip:<br><br>Group & people: ages, generations, languages spoken, tech comfort level, physical mobility, sleep schedules for children<br>Logistics: flights (times, layovers, timezones), hotel (location, check-in/out), visas and entry requirements for every passport in the group, travel insurance<br>Health & safety: dietary restrictions and allergies per person (not just "vegetarian" — ask who, and before which activities), paediatric medicine kit, grandparent medications, any mobility aids<br>Time & climate: home timezone vs destination timezone — calculate the jet lag shift explicitly. Flag if any long day falls at peak jet lag. Note the temperature and humidity delta from home and plan acclimatisation accordingly.<br>Emotional goal: what is this trip actually for? First international trip for the kids? Making memories with ageing grandparents? A reunion? This should shape the whole itinerary, not just the activities.<br>Activities: prioritise by person, not just by attraction. Who will love this? Who will struggle? What's the backup if someone's too tired?<br><br><span style="display:block;margin:10px 0 4px;color:#FFA07A;font-weight:700;">GATE — before finalising the itinerary, run this scrutiny checklist and share the results with me:</span><span style="display:block;padding-left:12px;margin:2px 0;">□ Jet lag: does the hardest day fall on the worst jet lag night? If yes, flag it and suggest adjusting.</span><span style="display:block;padding-left:12px;margin:2px 0;">□ Pacing: is there at least one meaningful rest break per day? Are Days 1–2 lighter while everyone acclimatises?</span><span style="display:block;padding-left:12px;margin:2px 0;">□ Meals: is every person fed at every meal? Check dietary needs against each slot.</span><span style="display:block;padding-left:12px;margin:2px 0;">□ Weather: is the climate delta flagged? Are outdoor activities during coolest parts of the day?</span><span style="display:block;padding-left:12px;margin:2px 0;">□ Hydration: are water/cooling breaks built into the schedule, especially for children and elderly?</span><span style="display:block;padding-left:12px;margin:2px 0;">□ Single points of failure: is there any moment where one cancelled booking, one missed transport, or one tired child derails the whole day? Suggest a backup.</span><span style="display:block;padding-left:12px;margin:2px 0;">□ Pre-trip prep window: how many weeks until departure? Recommend what to do each week (sleep shift, packing, bookings, SIM cards, shared photos album).</span><span style="display:block;padding-left:12px;margin:2px 0;">□ Travel insurance: is it confirmed? If not, flag it as urgent.</span><span style="display:block;padding-left:12px;margin:2px 0;">□ Visa/entry: is every passport's entry confirmed for every country on the route?</span><br>Show me the checklist results. Ask: "Anything here you want to adjust before I build the app?"<br><br><strong style="color:white;display:block;margin:14px 0 6px;">PHASE 2 — BUILDING THE APP</strong><br><span style="display:block;margin:10px 0 4px;color:#FFA07A;font-weight:700;">GATE — before starting, show me: "Here's what I know about your group. Here's what I'm still uncertain about. Here's what I'm about to build." Wait for my confirmation.</span><br>Build the app using the GitHub repo as a template. Key things to include:<br>- A Prep tab (first tab, before Day 1) covering pre-trip checklist, sleep shift schedule, packing list, and arrival instructions for anyone joining from a different city<br>- Tailored views per audience — full detail for the organiser, simplified version for grandparents or less tech-savvy members (in their language if needed)<br>- Food recommendations with dietary tags per person at every hawker centre and restaurant<br>- A countdown timer on the home screen<br>- Offline-first: all pages cached on first load — no internet needed at temples, beaches, or airports<br><br>After building each major section, confirm it landed correctly before moving to the next: re-read the section, summarise what was added, and ask "does this look right?"<br><br><strong style="color:white;display:block;margin:14px 0 6px;">PHASE 3 — PUBLISHING</strong><br>Give me step-by-step instructions to put the app online free using GitHub Pages. After I follow the steps, ask me to test the link on my phone and confirm it loads. Only mark this done when I confirm it's working.<br><br><span style="display:block;margin:10px 0 4px;color:#FFA07A;font-weight:700;">GATE — final checklist before closing:</span><span style="display:block;padding-left:12px;margin:2px 0;">□ Link works on mobile (iOS Safari and/or Android Chrome)</span><span style="display:block;padding-left:12px;margin:2px 0;">□ All pages load offline after first visit</span><span style="display:block;padding-left:12px;margin:2px 0;">□ Everyone in the group has the link</span><span style="display:block;padding-left:12px;margin:2px 0;">□ Any pre-trip tasks still outstanding?</span><br>
+      </p></p>
+  <div style="display:flex;gap:10px;margin-top:14px;">
+    <a id="start-claude-link" href="#" target="_blank" rel="noopener"
+      style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+        background:white;color:#1A4A6B;border-radius:10px;padding:11px;
+        font-size:13px;font-weight:700;text-decoration:none;font-family:'DM Sans',sans-serif;">
+      ✦ Start in Claude →
+    </a>
+    <button onclick="copyPrompt()"
+      style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
+        background:rgba(255,255,255,0.14);border:none;border-radius:10px;padding:11px;
+        color:white;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;">
+      📋 Copy prompt
+    </button>
+  </div>
+  </div>
+
+  <p style="text-align:center;font-size:12px;color:var(--light);margin-bottom:20px;">
+    ☕ If this saved you hours of trip planning, <a href="https://ko-fi.com/hrajendra" target="_blank" rel="noopener" style="color:var(--orange);text-decoration:none;font-weight:600;">buy me a kaya toast</a>
+  </p>
+
+  <div style="background:white;border-radius:12px;padding:14px 16px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-left:4px solid #1A4A6B;">
+    <div style="background:#F5F5F5;border-radius:12px;padding:16px 18px;margin-top:12px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--light);margin-bottom:10px;">What happens next</div>
+    <div style="font-size:13px;color:var(--mid);line-height:1.7;">
+      <p><strong style="color:var(--dark);">Claude will:</strong></p>
+      <ol style="padding-left:18px;margin:6px 0 12px;">
+        <li>Ask you just 5 questions to start — then build a rough Day 1 immediately so you can react to something real</li>
+        <li>Refine progressively — one question at a time, each round deepening the plan based on your feedback</li>
+        <li>Run a scrutiny checklist before finalising — jet lag, pacing, every person fed at every meal, single points of failure</li>
+        <li>Show you its checklist at every transition — nothing moves forward until you confirm</li>
+        <li>Build the app and walk you through publishing it for free</li>
+      </ol>
+      <p><strong style="color:var(--dark);">You can say at any point:</strong><br>
+      "Show me your checklist" — see exactly what Claude knows and what's missing<br>
+      "What are you still missing?" — surface gaps before they become problems<br>
+      "Check your list first" — if Claude tries to skip ahead</p>
+    </div>
+  </div>
+    <div style="font-size:13px;color:var(--mid);line-height:1.6;">Claude will ask you questions one at a time — destination, dates, who's travelling, dietary needs, bookings — then build your itinerary for review, then build the app, then tell you exactly how to put it online. You don't need to know anything in advance.</div>
+  </div>
+
+  <!-- ── Useful prompts ── -->
+  <div class="section-head">Things to ask Claude</div>
+
+  <table class="ref-table">
+    <tr><th>When you want to…</th><th>Say this to Claude</th></tr>
+    <tr>
+      <td>Add another day to the trip</td>
+      <td>"Add a Day 6 to the app. Here's what we're doing that day: [describe your plans]"</td>
+    </tr>
+    <tr>
+      <td>Add a guide in another language</td>
+      <td>"Add a grandparent guide in Hindi. Keep it simple — just where to be and when, with one short note per activity."</td>
+    </tr>
+    <tr>
+      <td>Something isn't working right</td>
+      <td>"When I tap on Day 2 nothing happens. Can you fix it?" — Claude will ask for the file if needed.</td>
+    </tr>
+    <tr>
+      <td>Change how the app looks</td>
+      <td>"Change the colours to feel more like Japan — think cherry blossom pinks and deep indigo."</td>
+    </tr>
+    <tr>
+      <td>Add food and drink recommendations</td>
+      <td>"Add a food guide for Day 3 with the dishes we're planning to try, and flag anything that has nuts or dairy."</td>
+    </tr>
+    <tr>
+      <td>Update a booking or venue</td>
+      <td>"We changed our Day 3 dinner from Restaurant A to Restaurant B. Update everywhere it's mentioned."</td>
+    </tr>
+    <tr>
+      <td>Make a new icon for the app</td>
+      <td>"Make a home screen icon using a cherry blossom. Pink and white, simple and clean."</td>
+    </tr>
+    <tr>
+      <td>Make it work offline</td>
+      <td>"Make sure the app works without internet — pre-cache all pages so it works from the very first visit, even with no signal."</td>
+    </tr>
+  </table>
+
+  <a href="https://github.com/hrajendra/sg-trip-2026" class="gh-link" target="_blank" rel="noopener">View source on GitHub →</a>
+
+  <p class="footer">Built with <a href="https://claude.ai">Claude</a> · No code written by hand</p>
+
+
+  <a href="https://github.com/hrajendra/sg-trip-2026" class="gh-link" target="_blank" rel="noopener">View source on GitHub →</a>
+  <p class="footer">Built with <a href="https://claude.ai">Claude</a> · No code written by hand</p>
+
+</div>
+
+<script>  function copyPrompt() {
+    var text = window.TRIP_PROMPT;
+    navigator.clipboard.writeText(text).then(function() {
+      showToast('Prompt copied! ✓');
+    }).catch(function() {
+      showToast('Copy failed — select the text manually');
+    });
+  }
+  function showToast(msg) {
+    var t = document.createElement('div');
+    t.textContent = msg;
+    t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1A1A1A;color:white;padding:10px 20px;border-radius:20px;font-size:13px;z-index:9999;opacity:0;transition:opacity 0.2s;';
+    document.body.appendChild(t);
+    requestAnimationFrame(() => { t.style.opacity = '1'; setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 200); }, 2000); });
+  }
+  function shareLink(url, title) {
+    if (navigator.share) { navigator.share({ title: title, url: url }).catch(function(){}); }
+    else { navigator.clipboard.writeText(url).then(function() { showToast('Link copied! ✓'); }).catch(function() { showToast('Copy failed'); }); }
+  }
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
+  // ── SW update: auto-reload when new version takes over ──
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.addEventListener('message', e => {
+      if (e.data && e.data.type === 'SW_UPDATED') window.location.reload();
+    });
+  }
+  // ── Pull to refresh ──
+  (function() {
+    let startY = 0, pulling = false, indicator = null;
+    const THRESHOLD = 80;
+    function createIndicator() {
+      const el = document.createElement('div');
+      el.id = 'ptr-indicator';
+      el.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;display:flex;align-items:center;justify-content:center;height:0;overflow:hidden;background:rgba(255,255,255,0.95);transition:height 0.1s;font-size:13px;font-weight:600;color:#E05C2A;font-family:sans-serif;gap:8px;';
+      el.innerHTML = '<span class="ptr-spinner" style="display:inline-block;width:18px;height:18px;border:2.5px solid #E05C2A;border-top-color:transparent;border-radius:50%;"></span><span>Pull to refresh</span>';
+      document.body.prepend(el);
+      return el;
+    }
+    document.addEventListener('touchstart', e => { if (window.scrollY === 0) { startY = e.touches[0].clientY; pulling = true; } }, { passive: true });
+    document.addEventListener('touchmove', e => {
+      if (!pulling) return;
+      const dy = e.touches[0].clientY - startY;
+      if (dy > 0) {
+        if (!indicator) indicator = createIndicator();
+        const h = Math.min(dy * 0.5, THRESHOLD);
+        indicator.style.height = h + 'px';
+        const pct = h / THRESHOLD;
+        indicator.querySelector('.ptr-spinner').style.transform = `rotate(${pct * 360}deg)`;
+        indicator.querySelector('span:last-child').textContent = pct >= 1 ? 'Release to refresh' : 'Pull to refresh';
+      }
+    }, { passive: true });
+    document.addEventListener('touchend', e => {
+      if (!pulling || !indicator) return;
+      const dy = e.changedTouches[0].clientY - startY;
+      if (dy * 0.5 >= THRESHOLD) {
+        indicator.style.height = '48px';
+        indicator.querySelector('span:last-child').textContent = 'Refreshing…';
+        const style = document.createElement('style');
+        style.textContent = '@keyframes ptr-spin{to{transform:rotate(360deg)}}';
+        document.head.appendChild(style);
+        setTimeout(() => window.location.reload(), 400);
+      } else { indicator.style.height = '0'; }
+      pulling = false;
+    }, { passive: true });
+  })();
+  document.addEventListener("DOMContentLoaded", function() {
+    var el = document.getElementById("start-claude-link");
+    if (el && window.TRIP_PROMPT) { el.href = "https://claude.ai/new?q=" + encodeURIComponent(window.TRIP_PROMPT); }
+  });
+</script>
+</body>
+</html>

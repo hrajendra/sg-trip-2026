@@ -1,4 +1,4 @@
-const CACHE = 'sg-trip-v10';
+const CACHE = 'sg-trip-v11';
 const ASSETS = [
   './',
   './index.html',
@@ -8,6 +8,7 @@ const ASSETS = [
   './build.html',
   './dishes.js',
   './prompt.js',
+  './guide.html',
   './manifest.json',
   './icon-192.png',
   './icon-512.png',
