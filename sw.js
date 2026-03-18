@@ -1,4 +1,4 @@
-const CACHE = 'sg-trip-v8';
+const CACHE = 'sg-trip-v9';
 const ASSETS = [
   './',
   './index.html',
@@ -20,12 +20,17 @@ self.addEventListener('install', e => {
   self.skipWaiting();
 });
 
-// Remove old caches when new version activates
+// Remove old caches when new version activates, then tell all pages to reload
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
       Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
-    )
+    ).then(() => {
+      // Tell all open pages: new version is live, please reload
+      return self.clients.matchAll({ type: 'window' }).then(clients => {
+        clients.forEach(client => client.postMessage({ type: 'SW_UPDATED' }));
+      });
+    })
   );
   self.clients.claim();
 });
