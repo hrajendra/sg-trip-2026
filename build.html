@@ -93,15 +93,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
     transition:opacity 0.2s, transform 0.2s; z-index:999; white-space:nowrap; font-family:'DM Sans',sans-serif; }
   .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
 </style>
-  <script src="./prompt.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var el = document.getElementById("start-claude-link");
-      if (el && window.TRIP_PROMPT) {
-        el.href = "https://claude.ai/new?q=" + encodeURIComponent(window.TRIP_PROMPT);
-      }
-    });
-  </script>
+
 </head>
 <body>
 
@@ -116,103 +108,80 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
 
   <!-- ── Intro ── -->
   <div style="background:white;border-radius:14px;padding:18px 20px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);border-left:4px solid var(--orange);">
-    <p style="font-size:14px;color:var(--dark);line-height:1.7;margin:0;">This app was built the long way — through open-ended exploration, wrong turns, and figuring out the right architecture from scratch. Every edge case surfaced, every decision tested. <strong>That exploration is the point.</strong> It produced the template, the guided mode prompt, and the step-by-step path at the bottom of this page — so your version takes a few conversations, not hundreds.</p>
+    <p style="font-size:14px;color:var(--dark);line-height:1.7;margin:0;">This app was built the long way — through open-ended exploration, wrong turns, and figuring out the right architecture from scratch. Every edge case surfaced, every decision tested. <strong>That exploration is the point.</strong> It produced the template and the guided mode prompt — so your version takes a few conversations, not hundreds. <a href="guide.html" style="color:var(--orange);text-decoration:none;font-weight:600;">Build your own →</a></p>
   </div>
 
 
   <!-- ── Stats ── -->
   <div class="section-head">What the exploration took</div>
 
-  <div style="background:white;border-radius:14px;padding:14px 16px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-    <div style="font-size:11px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--light);margin-bottom:12px;">Trip planning — Mar 8 to Mar 9</div>
-    <div class="stats-grid">
-      <div class="stat-box">
-        <div class="stat-num">~30</div>
-        <div class="stat-label">Conversation turns — flights, hotels, visas, itinerary</div>
+  <div style="background:white;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.05);margin-bottom:16px;">
+
+    <div style="display:flex;align-items:center;padding:12px 16px;border-bottom:1px solid #f0f0f0;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:12px;font-weight:700;color:var(--dark);">Trip planning</div>
+        <div style="font-size:10px;color:var(--light);margin-top:1px;">Mar 8–9</div>
       </div>
-      <div class="stat-box accent">
-        <div class="stat-num">70+</div>
-        <div class="stat-label">Tool calls — searches, lookups, document drafts</div>
-      </div>
-      <div class="stat-box teal">
-        <div class="stat-num">5</div>
-        <div class="stat-label">Days planned across 3 cities — SFO, Singapore, Bengaluru</div>
-      </div>
-      <div class="stat-box green">
-        <div class="stat-num">8</div>
-        <div class="stat-label">People coordinated across 3 generations and 2 countries</div>
+      <div style="display:flex;gap:16px;flex-shrink:0;">
+        <div style="text-align:right;">
+          <div style="font-size:16px;font-weight:700;color:var(--navy);line-height:1;">~30</div>
+          <div style="font-size:9px;color:var(--light);">turns</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:16px;font-weight:700;color:var(--orange);line-height:1;">70+</div>
+          <div style="font-size:9px;color:var(--light);">tool calls</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:16px;font-weight:700;color:var(--green);line-height:1;">8</div>
+          <div style="font-size:9px;color:var(--light);">people</div>
+        </div>
       </div>
     </div>
+
+    <div style="display:flex;align-items:center;padding:12px 16px;border-bottom:1px solid #f0f0f0;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:12px;font-weight:700;color:var(--dark);">Building the app</div>
+        <div style="font-size:10px;color:var(--light);margin-top:1px;">Mar 9–12</div>
+      </div>
+      <div style="display:flex;gap:16px;flex-shrink:0;">
+        <div style="text-align:right;">
+          <div style="font-size:16px;font-weight:700;color:var(--navy);line-height:1;">~120</div>
+          <div style="font-size:9px;color:var(--light);">turns</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:16px;font-weight:700;color:var(--orange);line-height:1;">630+</div>
+          <div style="font-size:9px;color:var(--light);">executions</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:16px;font-weight:700;color:var(--teal);line-height:1;">7</div>
+          <div style="font-size:9px;color:var(--light);">versions</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;padding:12px 16px;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:12px;font-weight:700;color:var(--dark);">This page</div>
+        <div style="font-size:10px;color:var(--light);margin-top:1px;">Mar 12–18</div>
+      </div>
+      <div style="display:flex;gap:16px;flex-shrink:0;">
+        <div style="text-align:right;">
+          <div style="font-size:16px;font-weight:700;color:var(--navy);line-height:1;">~140</div>
+          <div style="font-size:9px;color:var(--light);">turns</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:16px;font-weight:700;color:var(--orange);line-height:1;">500+</div>
+          <div style="font-size:9px;color:var(--light);">executions</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:16px;font-weight:700;color:var(--teal);line-height:1;">2</div>
+          <div style="font-size:9px;color:var(--light);">prompts</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <div style="background:white;border-radius:14px;padding:14px 16px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-    <div style="font-size:11px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--light);margin-bottom:12px;">Building the app — Mar 9 to Mar 12</div>
-    <div class="stats-grid">
-      <div class="stat-box">
-        <div class="stat-num">~120</div>
-        <div class="stat-label">Conversation turns — building, iterating, debugging</div>
-      </div>
-      <div class="stat-box accent">
-        <div class="stat-num">630+</div>
-        <div class="stat-label">Code executions, file edits & debug runs</div>
-      </div>
-      <div class="stat-box teal">
-        <div class="stat-num">7</div>
-        <div class="stat-label">PWA versions shipped (v1 → v7)</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">9</div>
-        <div class="stat-label">Word doc versions of the itinerary</div>
-      </div>
-      <div class="stat-box green">
-        <div class="stat-num">4</div>
-        <div class="stat-label">Guide pages kept in sync throughout</div>
-      </div>
-      <div class="stat-box accent">
-        <div class="stat-num">30+</div>
-        <div class="stat-label">Dishes catalogued with stall numbers & dietary tags</div>
-      </div>
-    </div>
-  </div>
-
-  <div style="background:white;border-radius:14px;padding:14px 16px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-    <div style="font-size:11px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--light);margin-bottom:12px;">This page — Mar 12 to Mar 17</div>
-    <div class="stats-grid">
-      <div class="stat-box">
-        <div class="stat-num">~90</div>
-        <div class="stat-label">Conversation turns to design, write, and refine</div>
-      </div>
-      <div class="stat-box accent">
-        <div class="stat-num">300+</div>
-        <div class="stat-label">Code executions, screenshots retaken, copy refined</div>
-      </div>
-      <div class="stat-box teal">
-        <div class="stat-num">6</div>
-        <div class="stat-label">Screenshots retaken as the app evolved</div>
-      </div>
-      <div class="stat-box green">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Versions of the guided mode prompt, iterated with the family</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="stats-grid">
-    <div class="stat-box" style="grid-column: span 2; border-left: 4px solid var(--navy); border-radius: 14px;">
-      <div class="stat-num" style="font-size:20px; color: var(--navy);">10 days · 6 active · 16 sessions · ~240 turns · ~1,000 tool calls</div>
-      <div class="stat-label">Mar 8 to Mar 17, 2026 — from "help me plan a trip to Singapore" to this page</div>
-    </div>
-    <div class="stat-box" style="grid-column: span 2; border-left: 4px solid var(--orange); border-radius: 14px;">
-      <div class="stat-num" style="font-size:24px; color: var(--orange);">0 lines of code written by hand</div>
-      <div class="stat-label">Every file — HTML, CSS, JavaScript, service worker, manifest, icons — generated and edited through conversation</div>
-    </div>
-    <div class="stat-box" style="grid-column: span 2; border-left: 4px solid var(--teal); border-radius: 14px;">
-      <div class="stat-num" style="font-size:22px; color: var(--teal);">Works fully offline ✈️</div>
-      <div class="stat-label">All pages pre-cached on first load — no internet needed at temples, hawker centres, beaches, or airports. Install once, use everywhere.</div>
-    </div>
-  </div>
-
-  <!-- ── Story ── -->
   <div class="section-head">How it unfolded</div>
 
   <div style="font-size:11px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:var(--light);margin:0 0 8px;padding-left:2px;">Trip planning</div>
@@ -258,6 +227,11 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
   <div class="phase orange">
     <div class="phase-title">Phase 6 — Polish</div>
     <div class="phase-body">Countdown timer, shortened hero, Places and Food split into separate tabs, custom hibiscus icon generated in Python, hotel updated across 14 references in one pass, nav bugs tracked down to orphaned closing divs.</div>
+  </div>
+
+  <div class="phase teal">
+    <div class="phase-title">Phase 7 — Depth and distribution</div>
+    <div class="phase-body">A 58-item gap analysis surfaced everything missing: jet lag recovery notes night by night, a toddler backup plan at every meal, specific shops on Haji Lane, the Telugu moment at Tekka. A Prep tab was added to all three guides. Live Singapore weather via Open-Meteo — current conditions on the home screen, per-day forecast strips on every day tab. Pull-to-refresh, auto-reload on new deploy. The build story and guided prompt split into two separate pages. The prompt itself was rewritten — 5 opening questions, progressive build, 17-item stress-test, hard gates between phases.</div>
   </div>
 
   <!-- ── Retrospective ── -->
@@ -317,14 +291,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); padding-bottom
 
 </div>
 
-<script>  function copyPrompt() {
-    var text = window.TRIP_PROMPT;
-    navigator.clipboard.writeText(text).then(function() {
-      showToast('Prompt copied! ✓');
-    }).catch(function() {
-      showToast('Copy failed — select the text manually');
-    });
-  }
+<script>  
   function shareLink(url, title) {
     if (navigator.share) {
       navigator.share({ title: title, url: url }).catch(function(){});

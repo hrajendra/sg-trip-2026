@@ -234,8 +234,8 @@
 <div id="prep" class="section active">
   <div class="day-hdr"><div class="day-lbl">Before You Board</div><div class="day-title">Pre-Trip Checklist ✈️</div></div>
 
-  <div class="card card-red">
-    <div class="card-title">⚠️ Do this week — 20 days out</div>
+  <div class="card card-red" id="prep-todo-card">
+    <div class="card-title">⚠️ Do this week — <span id="prep-days-out">20</span> days out</div>
     <ul>
       <li><strong>Travel insurance</strong> — all 8 people. Check Chase Sapphire / Amex Platinum card benefits first (may cover medical emergencies). Otherwise World Nomads, Allianz, or Seven Corners. ~$150–300 USD for the group. <em>Grandparents' Indian health insurance does not cover Singapore.</em></li>
       <li><strong>Grandparent SIM cards</strong> — buy Airtel International or Singtel SIM at BLR airport before they board, OR pick up Singtel at Changi T2 arrivals and hand over on meeting. Without data they cannot WhatsApp you or access the guide during the 55-minute arrival gap.</li>
@@ -722,6 +722,20 @@
     document.querySelector(`[data-t="${t}"]`).classList.add('active');
     const nh=document.querySelector('.nav-wrap');if(nh){const navBottom=nh.getBoundingClientRect().bottom+window.scrollY;if(window.scrollY<navBottom-1)window.scrollTo({top:nh.offsetTop,behavior:'smooth'});}
   }
+  // ── Days out countdown ──
+  (function() {
+    var TRIP = new Date('2026-04-06T00:00:00');
+    var now = new Date();
+    var days = Math.ceil((TRIP - now) / (1000 * 60 * 60 * 24));
+    var card = document.getElementById('prep-todo-card');
+    var label = document.getElementById('prep-days-out');
+    if (days <= 0 && card) {
+      card.style.display = 'none'; // trip has started or passed
+    } else if (label) {
+      label.textContent = days;
+    }
+  })();
+
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});
   // ── SW update: auto-reload when new version takes over ──
   if ('serviceWorker' in navigator) {
