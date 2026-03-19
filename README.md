@@ -19,8 +19,8 @@ The app was entirely designed, written, and iterated with [Claude](https://claud
 <table>
   <tr>
     <td align="center"><img src="docs/ss_index_framed.png" width="240"><br><sub>Home · countdown + share</sub></td>
-    <td align="center"><img src="docs/ss_full_framed.png" width="240"><br><sub>Full itinerary · Day 1 arrival</sub></td>
-    <td align="center"><img src="docs/ss_gpen_framed.png" width="240"><br><sub>Grandparent guide (English) · Prep tab</sub></td>
+    <td align="center"><img src="docs/ss_full_framed.png" width="240"><br><sub>Full itinerary · Day 1 + weather</sub></td>
+    <td align="center"><img src="docs/ss_gpen_framed.png" width="240"><br><sub>Grandparent guide · Prep tab</sub></td>
   </tr>
   <tr>
     <td align="center"><img src="docs/ss_gpte_framed.png" width="240"><br><sub>Grandparent guide (Telugu) · Day 2</sub></td>
